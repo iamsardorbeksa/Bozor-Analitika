@@ -7,10 +7,17 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import { en, type DictKey } from './en'
-import { ru } from './ru'
-import { uz } from './uz'
-import { detectLang, LANGS, type Lang } from './lang'
+import type { AwardDef } from '../lib/awards'
+import { ar, arAwards } from './ar'
+import { de, deAwards } from './de'
+import { en, type AwardTexts, type Dict, type DictKey } from './en'
+import { es, esAwards } from './es'
+import { fr, frAwards } from './fr'
+import { detectLang, isRtl, LANGS, PLURAL_ORDER, type Lang } from './lang'
+import { pt, ptAwards } from './pt'
+import { ru, ruAwards } from './ru'
+import { uz, uzAwards } from './uz'
+import { zh, zhAwards } from './zh'
 import {
   formatCompact,
   formatDate,
@@ -22,7 +29,18 @@ import {
   weekdayName,
 } from './format'
 
-const DICTS: Record<Lang, Record<DictKey, string>> = { en, ru, uz }
+const DICTS: Record<Lang, Dict> = { en, es, fr, de, pt, ru, uz, zh, ar }
+/** English award texts come from src/lib/awards.ts itself. */
+const AWARD_TEXTS: Record<Exclude<Lang, 'en'>, AwardTexts> = {
+  es: esAwards,
+  fr: frAwards,
+  de: deAwards,
+  pt: ptAwards,
+  ru: ruAwards,
+  uz: uzAwards,
+  zh: zhAwards,
+  ar: arAwards,
+}
 const STORAGE_KEY = 'cw-lang'
 
 export type Vars = Record<string, string | number>
@@ -33,17 +51,14 @@ function interpolate(template: string, vars?: Vars): string {
 }
 
 /**
- * Plural strings are written as "one|other" (en, uz) or "one|few|many" (ru).
+ * Plural strings list one form per category in PLURAL_ORDER[lang], e.g. "one|other" (en),
+ * "one|few|many" (ru), "zero|one|two|few|many|other" (ar). Unknown categories use the last form.
  */
 function pickPlural(value: string, n: number, lang: Lang): string {
   const forms = value.split('|')
   if (forms.length === 1) return value
-  const cat = pluralCategory(n, lang)
-  if (lang === 'ru') {
-    const i = cat === 'one' ? 0 : cat === 'few' ? 1 : 2
-    return forms[Math.min(i, forms.length - 1)]
-  }
-  return cat === 'one' ? forms[0] : forms[forms.length - 1]
+  const i = PLURAL_ORDER[lang].indexOf(pluralCategory(n, lang))
+  return forms[i < 0 ? forms.length - 1 : Math.min(i, forms.length - 1)]
 }
 
 export function makeTranslator(lang: Lang) {
@@ -52,16 +67,25 @@ export function makeTranslator(lang: Lang) {
   /** Plural-aware: picks the form for `n` and fills {n}. */
   const tp = (key: DictKey, n: number, vars?: Vars) =>
     interpolate(pickPlural(dict[key] ?? en[key], n, lang), { n: formatNumber(n, lang), ...vars })
+  /** Award title + description in this language, falling back to English. */
+  const awardText = (def: Pick<AwardDef, 'id' | 'title' | 'description'>) =>
+    (lang !== 'en' && AWARD_TEXTS[lang][def.id]) || {
+      title: def.title,
+      description: def.description,
+    }
   return {
     lang,
+    dir: isRtl(lang) ? ('rtl' as const) : ('ltr' as const),
     t,
     tp,
+    awardText,
     num: (n: number, digits = 0) => formatNumber(n, lang, digits),
     compact: (n: number) => formatCompact(n, lang),
     duration: (ms: number) => formatDuration(ms, lang),
     date: (ts: number, withYear = true) => formatDate(ts, lang, withYear),
     shortDate: (ts: number) => formatShortDate(ts, lang),
-    weekday: (i: number, style: 'long' | 'short' = 'long') => weekdayName(i, lang, style),
+    weekday: (i: number, style: 'long' | 'short' | 'narrow' = 'long') =>
+      weekdayName(i, lang, style),
     hour: (h: number) => formatHour(h, lang),
   }
 }
@@ -96,6 +120,7 @@ export function I18nProvider({ children, lang: fixedLang }: { children: ReactNod
   }, [])
   useEffect(() => {
     document.documentElement.lang = lang
+    document.documentElement.dir = isRtl(lang) ? 'rtl' : 'ltr'
   }, [lang])
   const value = useMemo<I18nValue>(() => ({ ...makeTranslator(lang), setLang }), [lang, setLang])
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>

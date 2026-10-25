@@ -1,4 +1,4 @@
-import type { Dict } from './en'
+import type { AwardTexts, Dict } from './en'
 
 /** Uzbek (Latin). Uzbek nouns don't change after numbers, so plural strings use one form. */
 export const uz: Dict = {
@@ -281,4 +281,144 @@ export const uz: Dict = {
   'privacyPage.h5': 'Varaqni yopsangiz — hammasi oʻchadi',
   'privacyPage.p5':
     'Chatingiz faqat shu varaq xotirasida yashaydi. Sahifani yoping yoki yangilang — u yoʻqoladi.',
+}
+
+export const uzAwards: AwardTexts = {
+  'midnight-philosopher': {
+    title: 'Yarim tun faylasufi',
+    description:
+      'Yarim tundan soat 5 gacha {count} ta xabar. Chuqur fikrlar qorongʻulikni yaxshi koʻradi.',
+  },
+  'voice-note-villain': {
+    title: 'Ovozli xabarlar ustasi',
+    description: '{count} ta ovozli xabar. Podkast qachon chiqadi?',
+  },
+  'seen-at': {
+    title: 'Koʻrildi: 14:14',
+    description: 'Oʻrtacha javob vaqti: {duration}. Sabr tagi — sariq oltin.',
+  },
+  'speed-demon': {
+    title: 'Chaqmoq',
+    description: '{duration} ichida javob beradi. Barmoqlaringiz charchamadimi?',
+  },
+  'essay-writer': {
+    title: 'Insho ustasi',
+    description: 'Har bir xabarda oʻrtacha {count} soʻz. Ikkinchi bob qachon?',
+  },
+  'hype-machine': {
+    title: 'Hayajon mashinasi',
+    description: '{count} ta undov belgisi va emoji. Sof energiya!!!',
+  },
+  'ghost-mode': {
+    title: 'Arvoh rejimi',
+    description: 'Bir marta {duration} davomida gʻoyib boʻldi. Qoʻrqinchli.',
+  },
+  'conversation-starter': {
+    title: 'Suhbat boshlovchisi',
+    description: 'Barcha suhbatlarning {pct} qismini boshlagan. Chatning budilnigi.',
+  },
+  'topic-killer': {
+    title: 'Mavzu qotili',
+    description: '{count} marta uzoq jimlikdan oldin oxirgi soʻzni aytgan. Mikrofon tashlandi.',
+  },
+  'chief-laughing-officer': {
+    title: 'Bosh kulgi direktori',
+    description: '{count} marta kulgi. Eng zoʻr tomoshabin.',
+  },
+  'sticker-mafia': {
+    title: 'Stiker mafiyasi',
+    description: '{count} ta stiker. Soʻzlar shart emas.',
+  },
+  'question-detective': {
+    title: 'Savol belgisi detektivi',
+    description: '{count} ta savol. Qiziquvchanlik — maksimumda.',
+  },
+  'sorry-champion': {
+    title: 'Kechirim chempioni',
+    description: '{count} marta kechirim soʻragan. Ehtimol, sababsiz ham.',
+  },
+  'gratitude-guru': {
+    title: 'Minnatdorchilik ustozi',
+    description: '{count} marta rahmat aytgan. Odobi aʼlo.',
+  },
+  'love-letter': {
+    title: 'Sevgi maktubi',
+    description: '{count} marta “yaxshi koʻraman”. Shirinlik darajasi: kritik.',
+  },
+  'certified-ok': {
+    title: 'Rasmiy “ok”chi',
+    description: '{count} marta “ok”. Qisqa. Sirli. Ok.',
+  },
+  'triple-texter': {
+    title: 'Ketma-ket yozuvchi',
+    description: '{count} marta ketma-ket 3+ xabar. Nega bir marta aytish kerak?',
+  },
+  'early-bird': {
+    title: 'Erta turar',
+    description: 'Soat 5 dan 9 gacha {count} ta xabar. Avval chat, keyin kofe.',
+  },
+  'weekend-warrior': {
+    title: 'Dam olish jangchisi',
+    description: 'Xabarlarining {pct} qismi dam olish kunlarida. Shanba qahramoni.',
+  },
+  'emoji-artist': {
+    title: 'Emoji rassomi',
+    description: '{count} xil emoji. Haqiqiy vizual hikoyachi.',
+  },
+  paparazzi: {
+    title: 'Paparatsi',
+    description: '{count} ta rasm va video. Rasmsiz ishonmaymiz.',
+  },
+  'master-of-brevity': {
+    title: 'Qisqalik ustasi',
+    description: 'Har xabarda atigi {count} soʻz. Harflarni tejash kerak.',
+  },
+  'main-character': {
+    title: 'Bosh qahramon',
+    description: 'Barcha xabarlarning {pct} qismi. Bu chat — shaxsiy shou.',
+  },
+  'undo-button': {
+    title: '“Bekor qilish” tugmasi',
+    description: '{count} ta xabar oʻchirilgan. Hech qachon bilmaymiz…',
+  },
+  icebreaker: {
+    title: 'Muzyorar',
+    description: 'Eng uzun jimlikni ({duration}) buzgan. Haqiqiy qahramon.',
+  },
+  'office-hours-hero': {
+    title: 'Ish vaqti qahramoni',
+    description: 'Ish kunlari 9 dan 17 gacha {count} ta xabar. Ishlayapmiz-a?',
+  },
+  'walking-dictionary': {
+    title: 'Yuruvchi lugʻat',
+    description: '{count} xil soʻz ishlatgan. Soʻz boyligi zoʻr.',
+  },
+  'caps-lock': {
+    title: 'CAPS LOCK ISHQIBOZI',
+    description: '{count} TA XABAR KATTA HARFLARDA. ESHITYAPMIZ.',
+  },
+  'link-librarian': {
+    title: 'Havolalar kutubxonachisi',
+    description: '{count} ta havola. Hammaga uy vazifasi.',
+  },
+  'reply-master': {
+    title: 'Javob ustasi',
+    description: '{count} marta iqtibos bilan javob. Kontekst — hammasi.',
+  },
+  'forwarding-department': {
+    title: 'Yoʻnaltirish boʻlimi',
+    description: '{count} ta yoʻnaltirilgan xabar. Chatning shaxsiy yangiliklar lentasi.',
+  },
+  'loyal-regular': {
+    title: 'Sodiq hamroh',
+    description: '{count} ta xabar — doimiy iliqlik. Busiz chat boshqacha boʻlardi.',
+  },
+  'quiet-legend': {
+    title: 'Sokin afsona',
+    description: 'Kam yozadi, lekin {count} ta xabarning har biri oltin.',
+  },
+  'prime-time': {
+    title: 'Eng qizgʻin vaqt yulduzi',
+    description: 'Eng faol vaqti — taxminan {hour}:00. Soatlarni toʻgʻrilang.',
+  },
 }

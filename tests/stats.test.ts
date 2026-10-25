@@ -95,6 +95,34 @@ describe('tokenizer & laughter', () => {
   })
 })
 
+describe('new-language support', () => {
+  it('counts laughs and sweet words in Chinese, Arabic, French, German and Portuguese', () => {
+    const s = stats([
+      msg(0, 'A', '哈哈哈哈 太好笑了，谢谢你！我爱你'),
+      msg(MIN, 'B', 'ههههه شكراً يا صديقي، أحبك'),
+      msg(2 * MIN, 'C', 'mdr merci beaucoup'),
+      msg(3 * MIN, 'D', 'rsrsrs valeu, beleza'),
+      msg(4 * MIN, 'E', 'Vielen Dank, alles klar'),
+    ])
+    expect(person(s, 'A')).toMatchObject({ laughs: 1, phrases: { thanks: 1, love: 1 } })
+    expect(person(s, 'B')).toMatchObject({ laughs: 1, phrases: { thanks: 1, love: 1 } })
+    expect(person(s, 'C')).toMatchObject({ laughs: 1, phrases: { thanks: 1 } })
+    expect(person(s, 'D')).toMatchObject({ laughs: 1, phrases: { thanks: 1, ok: 1 } })
+    expect(person(s, 'E').phrases).toMatchObject({ thanks: 1, ok: 1 })
+  })
+
+  it('keeps Chinese/Arabic filler and laughter out of top words', () => {
+    const s = stats([
+      msg(0, 'A', '我们今天去吃火锅吧，火锅真的太好吃了 哈哈哈'),
+      msg(MIN, 'B', 'في البيت مع القهوة، القهوة أحلى'),
+    ])
+    const words = s.topWords.map((w) => w.key)
+    expect(words).toContain('火锅')
+    expect(words).toContain('القهوة')
+    for (const filler of ['我们', '的', '哈哈哈', 'في', 'مع']) expect(words).not.toContain(filler)
+  })
+})
+
 describe('computeStats', () => {
   it('measures reply time only when the sender switches, ignoring gaps over 12h', () => {
     const s = stats([
@@ -191,15 +219,13 @@ describe('computeStats', () => {
 })
 
 describe('awards', () => {
-  it('has at least 25 awards with all translations', () => {
+  it('has at least 25 awards with English texts', () => {
     expect(AWARDS.length).toBeGreaterThanOrEqual(25)
     const ids = new Set(AWARDS.map((a) => a.id))
     expect(ids.size).toBe(AWARDS.length)
     for (const a of AWARDS) {
-      for (const lang of ['en', 'ru', 'uz'] as const) {
-        expect(a.title[lang], `${a.id} ${lang}`).toBeTruthy()
-        expect(a.description[lang], `${a.id} ${lang}`).toBeTruthy()
-      }
+      expect(a.title, a.id).toBeTruthy()
+      expect(a.description, a.id).toBeTruthy()
     }
   })
 

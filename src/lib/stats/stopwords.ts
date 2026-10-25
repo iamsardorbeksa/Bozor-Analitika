@@ -67,11 +67,24 @@ const FR = `le la les de des du un une et à a en est que qui dans pour pas sur 
 ils elles on ne se sa son ses mais ou donc ni car oui non très tres plus moi toi lui leur y c'est cest j'ai jai ça
 ca bon bien ok mdr ptdr`
 
+/** Chinese: tokens as produced by Intl.Segmenter (single characters are dropped anyway). */
+const ZH = `我们 你们 他们 她们 它们 这个 那个 这些 那些 什么 怎么 怎么样 为什么 没有 一个 一下 一起 可以 就是
+但是 因为 所以 然后 现在 知道 觉得 是的 不是 还是 已经 自己 这样 那样 这么 那么 可能 应该 时候 出来 起来 东西
+真的 今天 明天 昨天 晚上 早上 我的 你的 他的 她的 好的 好吧 行吧 嗯嗯 哦哦 对啊 是啊 然后 而且 如果 虽然 还有
+还要 一样 有点 一点 这里 那里 哪里 谁 吗 呢 吧 啊 哦 嗯 呀 啦 的 了 是 我 你 他 她 它 在 有 就 不 也 都 和 要
+会 没 去 来 说 看 想 好 对 很 太 又 再 还 把 被 让 给 跟 从 到 着 过 个 这 那`
+
+/** Arabic (MSA + common dialect filler). */
+const AR = `في من على إلى الى عن مع هذا هذه ذلك تلك هو هي هم هما انا أنا انت أنت انتي أنت\u0650 انتم نحن كان كانت
+يكون تكون لا لم لن ما ماذا متى كيف أين اين هل او أو ثم لكن بس يا اللي الي التي الذي الذين كل بعض عند عندي
+عندك لي لك له لها لهم هنا هناك كده كدا ايه إيه شو شي وش ليش ليه طيب تمام اوكي ان إن أن قد كمان برضو والله
+ايوه أيوة نعم مش مو مب اني إني انه إنه انها يعني خلاص حتى بعد قبل الحين الآن اليوم بكرة امبارح وين فين`
+
 /** Generic chat filler that shows up regardless of language. */
 const GENERIC = `ok okay okey okk ок окей xd https http www com media omitted image video audio sticker gif null
 deleted message edited`
 
-const ALL = [EN, RU, UZ_LATIN, UZ_CYRILLIC, ES, TR, PT, DE, FR, GENERIC]
+const ALL = [EN, RU, UZ_LATIN, UZ_CYRILLIC, ES, TR, PT, DE, FR, ZH, AR, GENERIC]
 
 export const STOPWORDS: ReadonlySet<string> = new Set(
   ALL.join(' ')

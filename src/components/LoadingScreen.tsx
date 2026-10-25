@@ -40,7 +40,7 @@ export function LoadingScreen({ phase, fraction }: { phase: Phase; fraction: num
               </span>
               {t(`loading.${p}`)}
               {i === step && (
-                <span className="ml-auto tabular-nums">{Math.round(fraction * 100)}%</span>
+                <span className="ms-auto tabular-nums">{Math.round(fraction * 100)}%</span>
               )}
             </li>
           ))}

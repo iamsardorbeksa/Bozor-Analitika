@@ -59,15 +59,15 @@ src/
   lib/parse/                WhatsApp + Telegram parsers, platform detection, zip handling
   lib/stats/compute.ts      single-pass stats engine
   lib/stats/phrases.ts      configurable "sorry / thanks / love you / ok" lists
-  lib/stats/stopwords.ts    stopwords (en, ru, uz latin+cyrillic, es, tr, pt, de, fr)
-  lib/awards.ts             all award definitions (condition, title, description)
+  lib/stats/stopwords.ts    stopwords (en, ru, uz latin+cyrillic, es, tr, pt, de, fr, zh, ar)
+  lib/awards.ts             all award definitions (condition, English title + description)
   lib/demo/demoChats.ts     fictional demo chats
   lib/export/               PNG export (html-to-image), share, ZIP (fflate), inlined fonts
   worker/                   Web Worker: parsing + stats off the main thread
   components/cards/         the story cards and their palettes
   components/story/         story viewer (tap / swipe / keys, settings sheet)
   components/landing/       landing page
-  i18n/                     en / ru / uz dictionaries and formatting
+  i18n/                     dictionaries (en, es, fr, de, pt, ru, uz, zh, ar) incl. award translations, formatting
 scripts/                    asset generator, large-chat generator
 ```
 

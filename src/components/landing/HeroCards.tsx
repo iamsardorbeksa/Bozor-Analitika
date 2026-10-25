@@ -5,7 +5,7 @@ const HOURLY = [3, 2, 1, 1, 1, 2, 3, 4, 5, 4, 5, 6, 5, 4, 5, 6, 7, 8, 9, 10, 12,
 
 /** Decorative fan of mini story cards next to the hero headline. */
 export function HeroCards() {
-  const { t, tp, num, hour, lang } = useI18n()
+  const { t, tp, num, hour, awardText } = useI18n()
   const speed = AWARDS_BY_ID.get('speed-demon')!
   return (
     <div className="hero-cards" aria-hidden="true">
@@ -29,7 +29,7 @@ export function HeroCards() {
         <span className="mini-big">{num(4524)}</span>
         <span className="mini-sub">{tp('unit.messages', 4524)}</span>
         <span className="mini-award">
-          {speed.emoji} {speed.title[lang]}
+          {speed.emoji} {awardText(speed).title}
         </span>
       </div>
     </div>

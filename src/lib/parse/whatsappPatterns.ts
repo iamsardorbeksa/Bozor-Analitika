@@ -42,20 +42,27 @@ const DELETED_TEXTS = [
   // Arabic
   'تم حذف هذه الرسالة',
   'لقد حذفت هذه الرسالة',
+  'حذفت هذه الرسالة',
+  // Chinese
+  '此消息已删除',
+  '此消息已被删除',
+  '你删除了此消息',
+  '您删除了此消息',
 ].map((s) => s.normalize('NFC'))
 
 const DELETED_SET = new Set(DELETED_TEXTS)
 
 /** "<This message was edited>" style suffixes that should be stripped from message text. */
 const EDITED_SUFFIX_RE =
-  /\s*<(?:this message was edited|сообщение (?:было )?изменено|изменено|xabar tahrirlandi|tahrirlangan|se editó este mensaje|editado|bu mesaj düzenlendi|düzenlendi|mensagem editada|diese nachricht wurde bearbeitet|bearbeitet|ce message a été modifié|modifié|تم تعديل هذه الرسالة)>\s*$/i
+  /\s*<(?:this message was edited|сообщение (?:было )?изменено|изменено|xabar tahrirlandi|tahrirlangan|se editó este mensaje|editado|bu mesaj düzenlendi|düzenlendi|mensagem editada|diese nachricht wurde bearbeitet|bearbeitet|ce message a été modifié|modifié|تم تعديل هذه الرسالة|تم التعديل|此消息已编辑|已编辑)>\s*$/i
 
 /** Words that, in a short message, indicate a media placeholder ("image omitted", "<Без медиафайлов>"...). */
 const OMITTED_RE =
-  /(omitted|omitid[oa]|ocultad[oa]|oculta|weggelassen|ausgeschlossen|absente?s?|omise?s?|отсутству|без медиа|dahil edilmedi|استبعاد|غير مضمن|tashlab ketildi|qoldirildi|o'tkazib yuborildi|kiritilmagan|mediasiz|yo'q|file attached|файл прикреплен|файл прикреплён|archivo adjunto|arquivo anexado|dosya ekli|datei angehängt|fichier joint|fayl biriktirilgan|attached:)/i
+  /(omitted|omitid[oa]|ocultad[oa]|oculta|weggelassen|ausgeschlossen|absente?s?|omise?s?|отсутству|без медиа|dahil edilmedi|استبعاد|غير مضمن|tashlab ketildi|qoldirildi|o'tkazib yuborildi|kiritilmagan|mediasiz|yo'q|file attached|файл прикреплен|файл прикреплён|archivo adjunto|arquivo anexado|dosya ekli|datei angehängt|fichier joint|fayl biriktirilgan|attached:|已省略|已忽略|省略影音|ملف مرفق)/i
 
-const STICKER_RE = /(sticker|стикер|stiker|çıkartma|figurinha|ملصق|STK-|\.webp)/i
-const VOICE_RE = /(audio|аудио|ovoz|ses |sesli|áudio|صوت|voice|голосов|PTT-|\.opus|\.m4a|\.ogg)/i
+const STICKER_RE = /(sticker|стикер|stiker|çıkartma|figurinha|ملصق|贴图|贴纸|STK-|\.webp)/i
+const VOICE_RE =
+  /(audio|аудио|ovoz|ses |sesli|áudio|صوت|voice|голосов|音频|语音|PTT-|\.opus|\.m4a|\.ogg)/i
 /** Android "<Media omitted>" and its translations are always wrapped in angle brackets. */
 const BRACKETED_RE = /^<[^<>]{3,60}>$/
 
@@ -147,6 +154,37 @@ const SYSTEM_RE = new RegExp(
     'blocked this contact',
     'unblocked this contact',
     'заблокировали этот контакт',
+    // Chinese
+    '端到端加密',
+    '安全代码已更改',
+    '创建了群组',
+    '创建群组',
+    '加入了',
+    '通过邀请链接加入',
+    '已添加',
+    '添加了',
+    '退出了',
+    '已退出',
+    '移除了',
+    '更改了群组',
+    '更改了主题',
+    '更改了此群组',
+    '现在是管理员',
+    '未接语音通话',
+    '未接视频通话',
+    // Arabic group events
+    'أنشأ المجموعة',
+    'أنشأت المجموعة',
+    'أضاف',
+    'أضافت',
+    'غادر',
+    'غادرت',
+    'انضم',
+    'انضمت',
+    'غي\u0651ر',
+    'غيرت',
+    'مكالمة صوتية فائتة',
+    'مكالمة فيديو فائتة',
   ].join('|'),
   'i',
 )
@@ -164,6 +202,8 @@ const SYSTEM_TEXT_RE = new RegExp(
     '^nachrichten und anrufe sind',
     '^les messages et les appels',
     '^الرسائل والمكالمات',
+    '^消息和通话',
+    '^.{0,40}端到端加密',
     '^your security code with',
     '^.{0,40} created (?:the )?group',
     '^.{0,40} added ',

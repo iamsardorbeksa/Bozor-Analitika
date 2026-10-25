@@ -32,10 +32,10 @@ export function Landing({
   error: ParseErrorCode | null
   onDismissError: () => void
 }) {
-  const { t, lang } = useI18n()
+  const { t, awardText } = useI18n()
   const marquee = AWARDS.filter((a) => !a.fallback)
     .slice(0, 14)
-    .map((a) => `${a.emoji} ${a.title[lang]}`)
+    .map((a) => `${a.emoji} ${awardText(a).title}`)
     .join(' · ')
   return (
     <>
@@ -61,7 +61,7 @@ export function Landing({
                 <Icon name="sparkle" /> {t('hero.cta')}
               </a>
               <button className="btn-secondary" onClick={() => onDemo('whatsapp')}>
-                {t('hero.demo')} →
+                {t('hero.demo')} <span className="dir-arrow">→</span>
               </button>
             </div>
           </div>

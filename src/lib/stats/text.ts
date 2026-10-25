@@ -102,11 +102,25 @@ const LAUGH_WORD_RE = new RegExp(
       'ㅋ{2,}', // ㅋㅋㅋ (ko)
       'w{3,}', // www (ja)
       '5{3,}', // 555 (th)
+      'p?mdr+', // mdr, ptdr (fr)
+      'ptdr+',
+      '(?:rs){2,}', // rsrs (pt)
+      'ه{3,}', // ههههه (ar)
+      'خ{3,}', // خخخخ (Gulf ar)
+      'هه(?:ه|ـ)+',
     ].join('|') +
     ')$',
   'u',
 )
 const PAREN_LAUGH_RE = /\){2,}/g
+/** Chinese laughter is written without spaces, so it is matched inside the text: 哈哈, 呵呵, 嘻嘻, 笑死. */
+const CJK_LAUGH_RE = /哈{2,}|呵{2,}|嘻{2,}|嘿{2,}|笑死|xswl/gi
+const CJK_RE = /[一-鿿]/
+
+/** "哈哈哈" etc. as a token: counted by CJK_LAUGH_RE, but must not show up as a "top word". */
+export function isCjkLaugh(word: string): boolean {
+  return /^[哈呵嘻嘿]+$/.test(word)
+}
 
 export function isLaughWord(word: string): boolean {
   return word.length >= 3 && LAUGH_WORD_RE.test(word)
@@ -116,6 +130,10 @@ export function isLaughWord(word: string): boolean {
 export function countLaughs(lowerTokens: string[], text: string, emojis: string[]): number {
   let n = 0
   for (const t of lowerTokens) if (isLaughWord(t)) n++
+  if (CJK_RE.test(text)) {
+    const m = text.match(CJK_LAUGH_RE)
+    if (m) n += m.length
+  }
   if (text.includes('))')) {
     const m = text.match(PAREN_LAUGH_RE)
     if (m) n += m.length

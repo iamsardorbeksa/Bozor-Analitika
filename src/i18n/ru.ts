@@ -1,4 +1,4 @@
-import type { Dict } from './en'
+import type { AwardTexts, Dict } from './en'
 
 /** Russian. Plurals: "one|few|many" (1 сообщение | 2 сообщения | 5 сообщений). */
 export const ru: Dict = {
@@ -277,4 +277,143 @@ export const ru: Dict = {
   'privacyPage.h5': 'Закрыли вкладку — всё удалено',
   'privacyPage.p5':
     'Чат живёт только в памяти этой вкладки. Закройте или обновите страницу — и его нет.',
+}
+
+export const ruAwards: AwardTexts = {
+  'midnight-philosopher': {
+    title: 'Полуночный философ',
+    description: '{count} сообщений между полуночью и 5 утра. Глубоким мыслям нужна темнота.',
+  },
+  'voice-note-villain': {
+    title: 'Злодей голосовых',
+    description: '{count} голосовых. Когда запуск подкаста?',
+  },
+  'seen-at': {
+    title: 'Прочитано в 14:14',
+    description: 'Медианное время ответа: {duration}. Хорошее стоит ожидания.',
+  },
+  'speed-demon': {
+    title: 'Скоростной демон',
+    description: 'Отвечает за {duration} (медиана). Пальцы в порядке?',
+  },
+  'essay-writer': {
+    title: 'Автор эссе',
+    description: 'В среднем {count} слов в сообщении. Когда вторая глава?',
+  },
+  'hype-machine': {
+    title: 'Машина хайпа',
+    description: '{count} восклицательных знаков и эмодзи. Чистая энергия!!!',
+  },
+  'ghost-mode': {
+    title: 'Режим призрака',
+    description: 'Однажды исчезновение длилось {duration}. Жутковато.',
+  },
+  'conversation-starter': {
+    title: 'Заводила',
+    description: 'Начинает {pct} всех разговоров. Будильник этого чата.',
+  },
+  'topic-killer': {
+    title: 'Убийца тем',
+    description: 'Последнее слово перед долгой тишиной — {count} раз. Микрофон упал.',
+  },
+  'chief-laughing-officer': {
+    title: 'Главный по смеху',
+    description: '{count} смешков. Лучшая публика на свете.',
+  },
+  'sticker-mafia': {
+    title: 'Стикерная мафия',
+    description: '{count} стикеров. Слова переоценены.',
+  },
+  'question-detective': {
+    title: 'Детектив вопросительных знаков',
+    description: '{count} вопросов. Любопытство на максимуме.',
+  },
+  'sorry-champion': {
+    title: 'Чемпион по извинениям',
+    description: '{count} извинений. Наверняка даже без повода.',
+  },
+  'gratitude-guru': {
+    title: 'Гуру благодарности',
+    description: '«Спасибо» — {count} раз. Манеры безупречны.',
+  },
+  'love-letter': {
+    title: 'Любовное письмо',
+    description: '{count} признаний в любви. Уровень милоты: критический.',
+  },
+  'certified-ok': {
+    title: 'Мастер «ок»',
+    description: '«Ок» — {count} раз. Коротко. Загадочно. Ок.',
+  },
+  'triple-texter': {
+    title: 'Мастер серий',
+    description: '3+ сообщения подряд — {count} раз. Зачем говорить один раз?',
+  },
+  'early-bird': {
+    title: 'Ранняя пташка',
+    description: '{count} сообщений с 5 до 9 утра. Кофе подождёт.',
+  },
+  'weekend-warrior': {
+    title: 'Воин выходных',
+    description: '{pct} сообщений — в выходные. Звезда субботы.',
+  },
+  'emoji-artist': {
+    title: 'Эмодзи-художник',
+    description: '{count} разных эмодзи. Настоящий визуальный рассказчик.',
+  },
+  paparazzi: {
+    title: 'Папарацци',
+    description: '{count} фото и видео. Нет фото — не было.',
+  },
+  'master-of-brevity': {
+    title: 'Мастер краткости',
+    description: 'Всего {count} слова на сообщение. Зачем тратить буквы?',
+  },
+  'main-character': {
+    title: 'Главный герой',
+    description: '{pct} всех сообщений. Этот чат — личное шоу.',
+  },
+  'undo-button': {
+    title: 'Кнопка «Отмена»',
+    description: 'Удалено {count} сообщений. Мы никогда не узнаем…',
+  },
+  icebreaker: {
+    title: 'Ледокол',
+    description: 'Прервать самую долгую тишину ({duration}) — настоящий подвиг.',
+  },
+  'office-hours-hero': {
+    title: 'Герой рабочего дня',
+    description: '{count} сообщений в будни с 9 до 17. Работа кипит, да?',
+  },
+  'walking-dictionary': {
+    title: 'Ходячий словарь',
+    description: '{count} разных слов. Словарный запас впечатляет.',
+  },
+  'caps-lock': {
+    title: 'ФАНАТ CAPS LOCK',
+    description: '{count} СООБЩЕНИЙ КАПСОМ. МЫ СЛЫШИМ.',
+  },
+  'link-librarian': {
+    title: 'Библиотекарь ссылок',
+    description: '{count} ссылок. Домашка для всех.',
+  },
+  'reply-master': {
+    title: 'Мастер цитат',
+    description: '{count} ответов с цитатой. Контекст — наше всё.',
+  },
+  'forwarding-department': {
+    title: 'Отдел пересылок',
+    description: '{count} пересланных сообщений. Личная лента новостей чата.',
+  },
+  'loyal-regular': {
+    title: 'Верный завсегдатай',
+    description: '{count} сообщений стабильного уюта. Без этого чат был бы другим.',
+  },
+  'quiet-legend': {
+    title: 'Тихая легенда',
+    description: 'Пишет редко, но каждое из {count} сообщений — на вес золота.',
+  },
+  'prime-time': {
+    title: 'Звезда прайм-тайма',
+    description: 'Пик активности — около {hour}:00. Сверяйте часы.',
+  },
 }

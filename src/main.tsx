@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import '@fontsource-variable/unbounded'
 import '@fontsource-variable/manrope'
+// Arabic glyphs only download when Arabic text is on screen (unicode-range).
+import '@fontsource-variable/cairo'
 import App from './App'
 import { applyInitialTheme } from './components/landing/SiteChrome'
 import './index.css'

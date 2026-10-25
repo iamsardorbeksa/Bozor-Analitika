@@ -81,7 +81,7 @@ export function SiteHeader() {
           {APP_CONFIG.name}
         </span>
       </a>
-      <nav className="ml-auto flex items-center gap-1 sm:gap-2" aria-label="Main">
+      <nav className="ms-auto flex items-center gap-1 sm:gap-2" aria-label="Main">
         <a href="#how" className="header-link hidden md:inline-flex">
           {t('nav.howto')}
         </a>

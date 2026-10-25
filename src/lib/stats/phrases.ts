@@ -46,6 +46,22 @@ export const PHRASES = {
     'désolé',
     'désolée',
     'desole',
+    'je suis désolé',
+    'excuse-moi',
+    'perdóname',
+    // zh
+    '对不起',
+    '抱歉',
+    '不好意思',
+    // ar
+    'آسف',
+    'آسفة',
+    'اسف',
+    'اسفة',
+    'عذرا',
+    'عذرا\u064B',
+    'سامحني',
+    'معلش',
   ],
   thanks: [
     'thanks',
@@ -75,7 +91,24 @@ export const PHRASES = {
     'sağol',
     'sagol',
     'danke',
+    'dankeschön',
+    'vielen dank',
     'merci',
+    'merci beaucoup',
+    'muchas gracias',
+    'valeu',
+    // zh
+    '谢谢',
+    '多谢',
+    '感谢',
+    '谢啦',
+    '谢了',
+    // ar
+    'شكرا',
+    'شكرا\u064B',
+    'شكر\u064Bا',
+    'مشكور',
+    'مشكورة',
   ],
   love: [
     'love you',
@@ -99,7 +132,20 @@ export const PHRASES = {
     'seni seviyorum',
     'eu te amo',
     'ich liebe dich',
+    'hab dich lieb',
+    'hdl',
     "je t'aime",
+    'je vous aime',
+    'te amo muito',
+    // zh
+    '我爱你',
+    '爱你',
+    // ar
+    'أحبك',
+    'احبك',
+    'بحبك',
+    'أحبكم',
+    'بحبكم',
   ],
   ok: [
     'ok',
@@ -130,7 +176,21 @@ export const PHRASES = {
     'tamam',
     'tmm',
     'beleza',
+    'blz',
     "d'accord",
+    'alles klar',
+    'passt',
+    // zh
+    '好的',
+    '好吧',
+    '行吧',
+    '嗯嗯',
+    // ar
+    'تمام',
+    'طيب',
+    'اوكي',
+    'أوكي',
+    'ماشي',
   ],
 } as const satisfies Record<string, readonly string[]>
 
@@ -141,14 +201,27 @@ function escapeRe(s: string) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
-/** One regex per category, longest phrases first so "thank you" wins over "ty". */
+const CJK_RE = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u
+
+/**
+ * One regex per category, longest phrases first so "thank you" wins over "ty".
+ * Phrases are matched as whole words, except Chinese/Japanese ones: those scripts
+ * have no spaces, so "谢谢你" must still count as "谢谢".
+ */
 export const PHRASE_REGEXES: Record<PhraseCategory, RegExp> = Object.fromEntries(
   PHRASE_CATEGORIES.map((cat) => {
-    const alts = [...PHRASES[cat]]
+    const phrases = [...PHRASES[cat]]
       .map((p) => p.toLowerCase().replace(/[‘’ʻʼ]/g, "'"))
       .sort((a, b) => b.length - a.length)
+    const words = phrases
+      .filter((p) => !CJK_RE.test(p))
       .map(escapeRe)
       .join('|')
-    return [cat, new RegExp(`(?<![\\p{L}\\p{N}'])(?:${alts})(?![\\p{L}\\p{N}])`, 'gu')]
+    const cjk = phrases
+      .filter((p) => CJK_RE.test(p))
+      .map(escapeRe)
+      .join('|')
+    const bounded = `(?<![\\p{L}\\p{N}'])(?:${words})(?![\\p{L}\\p{N}])`
+    return [cat, new RegExp(cjk ? `${bounded}|${cjk}` : bounded, 'gu')]
   }),
 ) as Record<PhraseCategory, RegExp>

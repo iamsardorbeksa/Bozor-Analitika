@@ -11,6 +11,7 @@ import manropeLatin from '@fontsource-variable/manrope/files/manrope-latin-wght-
 import manropeLatinExt from '@fontsource-variable/manrope/files/manrope-latin-ext-wght-normal.woff2?inline'
 import manropeCyrillic from '@fontsource-variable/manrope/files/manrope-cyrillic-wght-normal.woff2?inline'
 import manropeCyrillicExt from '@fontsource-variable/manrope/files/manrope-cyrillic-ext-wght-normal.woff2?inline'
+import cairoArabic from '@fontsource-variable/cairo/files/cairo-arabic-wght-normal.woff2?inline'
 
 const RANGES = {
   latin:
@@ -19,6 +20,7 @@ const RANGES = {
     'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF',
   cyrillic: 'U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116',
   cyrillicExt: 'U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F',
+  arabic: 'U+0600-06FF,U+0750-077F,U+0870-08FF,U+200C-200E,U+FB50-FDFF,U+FE70-FEFC',
 }
 
 function face(family: string, src: string, range: string): string {
@@ -35,4 +37,6 @@ export const fontEmbedCSS = [
   face('Manrope Variable', manropeLatinExt, RANGES.latinExt),
   face('Manrope Variable', manropeCyrillic, RANGES.cyrillic),
   face('Manrope Variable', manropeCyrillicExt, RANGES.cyrillicExt),
+  // Arabic: Chinese uses the system font, which the browser already has locally.
+  face('Cairo Variable', cairoArabic, RANGES.arabic),
 ].join('\n')

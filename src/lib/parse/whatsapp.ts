@@ -11,10 +11,13 @@ import {
  * Matches the timestamp header of a WhatsApp line, after cleanLine():
  *   Android: "12/31/23, 9:41 PM - Name: message"
  *   iOS:     "[31/12/2023, 21:41:05] Name: message"
- * Also handles dots / dashes as date separators, missing comma, a.m./p.m. and Arabic ص/م.
+ *   Chinese: "2023/12/31 下午9:41 - 张三: 你好" (AM/PM marker *before* the time)
+ *   Arabic:  "31/12/2023، 9:41 م - Name: message" (Arabic comma; digits normalized by cleanLine)
+ * Also handles dots / dashes as date separators, missing comma and a.m./p.m.
+ * Groups: 1-3 date parts, 4 AM/PM prefix, 5 hour, 6 minute, 7 second, 8 AM/PM suffix.
  */
 const HEADER_RE =
-  /^\[?(\d{1,4})[./-](\d{1,2})[./-](\d{1,4})[,.]?\s+(\d{1,2})[:.](\d{2})(?:[:.](\d{2}))?\s*([AaPp]\.?\s?[Mm]\.?|ص|م|午前|午後|오전|오후)?\s*\]?\s*(?:[-–—]\s+|:\s+)?/
+  /^\[?(\d{1,4})[./-](\d{1,2})[./-](\d{1,4})[,.،]?\s*(上午|下午|午前|午後|오전|오후)?\s*(\d{1,2})[:.](\d{2})(?:[:.](\d{2}))?\s*([AaPp]\.?\s?[Mm]\.?|ص|م|午前|午後|오전|오후)?\s*\]?\s*(?:[-–—]\s+|:\s+)?/
 
 export interface WhatsAppParseOptions {
   /** Force a date order instead of auto-detecting. */
@@ -114,7 +117,7 @@ function toTimestamp(e: RawEntry, order: DateOrder): number | null {
   let hour = e.hour
   if (e.ampm) {
     const p = e.ampm.toLowerCase()
-    const pm = p.startsWith('p') || p === 'م' || p === '午後' || p === '오후'
+    const pm = p.startsWith('p') || p === 'م' || p === '下午' || p === '午後' || p === '오후'
     if (hour === 12) hour = pm ? 12 : 0
     else if (pm) hour += 12
   }
@@ -122,10 +125,12 @@ function toTimestamp(e: RawEntry, order: DateOrder): number | null {
   return new Date(year, month - 1, day, hour, e.minute, e.second).getTime()
 }
 
-/** Split "Name: text" (Android & iOS share this after the header). */
+/** Split "Name: text" (Android & iOS share this after the header; CJK exports may use "："). */
 function splitSender(content: string): { sender: string; text: string } | null {
   const idx = content.indexOf(': ')
   if (idx > 0) return { sender: content.slice(0, idx), text: content.slice(idx + 2) }
+  const wide = content.indexOf('：')
+  if (wide > 0) return { sender: content.slice(0, wide), text: content.slice(wide + 1).trimStart() }
   if (content.endsWith(':') && content.length > 1) {
     return { sender: content.slice(0, -1), text: '' }
   }
@@ -150,10 +155,10 @@ export function parseWhatsApp(input: string, options: WhatsAppParseOptions = {})
         b: +m[2],
         c: +m[3],
         aLen: m[1].length,
-        hour: +m[4],
-        minute: +m[5],
-        second: m[6] ? +m[6] : 0,
-        ampm: m[7],
+        hour: +m[5],
+        minute: +m[6],
+        second: m[7] ? +m[7] : 0,
+        ampm: m[4] ?? m[8],
         content,
         extra: null,
       })

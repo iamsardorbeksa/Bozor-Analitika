@@ -1,31 +1,70 @@
 import { describe, expect, it } from 'vitest'
-import { en, type DictKey } from '../src/i18n/en'
-import { ru } from '../src/i18n/ru'
-import { uz } from '../src/i18n/uz'
 import { makeTranslator } from '../src/i18n'
-import { formatDuration } from '../src/i18n/format'
+import { ar, arAwards } from '../src/i18n/ar'
+import { de, deAwards } from '../src/i18n/de'
+import { en, type AwardTexts, type Dict, type DictKey } from '../src/i18n/en'
+import { es, esAwards } from '../src/i18n/es'
+import { formatDate, formatDuration } from '../src/i18n/format'
+import { fr, frAwards } from '../src/i18n/fr'
+import { LANGS, PLURAL_ORDER, type Lang } from '../src/i18n/lang'
+import { pt, ptAwards } from '../src/i18n/pt'
+import { ru, ruAwards } from '../src/i18n/ru'
+import { uz, uzAwards } from '../src/i18n/uz'
+import { zh, zhAwards } from '../src/i18n/zh'
+import { AWARDS } from '../src/lib/awards'
 
 const placeholders = (s: string) => [...s.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort()
+const uniq = (a: string[]) => [...new Set(a)].sort()
+
+const LOCALES: [Exclude<Lang, 'en'>, Dict, AwardTexts][] = [
+  ['es', es, esAwards],
+  ['fr', fr, frAwards],
+  ['de', de, deAwards],
+  ['pt', pt, ptAwards],
+  ['ru', ru, ruAwards],
+  ['uz', uz, uzAwards],
+  ['zh', zh, zhAwards],
+  ['ar', ar, arAwards],
+]
 
 describe('translations', () => {
-  for (const [name, dict] of [
-    ['ru', ru],
-    ['uz', uz],
-  ] as const) {
-    it(`${name} uses the same placeholders as English`, () => {
-      for (const key of Object.keys(en) as DictKey[]) {
-        const want = new Set(placeholders(en[key]))
-        const got = new Set(placeholders(dict[key]))
-        expect([...got].sort(), `${name}:${key}`).toEqual([...want].sort())
-      }
+  it('covers every supported language', () => {
+    expect(LOCALES.map(([l]) => l).sort()).toEqual(LANGS.filter((l) => l !== 'en').sort())
+  })
+
+  for (const [lang, dict, awards] of LOCALES) {
+    describe(lang, () => {
+      it('has every UI string with the same placeholders as English', () => {
+        for (const key of Object.keys(en) as DictKey[]) {
+          expect(dict[key], `${lang}:${key}`).toBeTruthy()
+          for (const form of dict[key].split('|')) {
+            const want = uniq(placeholders(en[key]))
+            expect(uniq(placeholders(form)), `${lang}:${key} "${form}"`).toEqual(want)
+          }
+        }
+      })
+
+      it('writes plural strings with one form per plural category', () => {
+        const forms = PLURAL_ORDER[lang].length
+        for (const key of Object.keys(en) as DictKey[]) {
+          if (!en[key].includes('|')) continue
+          expect(dict[key].split('|'), `${lang}:${key}`).toHaveLength(forms)
+        }
+      })
+
+      it('translates every award with the same placeholders', () => {
+        for (const a of AWARDS) {
+          const tr = awards[a.id]
+          expect(tr?.title, `${lang}:${a.id}`).toBeTruthy()
+          expect(tr?.description, `${lang}:${a.id}`).toBeTruthy()
+          expect(placeholders(tr.description), `${lang}:${a.id}`).toEqual(
+            placeholders(a.description),
+          )
+        }
+        expect(Object.keys(awards).sort()).toEqual(AWARDS.map((a) => a.id).sort())
+      })
     })
   }
-
-  it('Russian plurals have three forms', () => {
-    for (const key of Object.keys(en) as DictKey[]) {
-      if (en[key].includes('|')) expect(ru[key].split('|'), key).toHaveLength(3)
-    }
-  })
 
   it('picks plural forms', () => {
     const r = makeTranslator('ru')
@@ -38,10 +77,11 @@ describe('translations', () => {
     expect(makeTranslator('uz').tp('setup.messages', 5)).toBe('5 ta xabar')
   })
 
-  it('formats durations in every language', () => {
-    for (const lang of ['en', 'ru', 'uz'] as const) {
-      expect(formatDuration(90_000, lang)).toMatch(/2/)
-      expect(formatDuration(3 * 86_400_000, lang)).toMatch(/3/)
+  it('formats durations and dates in every language', () => {
+    for (const lang of LANGS) {
+      expect(formatDuration(90_000, lang), lang).toMatch(/2/)
+      expect(formatDuration(3 * 86_400_000, lang), lang).toMatch(/3/)
+      expect(formatDate(new Date(2024, 2, 5).getTime(), lang), lang).toMatch(/2024/)
     }
   })
 })

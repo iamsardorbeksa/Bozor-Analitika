@@ -7,6 +7,7 @@ import {
   countLinks,
   extractEmojis,
   isAllCaps,
+  isCjkLaugh,
   isLaughWord,
   isQuestion,
   normalizeWord,
@@ -291,9 +292,14 @@ export function computeStats(messages: ChatMessage[], options: ComputeOptions): 
         for (let t = 0; t < tokens.length; t++) {
           const w = normalizeWord(tokens[t])
           lower[t] = w
-          if (isStopword(w) || /^\p{N}+$/u.test(w) || isLaughWord(w)) continue
-          // Very short words are noise in alphabetic scripts; CJK words can be 1 char.
-          if (w.length < 3 && /^[\p{Script=Latin}\p{Script=Cyrillic}\p{N}']+$/u.test(w)) continue
+          if (isStopword(w) || /^\p{N}+$/u.test(w) || isLaughWord(w) || isCjkLaugh(w)) continue
+          // Very short words are noise: under 3 letters in alphabetic scripts, single characters in CJK.
+          if (w.length < 2) continue
+          if (
+            w.length < 3 &&
+            /^[\p{Script=Latin}\p{Script=Cyrillic}\p{Script=Arabic}\p{N}']+$/u.test(w)
+          )
+            continue
           acc.words.set(w, (acc.words.get(w) ?? 0) + 1)
         }
         const emojis = extractEmojis(text)

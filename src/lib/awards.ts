@@ -2,12 +2,12 @@
  * All award definitions live in this file. Each award has:
  *  - condition(person, ctx): a score when the person qualifies (higher = stronger claim), or null
  *  - vars(person, ctx): numbers for the description placeholders
- *  - title / description in every UI language
+ *  - title / description in English (translations live next to the other UI strings,
+ *    in src/i18n/<lang>.ts as `<lang>Awards`, keyed by award id)
  *
  * Placeholders: {count} → number, {pct} → percentage, {duration} → ms formatted as time,
  * {hour} → hour of day. Keep the tone warm and playful: never about looks, identity or anything hurtful.
  */
-import type { Lang } from '../i18n/lang'
 import type { ChatStats, PersonStats } from './stats/compute'
 import { DAY, HOUR } from './stats/compute'
 
@@ -18,13 +18,11 @@ export interface AwardContext {
   totalConversations: number
 }
 
-type Text = Record<Lang, string>
-
 export interface AwardDef {
   id: string
   emoji: string
-  title: Text
-  description: Text
+  title: string
+  description: string
   condition: (p: PersonStats, ctx: AwardContext) => number | null
   vars: (p: PersonStats, ctx: AwardContext) => Record<string, number>
   /** Funnier / more meaningful awards win ties against weaker ones. */
@@ -41,12 +39,8 @@ export const AWARDS: AwardDef[] = [
     id: 'midnight-philosopher',
     emoji: '🌙',
     priority: 1.3,
-    title: { en: 'The Midnight Philosopher', ru: 'Полуночный философ', uz: 'Yarim tun faylasufi' },
-    description: {
-      en: '{count} messages between midnight and 5 AM. Deep thoughts need dark skies.',
-      ru: '{count} сообщений между полуночью и 5 утра. Глубоким мыслям нужна темнота.',
-      uz: 'Yarim tundan soat 5 gacha {count} ta xabar. Chuqur fikrlar qorongʻulikni yaxshi koʻradi.',
-    },
+    title: 'The Midnight Philosopher',
+    description: '{count} messages between midnight and 5 AM. Deep thoughts need dark skies.',
     condition: (p) => atLeast(p.lateNight, 3),
     vars: (p) => ({ count: p.lateNight }),
   },
@@ -54,12 +48,8 @@ export const AWARDS: AwardDef[] = [
     id: 'voice-note-villain',
     emoji: '🎙️',
     priority: 1.3,
-    title: { en: 'The Voice Note Villain', ru: 'Злодей голосовых', uz: 'Ovozli xabarlar ustasi' },
-    description: {
-      en: '{count} voice messages. When does the podcast launch?',
-      ru: '{count} голосовых. Когда запуск подкаста?',
-      uz: '{count} ta ovozli xabar. Podkast qachon chiqadi?',
-    },
+    title: 'The Voice Note Villain',
+    description: '{count} voice messages. When does the podcast launch?',
     condition: (p) => atLeast(p.voice, 3),
     vars: (p) => ({ count: p.voice }),
   },
@@ -67,12 +57,8 @@ export const AWARDS: AwardDef[] = [
     id: 'seen-at',
     emoji: '👀',
     priority: 1.3,
-    title: { en: 'Seen at 2:14 PM', ru: 'Прочитано в 14:14', uz: 'Koʻrildi: 14:14' },
-    description: {
-      en: 'Median reply time: {duration}. Good things come to those who wait.',
-      ru: 'Медианное время ответа: {duration}. Хорошее стоит ожидания.',
-      uz: 'Oʻrtacha javob vaqti: {duration}. Sabr tagi — sariq oltin.',
-    },
+    title: 'Seen at 2:14 PM',
+    description: 'Median reply time: {duration}. Good things come to those who wait.',
     condition: (p) => (p.medianReplyMs !== null && p.replyCount >= 5 ? p.medianReplyMs + 1 : null),
     vars: (p) => ({ duration: p.medianReplyMs ?? 0 }),
   },
@@ -80,12 +66,8 @@ export const AWARDS: AwardDef[] = [
     id: 'speed-demon',
     emoji: '⚡',
     priority: 1.3,
-    title: { en: 'Speed Demon', ru: 'Скоростной демон', uz: 'Chaqmoq' },
-    description: {
-      en: 'Replies in {duration} (median). Are your thumbs okay?',
-      ru: 'Отвечает за {duration} (медиана). Пальцы в порядке?',
-      uz: '{duration} ichida javob beradi. Barmoqlaringiz charchamadimi?',
-    },
+    title: 'Speed Demon',
+    description: 'Replies in {duration} (median). Are your thumbs okay?',
     condition: (p) =>
       p.medianReplyMs !== null && p.replyCount >= 5 ? 1 / (p.medianReplyMs + 1000) : null,
     vars: (p) => ({ duration: p.medianReplyMs ?? 0 }),
@@ -94,24 +76,16 @@ export const AWARDS: AwardDef[] = [
     id: 'essay-writer',
     emoji: '📜',
     priority: 1.2,
-    title: { en: 'The Essay Writer', ru: 'Автор эссе', uz: 'Insho ustasi' },
-    description: {
-      en: '{count} words per message on average. Chapter two when?',
-      ru: 'В среднем {count} слов в сообщении. Когда вторая глава?',
-      uz: 'Har bir xabarda oʻrtacha {count} soʻz. Ikkinchi bob qachon?',
-    },
+    title: 'The Essay Writer',
+    description: '{count} words per message on average. Chapter two when?',
     condition: (p) => (p.textMessages >= 20 && p.avgWords >= 4 ? p.avgWords : null),
     vars: (p) => ({ count: Math.round(p.avgWords * 10) / 10 }),
   },
   {
     id: 'hype-machine',
     emoji: '🎉',
-    title: { en: 'The Hype Machine', ru: 'Машина хайпа', uz: 'Hayajon mashinasi' },
-    description: {
-      en: '{count} exclamation marks and emojis. Pure energy!!!',
-      ru: '{count} восклицательных знаков и эмодзи. Чистая энергия!!!',
-      uz: '{count} ta undov belgisi va emoji. Sof energiya!!!',
-    },
+    title: 'The Hype Machine',
+    description: '{count} exclamation marks and emojis. Pure energy!!!',
     condition: (p) => {
       const hype = (p.exclamations + p.emojiCount) / Math.max(1, p.messages)
       return p.messages >= 20 && hype >= 0.2 ? hype : null
@@ -122,12 +96,8 @@ export const AWARDS: AwardDef[] = [
     id: 'ghost-mode',
     emoji: '👻',
     priority: 1.2,
-    title: { en: 'Ghost Mode', ru: 'Режим призрака', uz: 'Arvoh rejimi' },
-    description: {
-      en: 'Once vanished for {duration} before replying. Spooky.',
-      ru: 'Однажды исчезновение длилось {duration}. Жутковато.',
-      uz: 'Bir marta {duration} davomida gʻoyib boʻldi. Qoʻrqinchli.',
-    },
+    title: 'Ghost Mode',
+    description: 'Once vanished for {duration} before replying. Spooky.',
     condition: (p) => atLeast(p.maxGhostMs, 12 * HOUR),
     vars: (p) => ({ duration: p.maxGhostMs }),
   },
@@ -135,24 +105,16 @@ export const AWARDS: AwardDef[] = [
     id: 'conversation-starter',
     emoji: '🚀',
     priority: 1.2,
-    title: { en: 'The Conversation Starter', ru: 'Заводила', uz: 'Suhbat boshlovchisi' },
-    description: {
-      en: 'Kicked off {pct} of all conversations. The chat’s alarm clock.',
-      ru: 'Начинает {pct} всех разговоров. Будильник этого чата.',
-      uz: 'Barcha suhbatlarning {pct} qismini boshlagan. Chatning budilnigi.',
-    },
+    title: 'The Conversation Starter',
+    description: 'Kicked off {pct} of all conversations. The chat’s alarm clock.',
     condition: (p) => atLeast(p.convStarts, 3),
     vars: (p, ctx) => ({ pct: share(p.convStarts, ctx.totalConversations) }),
   },
   {
     id: 'topic-killer',
     emoji: '🔚',
-    title: { en: 'The Topic Killer', ru: 'Убийца тем', uz: 'Mavzu qotili' },
-    description: {
-      en: 'Had the last word before a long silence {count} times. Mic drop.',
-      ru: 'Последнее слово перед долгой тишиной — {count} раз. Микрофон упал.',
-      uz: '{count} marta uzoq jimlikdan oldin oxirgi soʻzni aytgan. Mikrofon tashlandi.',
-    },
+    title: 'The Topic Killer',
+    description: 'Had the last word before a long silence {count} times. Mic drop.',
     condition: (p) => atLeast(p.convEnds, 3),
     vars: (p) => ({ count: p.convEnds }),
   },
@@ -160,12 +122,8 @@ export const AWARDS: AwardDef[] = [
     id: 'chief-laughing-officer',
     emoji: '😂',
     priority: 1.3,
-    title: { en: 'Chief Laughing Officer', ru: 'Главный по смеху', uz: 'Bosh kulgi direktori' },
-    description: {
-      en: '{count} laughs logged. Best audience ever.',
-      ru: '{count} смешков. Лучшая публика на свете.',
-      uz: '{count} marta kulgi. Eng zoʻr tomoshabin.',
-    },
+    title: 'Chief Laughing Officer',
+    description: '{count} laughs logged. Best audience ever.',
     condition: (p) => atLeast(p.laughs, 5),
     vars: (p) => ({ count: p.laughs }),
   },
@@ -173,52 +131,32 @@ export const AWARDS: AwardDef[] = [
     id: 'sticker-mafia',
     emoji: '🃏',
     priority: 1.2,
-    title: { en: 'The Sticker Mafia', ru: 'Стикерная мафия', uz: 'Stiker mafiyasi' },
-    description: {
-      en: '{count} stickers deployed. Words are overrated.',
-      ru: '{count} стикеров. Слова переоценены.',
-      uz: '{count} ta stiker. Soʻzlar shart emas.',
-    },
+    title: 'The Sticker Mafia',
+    description: '{count} stickers deployed. Words are overrated.',
     condition: (p) => atLeast(p.stickers, 3),
     vars: (p) => ({ count: p.stickers }),
   },
   {
     id: 'question-detective',
     emoji: '🔍',
-    title: {
-      en: 'The Question Mark Detective',
-      ru: 'Детектив вопросительных знаков',
-      uz: 'Savol belgisi detektivi',
-    },
-    description: {
-      en: 'Asked {count} questions. Curiosity level: maxed out.',
-      ru: '{count} вопросов. Любопытство на максимуме.',
-      uz: '{count} ta savol. Qiziquvchanlik — maksimumda.',
-    },
+    title: 'The Question Mark Detective',
+    description: 'Asked {count} questions. Curiosity level: maxed out.',
     condition: (p) => atLeast(p.questions, 5),
     vars: (p) => ({ count: p.questions }),
   },
   {
     id: 'sorry-champion',
     emoji: '🙏',
-    title: { en: 'The Sorry Champion', ru: 'Чемпион по извинениям', uz: 'Kechirim chempioni' },
-    description: {
-      en: 'Said sorry {count} times. Probably even when it wasn’t needed.',
-      ru: '{count} извинений. Наверняка даже без повода.',
-      uz: '{count} marta kechirim soʻragan. Ehtimol, sababsiz ham.',
-    },
+    title: 'The Sorry Champion',
+    description: 'Said sorry {count} times. Probably even when it wasn’t needed.',
     condition: (p) => atLeast(p.phrases.sorry, 2),
     vars: (p) => ({ count: p.phrases.sorry }),
   },
   {
     id: 'gratitude-guru',
     emoji: '💐',
-    title: { en: 'The Gratitude Guru', ru: 'Гуру благодарности', uz: 'Minnatdorchilik ustozi' },
-    description: {
-      en: 'Said thanks {count} times. Manners: impeccable.',
-      ru: '«Спасибо» — {count} раз. Манеры безупречны.',
-      uz: '{count} marta rahmat aytgan. Odobi aʼlo.',
-    },
+    title: 'The Gratitude Guru',
+    description: 'Said thanks {count} times. Manners: impeccable.',
     condition: (p) => atLeast(p.phrases.thanks, 3),
     vars: (p) => ({ count: p.phrases.thanks }),
   },
@@ -226,60 +164,40 @@ export const AWARDS: AwardDef[] = [
     id: 'love-letter',
     emoji: '💌',
     priority: 1.1,
-    title: { en: 'The Love Letter', ru: 'Любовное письмо', uz: 'Sevgi maktubi' },
-    description: {
-      en: 'Said “love you” {count} times. Wholesome levels: critical.',
-      ru: '{count} признаний в любви. Уровень милоты: критический.',
-      uz: '{count} marta “yaxshi koʻraman”. Shirinlik darajasi: kritik.',
-    },
+    title: 'The Love Letter',
+    description: 'Said “love you” {count} times. Wholesome levels: critical.',
     condition: (p) => atLeast(p.phrases.love, 2),
     vars: (p) => ({ count: p.phrases.love }),
   },
   {
     id: 'certified-ok',
     emoji: '👌',
-    title: { en: 'Certified OK-er', ru: 'Мастер «ок»', uz: 'Rasmiy “ok”chi' },
-    description: {
-      en: 'Said “ok” {count} times. Efficient. Mysterious. Ok.',
-      ru: '«Ок» — {count} раз. Коротко. Загадочно. Ок.',
-      uz: '{count} marta “ok”. Qisqa. Sirli. Ok.',
-    },
+    title: 'Certified OK-er',
+    description: 'Said “ok” {count} times. Efficient. Mysterious. Ok.',
     condition: (p) => atLeast(p.phrases.ok, 5),
     vars: (p) => ({ count: p.phrases.ok }),
   },
   {
     id: 'triple-texter',
     emoji: '🔁',
-    title: { en: 'The Triple Texter', ru: 'Мастер серий', uz: 'Ketma-ket yozuvchi' },
-    description: {
-      en: 'Sent 3+ messages in a row {count} times. Why say it once?',
-      ru: '3+ сообщения подряд — {count} раз. Зачем говорить один раз?',
-      uz: '{count} marta ketma-ket 3+ xabar. Nega bir marta aytish kerak?',
-    },
+    title: 'The Triple Texter',
+    description: 'Sent 3+ messages in a row {count} times. Why say it once?',
     condition: (p) => atLeast(p.doubleTexts, 3),
     vars: (p) => ({ count: p.doubleTexts }),
   },
   {
     id: 'early-bird',
     emoji: '🌅',
-    title: { en: 'The Early Bird', ru: 'Ранняя пташка', uz: 'Erta turar' },
-    description: {
-      en: '{count} messages between 5 and 9 AM. Coffee? Chat first.',
-      ru: '{count} сообщений с 5 до 9 утра. Кофе подождёт.',
-      uz: 'Soat 5 dan 9 gacha {count} ta xabar. Avval chat, keyin kofe.',
-    },
+    title: 'The Early Bird',
+    description: '{count} messages between 5 and 9 AM. Coffee? Chat first.',
     condition: (p) => atLeast(p.earlyBird, 5),
     vars: (p) => ({ count: p.earlyBird }),
   },
   {
     id: 'weekend-warrior',
     emoji: '🛋️',
-    title: { en: 'The Weekend Warrior', ru: 'Воин выходных', uz: 'Dam olish jangchisi' },
-    description: {
-      en: '{pct} of their messages land on weekends. Saturday’s main character.',
-      ru: '{pct} сообщений — в выходные. Звезда субботы.',
-      uz: 'Xabarlarining {pct} qismi dam olish kunlarida. Shanba qahramoni.',
-    },
+    title: 'The Weekend Warrior',
+    description: '{pct} of their messages land on weekends. Saturday’s main character.',
     condition: (p) => {
       const s = p.weekend / Math.max(1, p.messages)
       return p.messages >= 30 && s >= 0.35 ? s : null
@@ -289,48 +207,32 @@ export const AWARDS: AwardDef[] = [
   {
     id: 'emoji-artist',
     emoji: '🎨',
-    title: { en: 'The Emoji Artist', ru: 'Эмодзи-художник', uz: 'Emoji rassomi' },
-    description: {
-      en: 'Used {count} different emojis. A true visual storyteller.',
-      ru: '{count} разных эмодзи. Настоящий визуальный рассказчик.',
-      uz: '{count} xil emoji. Haqiqiy vizual hikoyachi.',
-    },
+    title: 'The Emoji Artist',
+    description: 'Used {count} different emojis. A true visual storyteller.',
     condition: (p) => atLeast(p.distinctEmojis, 8),
     vars: (p) => ({ count: p.distinctEmojis }),
   },
   {
     id: 'paparazzi',
     emoji: '📸',
-    title: { en: 'The Paparazzi', ru: 'Папарацци', uz: 'Paparatsi' },
-    description: {
-      en: 'Shared {count} photos and videos. Pics or it didn’t happen.',
-      ru: '{count} фото и видео. Нет фото — не было.',
-      uz: '{count} ta rasm va video. Rasmsiz ishonmaymiz.',
-    },
+    title: 'The Paparazzi',
+    description: 'Shared {count} photos and videos. Pics or it didn’t happen.',
     condition: (p) => atLeast(p.media, 5),
     vars: (p) => ({ count: p.media }),
   },
   {
     id: 'master-of-brevity',
     emoji: '✂️',
-    title: { en: 'The Master of Brevity', ru: 'Мастер краткости', uz: 'Qisqalik ustasi' },
-    description: {
-      en: 'Just {count} words per message. Why waste letters?',
-      ru: 'Всего {count} слова на сообщение. Зачем тратить буквы?',
-      uz: 'Har xabarda atigi {count} soʻz. Harflarni tejash kerak.',
-    },
+    title: 'The Master of Brevity',
+    description: 'Just {count} words per message. Why waste letters?',
     condition: (p) => (p.textMessages >= 30 && p.avgWords > 0 ? 1 / p.avgWords : null),
     vars: (p) => ({ count: Math.round(p.avgWords * 10) / 10 }),
   },
   {
     id: 'main-character',
     emoji: '🎬',
-    title: { en: 'The Main Character', ru: 'Главный герой', uz: 'Bosh qahramon' },
-    description: {
-      en: 'Sent {pct} of all messages. This chat is their show.',
-      ru: '{pct} всех сообщений. Этот чат — личное шоу.',
-      uz: 'Barcha xabarlarning {pct} qismi. Bu chat — shaxsiy shou.',
-    },
+    title: 'The Main Character',
+    description: 'Sent {pct} of all messages. This chat is their show.',
     condition: (p, ctx) => {
       const s = p.messages / Math.max(1, ctx.stats.totalMessages)
       const fair = 1 / Math.max(1, ctx.stats.people.length)
@@ -341,12 +243,8 @@ export const AWARDS: AwardDef[] = [
   {
     id: 'undo-button',
     emoji: '🫣',
-    title: { en: 'The Undo Button', ru: 'Кнопка «Отмена»', uz: '“Bekor qilish” tugmasi' },
-    description: {
-      en: 'Deleted {count} messages. We’ll never know…',
-      ru: 'Удалено {count} сообщений. Мы никогда не узнаем…',
-      uz: '{count} ta xabar oʻchirilgan. Hech qachon bilmaymiz…',
-    },
+    title: 'The Undo Button',
+    description: 'Deleted {count} messages. We’ll never know…',
     condition: (p) => atLeast(p.deleted, 2),
     vars: (p) => ({ count: p.deleted }),
   },
@@ -354,12 +252,8 @@ export const AWARDS: AwardDef[] = [
     id: 'icebreaker',
     emoji: '🧊',
     priority: 1.1,
-    title: { en: 'The Icebreaker', ru: 'Ледокол', uz: 'Muzyorar' },
-    description: {
-      en: 'Broke the longest silence ({duration}). A true hero.',
-      ru: 'Прервать самую долгую тишину ({duration}) — настоящий подвиг.',
-      uz: 'Eng uzun jimlikni ({duration}) buzgan. Haqiqiy qahramon.',
-    },
+    title: 'The Icebreaker',
+    description: 'Broke the longest silence ({duration}). A true hero.',
     condition: (_p, ctx) => {
       const s = ctx.stats.longestSilence
       return s && s.brokenBy === ctx.index && s.ms >= DAY ? s.ms : null
@@ -369,72 +263,48 @@ export const AWARDS: AwardDef[] = [
   {
     id: 'office-hours-hero',
     emoji: '💼',
-    title: { en: 'Office Hours Hero', ru: 'Герой рабочего дня', uz: 'Ish vaqti qahramoni' },
-    description: {
-      en: '{count} messages on weekdays, 9 to 5. Totally working, right?',
-      ru: '{count} сообщений в будни с 9 до 17. Работа кипит, да?',
-      uz: 'Ish kunlari 9 dan 17 gacha {count} ta xabar. Ishlayapmiz-a?',
-    },
+    title: 'Office Hours Hero',
+    description: '{count} messages on weekdays, 9 to 5. Totally working, right?',
     condition: (p) => atLeast(p.workHours, 20),
     vars: (p) => ({ count: p.workHours }),
   },
   {
     id: 'walking-dictionary',
     emoji: '📚',
-    title: { en: 'The Walking Dictionary', ru: 'Ходячий словарь', uz: 'Yuruvchi lugʻat' },
-    description: {
-      en: 'Used {count} different words. Vocabulary flex.',
-      ru: '{count} разных слов. Словарный запас впечатляет.',
-      uz: '{count} xil soʻz ishlatgan. Soʻz boyligi zoʻr.',
-    },
+    title: 'The Walking Dictionary',
+    description: 'Used {count} different words. Vocabulary flex.',
     condition: (p) => atLeast(p.uniqueWords, 50),
     vars: (p) => ({ count: p.uniqueWords }),
   },
   {
     id: 'caps-lock',
     emoji: '📣',
-    title: { en: 'CAPS LOCK ENTHUSIAST', ru: 'ФАНАТ CAPS LOCK', uz: 'CAPS LOCK ISHQIBOZI' },
-    description: {
-      en: '{count} MESSAGES IN ALL CAPS. WE HEAR YOU.',
-      ru: '{count} СООБЩЕНИЙ КАПСОМ. МЫ СЛЫШИМ.',
-      uz: '{count} TA XABAR KATTA HARFLARDA. ESHITYAPMIZ.',
-    },
+    title: 'CAPS LOCK ENTHUSIAST',
+    description: '{count} MESSAGES IN ALL CAPS. WE HEAR YOU.',
     condition: (p) => atLeast(p.capsMessages, 3),
     vars: (p) => ({ count: p.capsMessages }),
   },
   {
     id: 'link-librarian',
     emoji: '🔗',
-    title: { en: 'The Link Librarian', ru: 'Библиотекарь ссылок', uz: 'Havolalar kutubxonachisi' },
-    description: {
-      en: 'Shared {count} links. Homework for everyone.',
-      ru: '{count} ссылок. Домашка для всех.',
-      uz: '{count} ta havola. Hammaga uy vazifasi.',
-    },
+    title: 'The Link Librarian',
+    description: 'Shared {count} links. Homework for everyone.',
     condition: (p) => atLeast(p.links, 3),
     vars: (p) => ({ count: p.links }),
   },
   {
     id: 'reply-master',
     emoji: '💬',
-    title: { en: 'The Reply Master', ru: 'Мастер цитат', uz: 'Javob ustasi' },
-    description: {
-      en: 'Quote-replied {count} times. Context is everything.',
-      ru: '{count} ответов с цитатой. Контекст — наше всё.',
-      uz: '{count} marta iqtibos bilan javob. Kontekst — hammasi.',
-    },
+    title: 'The Reply Master',
+    description: 'Quote-replied {count} times. Context is everything.',
     condition: (p) => atLeast(p.quotedReplies, 5),
     vars: (p) => ({ count: p.quotedReplies }),
   },
   {
     id: 'forwarding-department',
     emoji: '📨',
-    title: { en: 'The Forwarding Department', ru: 'Отдел пересылок', uz: 'Yoʻnaltirish boʻlimi' },
-    description: {
-      en: 'Forwarded {count} messages. The chat’s personal newsfeed.',
-      ru: '{count} пересланных сообщений. Личная лента новостей чата.',
-      uz: '{count} ta yoʻnaltirilgan xabar. Chatning shaxsiy yangiliklar lentasi.',
-    },
+    title: 'The Forwarding Department',
+    description: 'Forwarded {count} messages. The chat’s personal newsfeed.',
     condition: (p) => atLeast(p.forwarded, 3),
     vars: (p) => ({ count: p.forwarded }),
   },
@@ -444,12 +314,8 @@ export const AWARDS: AwardDef[] = [
     id: 'loyal-regular',
     emoji: '💛',
     fallback: true,
-    title: { en: 'The Loyal Regular', ru: 'Верный завсегдатай', uz: 'Sodiq hamroh' },
-    description: {
-      en: '{count} messages of steady, cozy presence. The chat wouldn’t be the same.',
-      ru: '{count} сообщений стабильного уюта. Без этого чат был бы другим.',
-      uz: '{count} ta xabar — doimiy iliqlik. Busiz chat boshqacha boʻlardi.',
-    },
+    title: 'The Loyal Regular',
+    description: '{count} messages of steady, cozy presence. The chat wouldn’t be the same.',
     condition: (p) => p.messages,
     vars: (p) => ({ count: p.messages }),
   },
@@ -457,12 +323,8 @@ export const AWARDS: AwardDef[] = [
     id: 'quiet-legend',
     emoji: '🌿',
     fallback: true,
-    title: { en: 'The Quiet Legend', ru: 'Тихая легенда', uz: 'Sokin afsona' },
-    description: {
-      en: 'Speaks rarely, but each of their {count} messages is pure gold.',
-      ru: 'Пишет редко, но каждое из {count} сообщений — на вес золота.',
-      uz: 'Kam yozadi, lekin {count} ta xabarning har biri oltin.',
-    },
+    title: 'The Quiet Legend',
+    description: 'Speaks rarely, but each of their {count} messages is pure gold.',
     condition: (p, ctx) => 1 / Math.max(1, p.messages / Math.max(1, ctx.stats.totalMessages)),
     vars: (p) => ({ count: p.messages }),
   },
@@ -470,12 +332,8 @@ export const AWARDS: AwardDef[] = [
     id: 'prime-time',
     emoji: '⏰',
     fallback: true,
-    title: { en: 'Prime Time Player', ru: 'Звезда прайм-тайма', uz: 'Eng qizgʻin vaqt yulduzi' },
-    description: {
-      en: 'Most active around {hour}:00. Set your watches.',
-      ru: 'Пик активности — около {hour}:00. Сверяйте часы.',
-      uz: 'Eng faol vaqti — taxminan {hour}:00. Soatlarni toʻgʻrilang.',
-    },
+    title: 'Prime Time Player',
+    description: 'Most active around {hour}:00. Set your watches.',
     condition: (p) => p.messages,
     vars: (p) => ({ hour: p.hourly.indexOf(Math.max(...p.hourly)) }),
   },

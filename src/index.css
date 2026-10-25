@@ -3,8 +3,14 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-display: 'Unbounded Variable', 'Arial Black', system-ui, sans-serif;
-  --font-sans: 'Manrope Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* Unbounded/Manrope have no Arabic or Chinese glyphs: Arabic falls back to the bundled Cairo,
+     Chinese to the system's CJK font. */
+  --font-display:
+    'Unbounded Variable', 'Cairo Variable', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'Noto Sans CJK SC', 'Noto Sans SC', 'Arial Black', system-ui, sans-serif;
+  --font-sans:
+    'Manrope Variable', 'Cairo Variable', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'Noto Sans CJK SC', 'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --color-ink: #0e0b1f;
   --color-violet: #5b2eff;
   --color-lime: #d7ff3a;
@@ -134,7 +140,50 @@ body {
   color: var(--muted);
 }
 .cw-footer-url {
-  margin-left: auto;
+  margin-inline-start: auto;
+}
+
+/* ------------------------------------------------------------------ right-to-left & CJK */
+
+/* Auto-fit (FitBody) shrinks toward the reading start corner, where RTL content is anchored. */
+[dir='rtl'] .cw-fit {
+  transform-origin: top right;
+}
+/* Bars grow from the reading start edge. */
+[dir='rtl'] .cw-grow-x {
+  transform-origin: right center;
+}
+[dir='rtl'] .cw-slide {
+  animation-name: cw-slide-rtl;
+}
+@keyframes cw-slide-rtl {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+}
+/* Arrows like "Next →" point the other way in RTL. */
+[dir='rtl'] .dir-arrow {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+/* Negative tracking breaks Arabic letter joining and crowds Chinese characters. */
+:lang(ar) .cw-display,
+:lang(zh) .cw-display,
+:lang(ar) .hero-title,
+:lang(zh) .hero-title,
+:lang(ar) .section-title,
+:lang(zh) .section-title {
+  letter-spacing: 0;
+}
+:lang(ar) .cw-kicker,
+:lang(ar) .eyebrow,
+:lang(ar) .cw-badge {
+  letter-spacing: 0;
+}
+/* Arabic script needs more line height than Latin display type. */
+:lang(ar) .cw-display {
+  line-height: 1.25;
 }
 .cw-logo {
   display: inline-flex;

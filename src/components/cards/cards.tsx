@@ -179,7 +179,7 @@ export function IntroCard({ data, isStatic }: CardProps) {
         {!isStatic && (
           <Anim d={1100} kind="fade">
             <p className="cw-hint mt-10 text-[14px] font-bold" style={{ color: p.muted }}>
-              {t('card.intro.tap')} →
+              {t('card.intro.tap')} <span className="dir-arrow">→</span>
             </p>
           </Anim>
         )}
@@ -375,7 +375,7 @@ function hourVibe(h: number, t: Translator['t']): string {
 }
 
 export function PeakHourCard({ data, isStatic }: CardProps) {
-  const { t, hour, weekday, num } = useI18n()
+  const { t, hour, weekday, num, lang } = useI18n()
   const p = PALETTES.peak
   const { stats } = data
   const max = Math.max(...stats.hourly, 1)
@@ -404,6 +404,7 @@ export function PeakHourCard({ data, isStatic }: CardProps) {
       </Anim>
       <div
         className="mt-6 flex h-[120px] items-end gap-[3px]"
+        dir="ltr"
         role="img"
         aria-label={t('card.peak.chartLabel')}
       >
@@ -419,7 +420,11 @@ export function PeakHourCard({ data, isStatic }: CardProps) {
           />
         ))}
       </div>
-      <div className="mt-1 flex justify-between text-[11px] font-bold" style={{ color: p.muted }}>
+      <div
+        dir="ltr"
+        className="mt-1 flex justify-between text-[11px] font-bold"
+        style={{ color: p.muted }}
+      >
         <span>{hour(0)}</span>
         <span>{hour(6)}</span>
         <span>{hour(12)}</span>
@@ -437,7 +442,7 @@ export function PeakHourCard({ data, isStatic }: CardProps) {
           <div className="cw-display mt-1 text-[24px] capitalize" style={{ color: p.accent2 }}>
             {weekday(stats.peakWeekday)}
           </div>
-          <div className="mt-3 flex items-end gap-2" style={{ height: 44 }}>
+          <div dir="ltr" className="mt-3 flex items-end gap-2" style={{ height: 44 }}>
             {stats.weekday.map((v, i) => (
               <div
                 key={i}
@@ -456,10 +461,16 @@ export function PeakHourCard({ data, isStatic }: CardProps) {
               </div>
             ))}
           </div>
-          <div className="mt-1 flex gap-2 text-[10px] font-bold" style={{ color: p.muted }}>
+          <div
+            dir="ltr"
+            className="mt-1 flex gap-2 text-[10px] font-bold"
+            style={{ color: p.muted }}
+          >
             {stats.weekday.map((_, i) => (
               <span key={i} className="flex-1 text-center capitalize">
-                {weekday(i, 'short').slice(0, 2)}
+                {lang === 'ar' || lang === 'zh'
+                  ? weekday(i, 'narrow')
+                  : weekday(i, 'short').slice(0, 2)}
               </span>
             ))}
           </div>
@@ -896,7 +907,7 @@ export function AwardsCard({
   people,
   paletteIndex,
 }: CardProps & { people: number[]; paletteIndex: number }) {
-  const { t, lang, duration, num, hour } = useI18n()
+  const { t, awardText, duration, num, hour } = useI18n()
   const p: Palette = AWARD_PALETTES[paletteIndex % AWARD_PALETTES.length]
   const compact = people.length > 1
   const fill = (template: string, vars: Record<string, number>) =>
@@ -958,13 +969,13 @@ export function AwardsCard({
                             className="cw-display leading-tight"
                             style={{ fontSize: compact ? 14 : 18 }}
                           >
-                            {def.title[lang]}
+                            {awardText(def).title}
                           </div>
                           <div
                             className="mt-1 font-semibold leading-snug"
                             style={{ fontSize: compact ? 12 : 14, color: p.muted }}
                           >
-                            {fill(def.description[lang], a.vars)}
+                            {fill(awardText(def).description, a.vars)}
                           </div>
                         </div>
                       </div>

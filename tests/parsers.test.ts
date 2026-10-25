@@ -128,6 +128,28 @@ describe('WhatsApp parser', () => {
     expect(chat.messages[0].timestamp).toBe(local(2024, 3, 5, 14, 22))
   })
 
+  it('parses Chinese exports with 上午/下午 before the time', () => {
+    const chat = parseWhatsApp(fixture('zh-android.txt'))
+    expect(chat.dateOrder).toBe('YMD')
+    expect(chat.systemCount).toBe(1) // encryption notice
+    expect(chat.participants.sort()).toEqual(['张伟', '李娜'].sort())
+    expect(chat.messages.map((m) => m.kind)).toEqual(['text', 'text', 'media', 'deleted'])
+    expect(chat.messages[0].timestamp).toBe(local(2023, 12, 31, 10, 5))
+    expect(chat.messages[1].timestamp).toBe(local(2023, 12, 31, 21, 41))
+    expect(chat.messages[2].timestamp).toBe(local(2024, 1, 1, 0, 30))
+  })
+
+  it('parses Arabic exports with Arabic-Indic digits, Arabic comma and ص/م', () => {
+    const chat = parseWhatsApp(fixture('ar-android.txt'))
+    expect(chat.dateOrder).toBe('DMY')
+    expect(chat.participants).toEqual(['أحمد', 'سارة'])
+    expect(chat.messages.map((m) => m.kind)).toEqual(['text', 'deleted', 'media'])
+    expect(chat.messages[0].timestamp).toBe(local(2023, 12, 31, 21, 41))
+    expect(chat.messages[2].timestamp).toBe(local(2024, 1, 1, 0, 15))
+    // digits inside the message text are left alone
+    expect(chat.messages[0].text).toBe('ههههه شكراً')
+  })
+
   it('handles a.m./p.m. variants and 12 AM/PM edge cases', () => {
     const chat = parseWhatsApp(
       '[13/01/2024, 12:05:00 a.m.] Ann: midnight\n[13/01/2024, 12:05:00 p.m.] Ben: noon\n',

@@ -314,3 +314,6 @@ export const en = {
 
 export type DictKey = keyof typeof en
 export type Dict = Record<DictKey, string>
+
+/** Award translations, keyed by award id (English source texts live in src/lib/awards.ts). */
+export type AwardTexts = Record<string, { title: string; description: string }>

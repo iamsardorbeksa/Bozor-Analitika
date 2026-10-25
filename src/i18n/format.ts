@@ -1,6 +1,17 @@
 import type { Lang } from './lang'
 
-const LOCALES: Record<Lang, string> = { en: 'en-US', ru: 'ru-RU', uz: 'uz-Latn-UZ' }
+const LOCALES: Record<Lang, string> = {
+  en: 'en-US',
+  es: 'es-ES',
+  fr: 'fr-FR',
+  de: 'de-DE',
+  pt: 'pt-BR',
+  ru: 'ru-RU',
+  uz: 'uz-Latn-UZ',
+  zh: 'zh-CN',
+  // Western digits read best on shareable cards across the Arabic-speaking world.
+  ar: 'ar-u-nu-latn',
+}
 export const localeOf = (lang: Lang) => LOCALES[lang]
 
 /*
@@ -37,7 +48,7 @@ const UZ_UNITS: Record<string, { long: string; short: string }> = {
   day: { long: 'kun', short: 'kun' },
 }
 /** Uzbek uses the same digit grouping as Russian (space separators, decimal comma). */
-const NUMBER_LOCALES: Record<Lang, string> = { en: 'en-US', ru: 'ru-RU', uz: 'ru-RU' }
+const NUMBER_LOCALES: Record<Lang, string> = { ...LOCALES, uz: 'ru-RU' }
 
 const numberFormats = new Map<string, Intl.NumberFormat>()
 function nf(lang: Lang, opts: Intl.NumberFormatOptions = {}): Intl.NumberFormat {
@@ -152,7 +163,11 @@ export function formatShortDate(ts: number, lang: Lang): string {
 }
 
 /** Weekday name, Monday = 0. */
-export function weekdayName(index: number, lang: Lang, style: 'long' | 'short' = 'long'): string {
+export function weekdayName(
+  index: number,
+  lang: Lang,
+  style: 'long' | 'short' | 'narrow' = 'long',
+): string {
   // 2024-01-01 was a Monday.
   const d = new Date(2024, 0, 1 + index)
   if (lang === 'uz') return style === 'long' ? UZ_WEEKDAYS[index] : UZ_WEEKDAYS[index].slice(0, 3)
