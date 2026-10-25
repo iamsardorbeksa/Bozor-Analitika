@@ -6,7 +6,7 @@ import { en, type AwardTexts, type Dict, type DictKey } from '../src/i18n/en'
 import { es, esAwards } from '../src/i18n/es'
 import { formatDate, formatDuration } from '../src/i18n/format'
 import { fr, frAwards } from '../src/i18n/fr'
-import { LANGS, PLURAL_ORDER, type Lang } from '../src/i18n/lang'
+import { detectLang, LANGS, PLURAL_ORDER, type Lang } from '../src/i18n/lang'
 import { pt, ptAwards } from '../src/i18n/pt'
 import { ru, ruAwards } from '../src/i18n/ru'
 import { uz, uzAwards } from '../src/i18n/uz'
@@ -83,5 +83,20 @@ describe('translations', () => {
       expect(formatDuration(3 * 86_400_000, lang), lang).toMatch(/3/)
       expect(formatDate(new Date(2024, 2, 5).getTime(), lang), lang).toMatch(/2024/)
     }
+  })
+})
+
+describe('browser language detection', () => {
+  it('uses the first supported browser language, otherwise English', () => {
+    expect(detectLang(['ru-RU', 'en-US'])).toBe('ru')
+    expect(detectLang(['uz-Latn-UZ'])).toBe('uz')
+    expect(detectLang(['pt-BR'])).toBe('pt')
+    expect(detectLang(['zh-CN'])).toBe('zh')
+    expect(detectLang(['ar-EG'])).toBe('ar')
+    // unsupported languages are skipped in favour of the next preference
+    expect(detectLang(['it-IT', 'de-DE'])).toBe('de')
+    // nothing supported → English
+    expect(detectLang(['it-IT', 'ja-JP'])).toBe('en')
+    expect(detectLang([])).toBe('en')
   })
 })

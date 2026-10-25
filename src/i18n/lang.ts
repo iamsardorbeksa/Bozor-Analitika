@@ -34,5 +34,21 @@ export const PLURAL_ORDER: Record<Lang, Intl.LDMLPluralRule[]> = {
   ar: ['zero', 'one', 'two', 'few', 'many', 'other'],
 }
 
-/** Every visitor starts in English; their own pick from the language menu is remembered. */
+/** Used when none of the visitor's browser languages is supported. */
 export const DEFAULT_LANG: Lang = 'en'
+
+/**
+ * The visitor's browser language if we support it (checked in their order of preference,
+ * e.g. "ru-RU" → ru, "pt-BR" → pt), otherwise English.
+ */
+export function detectLang(
+  preferred: readonly string[] = typeof navigator !== 'undefined'
+    ? (navigator.languages ?? [navigator.language])
+    : [],
+): Lang {
+  for (const p of preferred) {
+    const base = p.toLowerCase().split('-')[0]
+    if ((LANGS as readonly string[]).includes(base)) return base as Lang
+  }
+  return DEFAULT_LANG
+}
