@@ -907,18 +907,9 @@ export function AwardsCard({
   people,
   paletteIndex,
 }: CardProps & { people: number[]; paletteIndex: number }) {
-  const { t, awardText, duration, num, hour } = useI18n()
+  const { t, awardText, awardDescription } = useI18n()
   const p: Palette = AWARD_PALETTES[paletteIndex % AWARD_PALETTES.length]
   const compact = people.length > 1
-  const fill = (template: string, vars: Record<string, number>) =>
-    template.replace(/\{(\w+)\}/g, (m, k: string) => {
-      if (!(k in vars)) return m
-      const v = vars[k]
-      if (k === 'duration') return duration(v)
-      if (k === 'pct') return `${v}%`
-      if (k === 'hour') return hour(v)
-      return num(v, 1)
-    })
   return (
     <CardShell
       palette={p}
@@ -975,7 +966,7 @@ export function AwardsCard({
                             className="mt-1 font-semibold leading-snug"
                             style={{ fontSize: compact ? 12 : 14, color: p.muted }}
                           >
-                            {fill(awardText(def).description, a.vars)}
+                            {awardDescription(def, a.vars)}
                           </div>
                         </div>
                       </div>

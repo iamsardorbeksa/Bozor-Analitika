@@ -230,6 +230,60 @@ export const ar: Dict = {
   'features.fast.text': 'نصف مليون رسالة في ثوانٍ، دون أن يتجمد هاتفك.',
   'features.share.title': 'مصمَّم للقصص',
   'features.share.text': 'كل بطاقة صورة بمقاس 1080×1920، جاهزة لـ Instagram أو TikTok أو مجموعتك.',
+  'features.title': 'لماذا يحبه الجميع',
+  'features.langs.title': 'يتحدث لغتك',
+  'features.langs.text':
+    '9 لغات، منها العربية والصينية. ويتعرّف حتى على الضحك و“شكرًا” فيها جميعًا.',
+  'features.groups.title': 'ثنائيات ومجموعات',
+  'features.groups.text': 'يعمل مع الدردشات الثنائية والمجموعات حتى 50 شخصًا.',
+  'features.free.title': 'مجاني وبلا تسجيل',
+  'features.free.text': 'لا حساب ولا تطبيق للتثبيت. وإضافته إلى الشاشة الرئيسية متاحة إن رغبت.',
+
+  // ---- "what you'll discover"
+  'discover.title': 'اكتشافات بانتظارك',
+  'discover.subtitle':
+    'القصة التي كانت دردشتك تكتبها طوال الوقت، في أكثر من 12 بطاقة تتنقل بينها بلمسة.',
+  'discover.total.title': 'الحصيلة الكبرى',
+  'discover.total.text': 'كل رسالة، وكل كلمة، واليوم الذي لم تتوقف فيه الرسائل أبدًا.',
+  'discover.who.title': 'من يتكلم أكثر',
+  'discover.who.text': 'النسبة بالضبط، ومن يكتب مقالات حقيقية.',
+  'discover.rush.title': 'ساعة الذروة',
+  'discover.rush.text': 'سهّيرة أم عشاق صباح؟ أنشط ساعة وأنشط يوم في الأسبوع.',
+  'discover.streak.title': 'أطول سلسلة',
+  'discover.streak.text': 'كم يومًا متتاليًا بقيت المحادثة حيّة.',
+  'discover.silence.title': 'الصمت الكبير',
+  'discover.silence.text': 'أطول انقطاع، ومن كسر الجليد في النهاية.',
+  'discover.reply.title': 'سرعة الرد',
+  'discover.reply.text': 'من يرد في ثوانٍ، ومن يتركك على “شوهدت”.',
+  'discover.starter.title': 'من يبدأ أولًا',
+  'discover.starter.text': 'من يفتح المحادثات، ولمن تكون الكلمة الأخيرة دائمًا.',
+  'discover.laugh.title': 'مقياس الضحك',
+  'discover.laugh.text': 'كل “هههه” و“خخخخ” و😂 محسوبة. من أفضل جمهور؟',
+  'discover.words.title': 'أكثر الكلمات والإيموجي',
+  'discover.words.text': 'الكلمات والإيموجي التي تختصركم.',
+
+  // ---- awards showcase
+  'showcase.title': 'جائزة للجميع',
+  'showcase.subtitle':
+    '34 لقبًا طريفًا تُمنح حسب طريقتكم الحقيقية في الدردشة. مضحكة دائمًا، ولا تجرح أبدًا.',
+  'showcase.example': 'مثال',
+
+  // ---- use cases
+  'uses.title': 'مثالي لـ',
+  'uses.couples.title': 'الأحبّة',
+  'uses.couples.text': 'مفاجأة لذكرى الارتباط: قصة حبكما بالأرقام.',
+  'uses.friends.title': 'الأصدقاء المقرّبون',
+  'uses.friends.text': 'حسمٌ نهائي لسؤال: من يرد أسرع؟',
+  'uses.family.title': 'مجموعات العائلة',
+  'uses.family.text': 'من صاحب الرقم القياسي في رسائل “صباح الخير”؟',
+  'uses.teams.title': 'الفرق والمجتمعات',
+  'uses.teams.text': 'ملخص ممتع لنهاية العام لدردشة المجموعة.',
+  'uses.moments.title': 'المناسبات الكبرى',
+  'uses.moments.text': 'أعياد الميلاد، ورأس السنة، والتخرج: منشور “عامنا معًا” جاهز.',
+
+  // ---- closing call to action
+  'cta.title': 'هل نكشف قصتكم؟',
+  'cta.text': 'الأمر يستغرق دقيقة تقريبًا، ودردشتك لا تغادر جهازك أبدًا.',
 
   // ---- FAQ
   'faq.title': 'أسئلة',

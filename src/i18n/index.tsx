@@ -73,12 +73,26 @@ export function makeTranslator(lang: Lang) {
       title: def.title,
       description: def.description,
     }
+  /** Award description with its numbers filled in: {duration} as time, {pct} as %, {hour} as an hour. */
+  const awardDescription = (
+    def: Pick<AwardDef, 'id' | 'title' | 'description'>,
+    vars: Record<string, number>,
+  ) =>
+    awardText(def).description.replace(/\{(\w+)\}/g, (m, k: string) => {
+      if (!(k in vars)) return m
+      const v = vars[k]
+      if (k === 'duration') return formatDuration(v, lang)
+      if (k === 'pct') return `${v}%`
+      if (k === 'hour') return formatHour(v, lang)
+      return formatNumber(v, lang, 1)
+    })
   return {
     lang,
     dir: isRtl(lang) ? ('rtl' as const) : ('ltr' as const),
     t,
     tp,
     awardText,
+    awardDescription,
     num: (n: number, digits = 0) => formatNumber(n, lang, digits),
     compact: (n: number) => formatCompact(n, lang),
     duration: (ms: number) => formatDuration(ms, lang),

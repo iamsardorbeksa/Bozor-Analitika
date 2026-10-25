@@ -228,6 +228,57 @@ export const zh: Dict = {
   'features.fast.text': '几十万条消息几秒搞定，手机也不卡。',
   'features.share.title': '为快拍而生',
   'features.share.text': '每张卡片都是 1080×1920 的图片，发 Instagram、TikTok 或群聊都合适。',
+  'features.title': '为什么大家都爱它',
+  'features.langs.title': '懂你的语言',
+  'features.langs.text': '支持 9 种语言，包括阿拉伯语和中文。每种语言里的笑声和“谢谢”都认得出来。',
+  'features.groups.title': '单聊群聊都能玩',
+  'features.groups.text': '一对一聊天和最多 50 人的群聊都支持。',
+  'features.free.title': '免费，免注册',
+  'features.free.text': '无需账号，无需安装。喜欢的话，还能添加到主屏幕。',
+
+  // ---- "what you'll discover"
+  'discover.title': '你会发现什么',
+  'discover.subtitle': '你们的聊天一直在悄悄写故事，12+ 张卡片，滑着看。',
+  'discover.total.title': '消息总数',
+  'discover.total.text': '每一条消息、每一个词，还有那天停不下来的疯狂输出。',
+  'discover.who.title': '谁的话更多',
+  'discover.who.text': '精确到比例，再看看谁是小作文选手。',
+  'discover.rush.title': '聊天高峰',
+  'discover.rush.text': '夜猫子还是早起党？最活跃的时段和星期一目了然。',
+  'discover.streak.title': '最长连续聊天',
+  'discover.streak.text': '连续多少天，聊天一天都没断过。',
+  'discover.silence.title': '最长的沉默',
+  'discover.silence.text': '断联最久的一次，以及最后是谁打破了沉默。',
+  'discover.reply.title': '回复速度',
+  'discover.reply.text': '谁秒回，谁又让你停在“已读”。',
+  'discover.starter.title': '谁先开口',
+  'discover.starter.text': '谁总在发起话题，谁又总要说最后一句。',
+  'discover.laugh.title': '笑声指数',
+  'discover.laugh.text': '每一声“哈哈哈”、“笑死”和 😂 都记着呢。谁是最佳观众？',
+  'discover.words.title': '高频词和表情',
+  'discover.words.text': '最能代表你们的那些词和表情。',
+
+  // ---- awards showcase
+  'showcase.title': '人人有奖',
+  'showcase.subtitle': '34 个趣味称号，按你们真实的聊天方式颁发。永远好笑，绝不伤人。',
+  'showcase.example': '示例',
+
+  // ---- use cases
+  'uses.title': '特别适合',
+  'uses.couples.title': '情侣',
+  'uses.couples.text': '纪念日惊喜：用数字讲述你们的爱情故事。',
+  'uses.friends.title': '死党',
+  'uses.friends.text': '谁回得更快？这次彻底见分晓。',
+  'uses.family.title': '家庭群',
+  'uses.family.text': '看看谁是家里的“早安”专业户。',
+  'uses.teams.title': '团队与社群',
+  'uses.teams.text': '给群聊来一份有趣的年终回顾。',
+  'uses.moments.title': '重要时刻',
+  'uses.moments.text': '生日、新年、毕业季：现成的“我们的这一年”纪念帖。',
+
+  // ---- closing call to action
+  'cta.title': '准备好看看你们的故事了吗？',
+  'cta.text': '大约一分钟就好。聊天记录绝不离开你的设备。',
 
   // ---- FAQ
   'faq.title': '常见问题',

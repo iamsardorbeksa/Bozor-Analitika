@@ -235,6 +235,62 @@ export const fr: Dict = {
   'features.share.title': 'Pensé pour les stories',
   'features.share.text':
     'Chaque carte est une image 1080×1920, prête pour Instagram, TikTok ou votre chat de groupe.',
+  'features.title': 'Pourquoi on l’adore',
+  'features.langs.title': 'Parle votre langue',
+  'features.langs.text':
+    '9 langues, dont l’arabe et le chinois. Les rires et les « merci » sont reconnus dans chacune.',
+  'features.groups.title': 'Duos et groupes',
+  'features.groups.text': 'Pour les tête-à-tête comme pour les groupes jusqu’à 50 personnes.',
+  'features.free.title': 'Gratuit, sans inscription',
+  'features.free.text':
+    'Pas de compte, pas d’appli à installer. Ajoutez-le à votre écran d’accueil si vous voulez.',
+
+  // ---- "what you'll discover"
+  'discover.title': 'Ce que vous allez découvrir',
+  'discover.subtitle':
+    'L’histoire que votre chat écrit depuis le début, en plus de 12 cartes à faire défiler.',
+  'discover.total.title': 'Le grand total',
+  'discover.total.text': 'Chaque message, chaque mot, et ce jour où vous n’arrêtiez plus d’écrire.',
+  'discover.who.title': 'Qui parle le plus',
+  'discover.who.text': 'La répartition exacte, et qui écrit de vraies dissertations.',
+  'discover.rush.title': 'Votre heure de pointe',
+  'discover.rush.text': 'Oiseaux de nuit ou lève-tôt ? Votre heure et votre jour les plus actifs.',
+  'discover.streak.title': 'Votre plus longue série',
+  'discover.streak.text': 'Combien de jours d’affilée la conversation est restée vivante.',
+  'discover.silence.title': 'Le grand silence',
+  'discover.silence.text': 'Votre plus longue pause, et qui a fini par briser la glace.',
+  'discover.reply.title': 'Vitesse de réponse',
+  'discover.reply.text': 'Qui répond en quelques secondes, et qui vous laisse en vu.',
+  'discover.starter.title': 'Qui écrit en premier',
+  'discover.starter.text': 'Qui lance les conversations, et qui a toujours le dernier mot.',
+  'discover.laugh.title': 'Rigolomètre',
+  'discover.laugh.text': 'Chaque « mdr », « ptdr » et 😂 compté. Qui est le meilleur public ?',
+  'discover.words.title': 'Top des mots et emojis',
+  'discover.words.text': 'Les mots et les emojis qui vous définissent.',
+
+  // ---- awards showcase
+  'showcase.title': 'Personne ne repart les mains vides',
+  'showcase.subtitle':
+    '34 titres rigolos, attribués selon votre vraie façon de discuter. Toujours drôles, jamais méchants.',
+  'showcase.example': 'Exemple',
+
+  // ---- use cases
+  'uses.title': 'Idéal pour',
+  'uses.couples.title': 'Couples',
+  'uses.couples.text': 'Une surprise d’anniversaire : votre histoire d’amour, en chiffres.',
+  'uses.friends.title': 'Amitiés',
+  'uses.friends.text': 'Tranchez une bonne fois pour toutes : qui répond le plus vite ?',
+  'uses.family.title': 'Groupes de famille',
+  'uses.family.text': 'Découvrez qui envoie le plus de « bonjour » du matin.',
+  'uses.teams.title': 'Équipes et communautés',
+  'uses.teams.text': 'Un bilan de fin d’année rigolo pour le chat de groupe.',
+  'uses.moments.title': 'Grands moments',
+  'uses.moments.text':
+    'Anniversaires, Nouvel An, remises de diplômes : un post « notre année » tout prêt.',
+
+  // ---- closing call to action
+  'cta.title': 'Envie de découvrir votre histoire ?',
+  'cta.text': 'Ça prend environ une minute. Votre chat ne quitte jamais votre appareil.',
 
   // ---- FAQ
   'faq.title': 'Questions',

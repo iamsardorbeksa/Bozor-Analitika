@@ -4,6 +4,13 @@ import type { DictKey } from '../../i18n/en'
 import type { ParseErrorCode } from '../../lib/types'
 import { Icon } from '../ui/Icon'
 import { HeroCards } from './HeroCards'
+import {
+  AwardShowcase,
+  ClosingCta,
+  DiscoverSection,
+  FeaturesSection,
+  UseCasesSection,
+} from './LandingSections'
 import { SiteFooter, SiteHeader } from './SiteChrome'
 import { UploadSection } from './UploadSection'
 
@@ -13,12 +20,6 @@ const FAQ: [DictKey, DictKey][] = [
   ['faq.q3', 'faq.a3'],
   ['faq.q4', 'faq.a4'],
   ['faq.q5', 'faq.a5'],
-]
-
-const FEATURES: [DictKey, DictKey, string][] = [
-  ['features.private.title', 'features.private.text', '🔒'],
-  ['features.fast.title', 'features.fast.text', '⚡'],
-  ['features.share.title', 'features.share.text', '📲'],
 ]
 
 export function Landing({
@@ -77,8 +78,12 @@ export function Landing({
           </div>
         </div>
 
+        <DiscoverSection />
+
         {/* ---------------------------------------------------------- upload */}
         <UploadSection onFile={onFile} error={error} onDismissError={onDismissError} />
+
+        <AwardShowcase />
 
         {/* ---------------------------------------------------------- demo */}
         <section className="section">
@@ -98,20 +103,8 @@ export function Landing({
           </div>
         </section>
 
-        {/* ---------------------------------------------------------- features */}
-        <section className="section">
-          <div className="grid gap-4 md:grid-cols-3">
-            {FEATURES.map(([title, text, emoji]) => (
-              <div key={title} className="surface-card">
-                <div className="text-4xl" aria-hidden="true">
-                  {emoji}
-                </div>
-                <h3 className="font-display mt-4 text-xl font-extrabold">{t(title)}</h3>
-                <p className="mt-2 leading-relaxed text-[var(--page-muted)]">{t(text)}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <FeaturesSection />
+        <UseCasesSection />
 
         {/* ---------------------------------------------------------- FAQ */}
         <section id="faq" className="section scroll-mt-20">
@@ -130,6 +123,8 @@ export function Landing({
             ))}
           </div>
         </section>
+
+        <ClosingCta onDemo={() => onDemo('whatsapp')} />
       </main>
       <SiteFooter />
     </>

@@ -231,6 +231,62 @@ export const de: Dict = {
   'features.share.title': 'Gemacht für Storys',
   'features.share.text':
     'Jede Karte ist ein Bild in 1080×1920, bereit für Instagram, TikTok oder euren Gruppenchat.',
+  'features.title': 'Warum alle es lieben',
+  'features.langs.title': 'Spricht deine Sprache',
+  'features.langs.text':
+    '9 Sprachen, darunter Arabisch und Chinesisch. Lacher und „Danke“ erkennt es sogar in allen.',
+  'features.groups.title': 'Zu zweit oder in der Gruppe',
+  'features.groups.text': 'Für Chats zu zweit und Gruppenchats mit bis zu 50 Leuten.',
+  'features.free.title': 'Kostenlos, ohne Anmeldung',
+  'features.free.text':
+    'Kein Account, keine App zum Installieren. Leg es dir auf den Homescreen, wenn du magst.',
+
+  // ---- "what you'll discover"
+  'discover.title': 'Was du entdeckst',
+  'discover.subtitle':
+    'Die Geschichte, die euer Chat die ganze Zeit geschrieben hat, in 12+ Karten zum Durchwischen.',
+  'discover.total.title': 'Eure Gesamtbilanz',
+  'discover.total.text':
+    'Jede Nachricht, jedes Wort und der eine Tag, an dem ihr einfach nicht aufhören konntet.',
+  'discover.who.title': 'Wer redet mehr',
+  'discover.who.text': 'Die genaue Verteilung, und wer echte Aufsätze schreibt.',
+  'discover.rush.title': 'Eure Rushhour',
+  'discover.rush.text': 'Nachteulen oder Frühaufsteher? Eure Top-Uhrzeit und euer Top-Wochentag.',
+  'discover.streak.title': 'Eure längste Serie',
+  'discover.streak.text': 'Wie viele Tage am Stück ihr den Chat am Leben gehalten habt.',
+  'discover.silence.title': 'Die große Funkstille',
+  'discover.silence.text': 'Eure längste Pause, und wer endlich das Eis gebrochen hat.',
+  'discover.reply.title': 'Antworttempo',
+  'discover.reply.text': 'Wer in Sekunden antwortet, und wer dich auf „Gelesen“ sitzen lässt.',
+  'discover.starter.title': 'Wer schreibt zuerst',
+  'discover.starter.text': 'Wer die Gespräche anfängt, und wer immer das letzte Wort hat.',
+  'discover.laugh.title': 'Lachometer',
+  'discover.laugh.text': 'Jedes „haha“, „hihi“ und 😂 gezählt. Wer ist das beste Publikum?',
+  'discover.words.title': 'Top-Wörter & Emojis',
+  'discover.words.text': 'Die Wörter und Emojis, die euch ausmachen.',
+
+  // ---- awards showcase
+  'showcase.title': 'Niemand geht leer aus',
+  'showcase.subtitle':
+    '34 witzige Titel, verliehen danach, wie ihr wirklich chattet. Immer lustig, nie gemein.',
+  'showcase.example': 'Beispiel',
+
+  // ---- use cases
+  'uses.title': 'Perfekt für',
+  'uses.couples.title': 'Paare',
+  'uses.couples.text': 'Eine Überraschung zum Jahrestag: eure Liebesgeschichte in Zahlen.',
+  'uses.friends.title': 'BFFs',
+  'uses.friends.text': 'Klärt ein für alle Mal, wer schneller antwortet.',
+  'uses.family.title': 'Familiengruppen',
+  'uses.family.text': 'Findet heraus, wer die meisten Guten-Morgen-Grüße schickt.',
+  'uses.teams.title': 'Teams & Communitys',
+  'uses.teams.text': 'Ein witziger Jahresrückblick für euren Gruppenchat.',
+  'uses.moments.title': 'Große Momente',
+  'uses.moments.text': 'Geburtstage, Silvester, Abschlussfeiern: ein fertiger „Unser Jahr“-Post.',
+
+  // ---- closing call to action
+  'cta.title': 'Bereit für deine Story?',
+  'cta.text': 'Dauert etwa eine Minute. Dein Chat verlässt nie dein Gerät.',
 
   // ---- FAQ
   'faq.title': 'Fragen',

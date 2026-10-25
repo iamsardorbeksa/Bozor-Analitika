@@ -205,6 +205,60 @@ export const ru: Dict = {
   'features.share.title': 'Создано для сторис',
   'features.share.text':
     'Каждая карточка — картинка 1080×1920 для Instagram, TikTok или вашего чата.',
+  'features.title': 'За что нас любят',
+  'features.langs.title': 'Говорит на вашем языке',
+  'features.langs.text':
+    '9 языков, включая арабский и китайский. И на каждом узнаёт смех и «спасибо».',
+  'features.groups.title': 'Для двоих и для групп',
+  'features.groups.text': 'Работает с личными чатами и группами до 50 человек.',
+  'features.free.title': 'Бесплатно, без регистрации',
+  'features.free.text': 'Ни аккаунта, ни установки. Можно добавить на главный экран, если хотите.',
+
+  // ---- "what you'll discover"
+  'discover.title': 'Что вы узнаете',
+  'discover.subtitle': 'История, которую ваш чат писал всё это время, — в 12+ карточках.',
+  'discover.total.title': 'Общий итог',
+  'discover.total.text':
+    'Каждое сообщение, каждое слово и тот самый день, когда вы не могли остановиться.',
+  'discover.who.title': 'Кто болтает больше',
+  'discover.who.text': 'Точный расклад и кто пишет целые сочинения.',
+  'discover.rush.title': 'Ваш час пик',
+  'discover.rush.text': 'Совы или жаворонки? Самый активный час и день недели.',
+  'discover.streak.title': 'Самая длинная серия',
+  'discover.streak.text': 'Сколько дней подряд вы не давали разговору угаснуть.',
+  'discover.silence.title': 'Великая тишина',
+  'discover.silence.text': 'Самая долгая пауза — и чьё сообщение растопило лёд.',
+  'discover.reply.title': 'Скорость ответа',
+  'discover.reply.text': 'Кто отвечает за секунды, а кто оставляет вас на «прочитанном».',
+  'discover.starter.title': 'Кто пишет первым',
+  'discover.starter.text': 'Кто начинает разговоры, а за кем всегда последнее слово.',
+  'discover.laugh.title': 'Смехометр',
+  'discover.laugh.text': 'Считаем каждое «ахах», «))))» и 😂. Кто здесь самая благодарная публика?',
+  'discover.words.title': 'Топ слов и эмодзи',
+  'discover.words.text': 'Слова и эмодзи, которые вас описывают.',
+
+  // ---- awards showcase
+  'showcase.title': 'Никто не уйдёт без награды',
+  'showcase.subtitle':
+    '34 шуточных титула — по тому, как вы на самом деле переписываетесь. Всегда смешно, никогда не обидно.',
+  'showcase.example': 'Пример',
+
+  // ---- use cases
+  'uses.title': 'Идеально для',
+  'uses.couples.title': 'Пары',
+  'uses.couples.text': 'Сюрприз на годовщину: ваша история любви в цифрах.',
+  'uses.friends.title': 'Лучшие друзья',
+  'uses.friends.text': 'Раз и навсегда выясните, кто отвечает быстрее.',
+  'uses.family.title': 'Семейные чаты',
+  'uses.family.text': 'Узнайте, кто чаще всех шлёт «доброе утро» с цветочками.',
+  'uses.teams.title': 'Команды и сообщества',
+  'uses.teams.text': 'Весёлые итоги года для общего чата.',
+  'uses.moments.title': 'Особые моменты',
+  'uses.moments.text': 'Дни рождения, Новый год, выпускной: готовый пост «наш год вместе».',
+
+  // ---- closing call to action
+  'cta.title': 'Готовы увидеть свою историю?',
+  'cta.text': 'Это займёт около минуты. Ваш чат никогда не покидает устройство.',
 
   'faq.title': 'Вопросы',
   'faq.q1': 'Это правда безопасно?',

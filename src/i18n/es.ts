@@ -232,6 +232,62 @@ export const es: Dict = {
   'features.share.title': 'Hecho para historias',
   'features.share.text':
     'Cada tarjeta es una imagen de 1080×1920, lista para Instagram, TikTok o tu grupo.',
+  'features.title': '¿Por qué gusta tanto?',
+  'features.langs.title': 'Habla tu idioma',
+  'features.langs.text':
+    '9 idiomas, incluidos el árabe y el chino. Hasta reconoce las risas y los «gracias» en todos.',
+  'features.groups.title': 'Dúos y grupos',
+  'features.groups.text': 'Funciona con chats entre dos y con grupos de hasta 50 personas.',
+  'features.free.title': 'Gratis y sin registro',
+  'features.free.text':
+    'Sin cuenta ni apps que instalar. Si quieres, añádelo a tu pantalla de inicio.',
+
+  // ---- "what you'll discover"
+  'discover.title': 'Lo que vas a descubrir',
+  'discover.subtitle':
+    'La historia que tu chat lleva tiempo escribiendo, en más de 12 tarjetas para deslizar.',
+  'discover.total.title': 'Tu gran total',
+  'discover.total.text': 'Cada mensaje, cada palabra y aquel día en que nadie soltó el móvil.',
+  'discover.who.title': 'Quién habla más',
+  'discover.who.text': 'El reparto exacto, y quién escribe auténticos ensayos.',
+  'discover.rush.title': 'Tu hora punta',
+  'discover.rush.text': '¿Búhos nocturnos o gente madrugadora? Tu hora y tu día más movidos.',
+  'discover.streak.title': 'Tu racha más larga',
+  'discover.streak.text': 'Cuántos días seguidos se mantuvo viva la conversación.',
+  'discover.silence.title': 'El gran silencio',
+  'discover.silence.text': 'La pausa más larga, y quién rompió por fin el hielo.',
+  'discover.reply.title': 'Velocidad de respuesta',
+  'discover.reply.text': 'Quién responde en segundos y quién te deja en visto.',
+  'discover.starter.title': 'Quién escribe primero',
+  'discover.starter.text':
+    'Quién empieza las conversaciones y quién siempre tiene la última palabra.',
+  'discover.laugh.title': 'Risómetro',
+  'discover.laugh.text': 'Contamos cada «jaja», «jsjs» y 😂. ¿Quién es el mejor público?',
+  'discover.words.title': 'Palabras y emojis top',
+  'discover.words.text': 'Las palabras y los emojis que los definen.',
+
+  // ---- awards showcase
+  'showcase.title': 'Aquí nadie se queda sin premio',
+  'showcase.subtitle':
+    '34 títulos divertidos, repartidos según cómo chateas de verdad. Siempre graciosos, nunca crueles.',
+  'showcase.example': 'Ejemplo',
+
+  // ---- use cases
+  'uses.title': 'Perfecto para',
+  'uses.couples.title': 'Parejas',
+  'uses.couples.text': 'Una sorpresa de aniversario: su historia de amor, en números.',
+  'uses.friends.title': 'Mejores amistades',
+  'uses.friends.text': 'Por fin sabrás quién responde más rápido. Sin discusión.',
+  'uses.family.title': 'Grupos familiares',
+  'uses.family.text': 'Descubre quién manda más «buenos días».',
+  'uses.teams.title': 'Equipos y comunidades',
+  'uses.teams.text': 'Un resumen de fin de año muy divertido para el grupo.',
+  'uses.moments.title': 'Grandes momentos',
+  'uses.moments.text': 'Cumpleaños, Año Nuevo, graduaciones: tu post de «nuestro año», ya listo.',
+
+  // ---- closing call to action
+  'cta.title': '¿Te animas a ver tu historia?',
+  'cta.text': 'Tarda más o menos un minuto. Tu chat nunca sale de tu dispositivo.',
 
   // ---- FAQ
   'faq.title': 'Preguntas',

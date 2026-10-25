@@ -231,6 +231,59 @@ export const en = {
   'features.share.title': 'Made for stories',
   'features.share.text':
     'Every card is a 1080×1920 image, ready for Instagram, TikTok or your group chat.',
+  'features.title': 'Why people love it',
+  'features.langs.title': 'Speaks your language',
+  'features.langs.text':
+    '9 languages, including Arabic and Chinese. It even recognises laughs and “thank you” in all of them.',
+  'features.groups.title': 'Duos and groups',
+  'features.groups.text': 'Works for 1-on-1 chats and group chats of up to 50 people.',
+  'features.free.title': 'Free, no sign-up',
+  'features.free.text': 'No account, no app to install. Add it to your home screen if you like.',
+
+  // ---- "what you'll discover"
+  'discover.title': 'What you’ll discover',
+  'discover.subtitle': 'The story your chat has been writing all along, in 12+ swipeable cards.',
+  'discover.total.title': 'Your grand total',
+  'discover.total.text': 'Every message, every word, and the one day you couldn’t stop texting.',
+  'discover.who.title': 'Who talks more',
+  'discover.who.text': 'The exact split, and who writes actual essays.',
+  'discover.rush.title': 'Your rush hour',
+  'discover.rush.text': 'Night owls or early birds? Your busiest hour and weekday.',
+  'discover.streak.title': 'Your longest streak',
+  'discover.streak.text': 'How many days in a row you kept the conversation alive.',
+  'discover.silence.title': 'The great silence',
+  'discover.silence.text': 'Your longest break, and who finally broke the ice.',
+  'discover.reply.title': 'Reply speed',
+  'discover.reply.text': 'Who answers in seconds, and who leaves you on “seen”.',
+  'discover.starter.title': 'Who texts first',
+  'discover.starter.text': 'Who starts the conversations, and who always has the last word.',
+  'discover.laugh.title': 'Laugh-o-meter',
+  'discover.laugh.text': 'Every “haha”, 😂 and “ахах” counted. Who’s the best audience?',
+  'discover.words.title': 'Top words & emojis',
+  'discover.words.text': 'The words and emojis that define you.',
+
+  // ---- awards showcase
+  'showcase.title': 'Everyone gets an award',
+  'showcase.subtitle':
+    '34 playful titles, handed out based on how you really chat. Always funny, never mean.',
+  'showcase.example': 'Example',
+
+  // ---- use cases
+  'uses.title': 'Perfect for',
+  'uses.couples.title': 'Couples',
+  'uses.couples.text': 'An anniversary surprise: your love story, in numbers.',
+  'uses.friends.title': 'Best friends',
+  'uses.friends.text': 'Settle once and for all who replies faster.',
+  'uses.family.title': 'Family groups',
+  'uses.family.text': 'Find out who sends the most good-morning messages.',
+  'uses.teams.title': 'Teams & communities',
+  'uses.teams.text': 'A fun end-of-year recap of the group chat.',
+  'uses.moments.title': 'Big moments',
+  'uses.moments.text': 'Birthdays, New Year, graduations: a ready-made “our year together” post.',
+
+  // ---- closing call to action
+  'cta.title': 'Ready to see your story?',
+  'cta.text': 'It takes about a minute. Your chat never leaves your device.',
 
   // ---- FAQ
   'faq.title': 'Questions',

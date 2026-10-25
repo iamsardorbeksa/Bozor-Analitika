@@ -207,6 +207,61 @@ export const uz: Dict = {
   'features.share.title': 'Storislar uchun',
   'features.share.text':
     'Har bir kartochka 1080×1920 rasm — Instagram, TikTok yoki chatingiz uchun tayyor.',
+  'features.title': 'Nega hammaga yoqadi',
+  'features.langs.title': 'Sizning tilingizda',
+  'features.langs.text':
+    '9 til, jumladan arab va xitoy tillari. Har birida kulgi va “rahmat” ni ham taniydi.',
+  'features.groups.title': 'Ikki kishi yoki guruh',
+  'features.groups.text': 'Shaxsiy chatlar va 50 kishigacha boʻlgan guruhlar uchun.',
+  'features.free.title': 'Bepul, roʻyxatdan oʻtmasdan',
+  'features.free.text':
+    'Akkaunt ham, ilova oʻrnatish ham shart emas. Xohlasangiz, bosh ekranga qoʻshib qoʻying.',
+
+  // ---- "what you'll discover"
+  'discover.title': 'Nimalarni bilib olasiz',
+  'discover.subtitle':
+    'Chatingiz shu vaqtgacha yozib kelgan hikoya — 12+ ta varaqlanadigan kartochkada.',
+  'discover.total.title': 'Umumiy hisob',
+  'discover.total.text': 'Har bir xabar, har bir soʻz va yozishdan toʻxtay olmagan oʻsha kuningiz.',
+  'discover.who.title': 'Kim koʻproq yozadi',
+  'discover.who.text': 'Aniq nisbat va kim butun boshli insho yozadi.',
+  'discover.rush.title': 'Qizgʻin soatingiz',
+  'discover.rush.text': 'Boyqushmisiz yoki erta turuvchi? Eng faol soatingiz va hafta kuningiz.',
+  'discover.streak.title': 'Eng uzun seriya',
+  'discover.streak.text': 'Suhbatni necha kun ketma-ket uzmagansiz.',
+  'discover.silence.title': 'Katta jimlik',
+  'discover.silence.text': 'Eng uzun tanaffus va jimlikni nihoyat kim buzdi.',
+  'discover.reply.title': 'Javob tezligi',
+  'discover.reply.text': 'Kim soniyalarda javob beradi, kim esa “oʻqildi” holatida qoldiradi.',
+  'discover.starter.title': 'Kim birinchi yozadi',
+  'discover.starter.text': 'Suhbatni kim boshlaydi va oxirgi soʻz doim kimda qoladi.',
+  'discover.laugh.title': 'Kulgi-metr',
+  'discover.laugh.text': 'Har bir “xaxa”, “hahaha” va 😂 hisoblanadi. Eng yaxshi tomoshabin kim?',
+  'discover.words.title': 'Top soʻzlar va emojilar',
+  'discover.words.text': 'Sizni tasvirlaydigan soʻzlar va emojilar.',
+
+  // ---- awards showcase
+  'showcase.title': 'Hammaga mukofot bor',
+  'showcase.subtitle':
+    '34 ta qiziqarli unvon — qanday yozishishingizga qarab beriladi. Doim kulgili, hech qachon haqoratli emas.',
+  'showcase.example': 'Namuna',
+
+  // ---- use cases
+  'uses.title': 'Kimlar uchun ideal',
+  'uses.couples.title': 'Juftliklar',
+  'uses.couples.text': 'Yubiley uchun syurpriz: sevgi hikoyangiz raqamlarda.',
+  'uses.friends.title': 'Eng yaqin doʻstlar',
+  'uses.friends.text': 'Kim tezroq javob berishini bir yoʻla aniqlab oling.',
+  'uses.family.title': 'Oilaviy guruhlar',
+  'uses.family.text': 'Kim eng koʻp “Xayrli tong” yuborishini bilib oling.',
+  'uses.teams.title': 'Jamoalar va hamjamiyatlar',
+  'uses.teams.text': 'Guruh chati uchun quvnoq yil yakunlari.',
+  'uses.moments.title': 'Muhim lahzalar',
+  'uses.moments.text': 'Tugʻilgan kunlar, Yangi yil, bitiruv: tayyor “birga oʻtgan yilimiz” posti.',
+
+  // ---- closing call to action
+  'cta.title': 'Hikoyangizni koʻrishga tayyormisiz?',
+  'cta.text': 'Bor-yoʻgʻi bir daqiqa. Chatingiz qurilmangizdan chiqmaydi.',
 
   'faq.title': 'Savollar',
   'faq.q1': 'Bu rostdan ham xavfsizmi?',
