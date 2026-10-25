@@ -6,9 +6,9 @@ export const APP_CONFIG = {
   name: 'Chat Wrapped',
   shortName: 'Wrapped',
   /** Shown in small print on every card. Keep it short. */
-  displayUrl: 'chatwrapped.app',
+  displayUrl: 'mychatwrapped.vercel.app',
   /** Absolute URL used for Open Graph tags. */
-  siteUrl: 'https://chatwrapped.app',
+  siteUrl: 'https://mychatwrapped.vercel.app',
   description:
     'Turn your WhatsApp or Telegram chat into a funny, shareable story. 100% private: your chat never leaves your device.',
   /** Shown in the site footer and as the page author. */

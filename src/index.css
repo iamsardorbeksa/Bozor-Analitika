@@ -139,8 +139,17 @@ body {
   letter-spacing: 0.02em;
   color: var(--muted);
 }
+.cw-footer-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.25;
+  white-space: nowrap;
+}
 .cw-footer-url {
-  margin-inline-start: auto;
+  font-size: 11.5px;
+  color: var(--fg);
+  letter-spacing: 0;
 }
 
 /* ------------------------------------------------------------------ right-to-left & CJK */

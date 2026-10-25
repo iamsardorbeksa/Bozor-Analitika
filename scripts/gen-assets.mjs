@@ -117,6 +117,9 @@ render(
 )
 
 // Open Graph / Twitter preview, 1200×630
+const pillText = `100% private · ${DISPLAY_URL}`
+// Unbounded 900 at 19px averages ~12.4px per character; 60px of horizontal padding.
+const pillWidth = Math.round(pillText.length * 12.4 + 60)
 const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <radialGradient id="g1" cx="0.15" cy="0.1" r="0.6"><stop offset="0" stop-color="#FF7AB6" stop-opacity="0.55"/><stop offset="1" stop-color="#FF7AB6" stop-opacity="0"/></radialGradient>
@@ -152,8 +155,8 @@ const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"
   <text x="72" y="400" font-size="92" font-weight="900" fill="#D7FF3A" letter-spacing="-3">wrapped.</text>
   <text x="74" y="468" font-size="24" font-weight="600" fill="#fff" opacity="0.9">WhatsApp + Telegram stats, awards &amp; stories</text>
 
-  <rect x="72" y="510" width="470" height="56" rx="28" fill="#0E0B1F"/>
-  <text x="102" y="546" font-size="19" font-weight="900" fill="#D7FF3A">100% private · ${DISPLAY_URL}</text>
+  <rect x="72" y="510" width="${pillWidth}" height="56" rx="28" fill="#0E0B1F"/>
+  <text x="102" y="546" font-size="19" font-weight="900" fill="#D7FF3A">${pillText}</text>
 </svg>`
 render(ogSvg, 1200, 'public/og-image.png')
 

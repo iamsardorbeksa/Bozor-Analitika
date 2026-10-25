@@ -204,14 +204,19 @@ export function CardShell({
       <FitBody>{children}</FitBody>
       <div className="cw-card-footer">
         <span className="cw-logo" aria-hidden="true">
-          <LogoMark color={palette.fg} accent={palette.accent} />
+          <LogoMark color={palette.fg} accent={palette.accent} size={footer === 'cta' ? 16 : 20} />
         </span>
-        <span>
-          {footer === 'cta'
-            ? t('card.footer.cta', { url: APP_CONFIG.displayUrl })
-            : t('card.footer.made', { name: APP_CONFIG.name })}
-        </span>
-        {footer === 'default' && <span className="cw-footer-url">{APP_CONFIG.displayUrl}</span>}
+        {footer === 'cta' ? (
+          <span>{t('card.footer.cta', { url: APP_CONFIG.displayUrl })}</span>
+        ) : (
+          // Two deliberate lines, so long translations never wrap awkwardly next to the URL.
+          <span className="cw-footer-stack">
+            <span>{t('card.footer.made', { name: APP_CONFIG.name })}</span>
+            <span className="cw-footer-url" dir="ltr">
+              {APP_CONFIG.displayUrl}
+            </span>
+          </span>
+        )}
       </div>
     </div>
   )

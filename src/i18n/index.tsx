@@ -13,7 +13,7 @@ import { de, deAwards } from './de'
 import { en, type AwardTexts, type Dict, type DictKey } from './en'
 import { es, esAwards } from './es'
 import { fr, frAwards } from './fr'
-import { detectLang, isRtl, LANGS, PLURAL_ORDER, type Lang } from './lang'
+import { DEFAULT_LANG, isRtl, LANGS, PLURAL_ORDER, type Lang } from './lang'
 import { pt, ptAwards } from './pt'
 import { ru, ruAwards } from './ru'
 import { uz, uzAwards } from './uz'
@@ -112,14 +112,15 @@ interface I18nValue extends Translator {
 
 const I18nContext = createContext<I18nValue | null>(null)
 
+/** The language the visitor picked earlier, otherwise English (not the browser language). */
 function initialLang(): Lang {
   try {
     const saved = localStorage.getItem(STORAGE_KEY) as Lang | null
     if (saved && (LANGS as readonly string[]).includes(saved)) return saved
   } catch {
-    /* storage may be blocked; fall back to the browser language */
+    /* storage may be blocked; fall back to the default */
   }
-  return detectLang()
+  return DEFAULT_LANG
 }
 
 export function I18nProvider({ children, lang: fixedLang }: { children: ReactNode; lang?: Lang }) {
