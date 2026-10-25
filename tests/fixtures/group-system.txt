@@ -1,0 +1,8 @@
+12/31/23, 9:41 PM - Alice created group "Trip: 2024"
+12/31/23, 9:42 PM - Alice added Bob
+12/31/23, 9:43 PM - Bob joined using this group's invite link
+12/31/23, 9:44 PM - Alice changed the subject from "Trip" to "Trip 2"
+12/31/23, 9:45 PM - Alice: Welcome!
+12/31/23, 9:46 PM - +1 555 123 4567: thanks
+12/31/23, 9:47 PM - Carol: hi all
+12/31/23, 9:48 PM - Bob left

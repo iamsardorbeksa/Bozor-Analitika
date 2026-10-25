@@ -1,0 +1,9 @@
+﻿[31/12/2023, 21:41:05] Alice: ‎Messages and calls are end-to-end encrypted. No one outside of this chat, not even WhatsApp, can read or listen to them.
+[31/12/2023, 21:41:05] Alice: Hey!
+[31/12/2023, 21:42:10] Bob: ‎image omitted
+[31/12/2023, 21:43:00] Bob: ‎sticker omitted
+[31/12/2023, 21:44:00] Alice: ‎audio omitted
+[01/01/2024, 02:00:00] Alice: multi
+line
+[14/01/2024, 10:00:00] Bob: You deleted this message
+[14/01/2024, 10:01:00] Bob: edited text <This message was edited>

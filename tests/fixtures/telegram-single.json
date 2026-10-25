@@ -1,0 +1,15 @@
+{
+ "name": "Alice",
+ "type": "personal_chat",
+ "id": 1,
+ "messages": [
+  {"id": 1, "type": "service", "date": "2024-01-01T10:00:00", "date_unixtime": "1704103200", "actor": "Alice", "action": "phone_call", "text": ""},
+  {"id": 2, "type": "message", "date": "2024-01-01T10:01:00", "date_unixtime": "1704103260", "from": "Alice", "from_id": "user1", "text": "Hello!"},
+  {"id": 3, "type": "message", "date": "2024-01-01T10:02:00", "date_unixtime": "1704103320", "from": "Bob", "from_id": "user2", "text": ["Check ", {"type": "link", "text": "https://example.com"}, " ", {"type": "bold", "text": "now"}], "reply_to_message_id": 2},
+  {"id": 4, "type": "message", "date": "2024-01-01T10:03:00", "date_unixtime": "1704103380", "from": "Alice", "from_id": "user1", "file": "(File not included. Change data exporting settings to download.)", "media_type": "voice_message", "text": ""},
+  {"id": 5, "type": "message", "date": "2024-01-01T10:04:00", "date_unixtime": "1704103440", "from": "Bob", "from_id": "user2", "media_type": "sticker", "sticker_emoji": "😂", "text": ""},
+  {"id": 6, "type": "message", "date": "2024-01-01T10:05:00", "date_unixtime": "1704103500", "from": "Bob", "from_id": "user2", "media_type": "video_message", "text": ""},
+  {"id": 7, "type": "message", "date": "2024-01-01T10:06:00", "date_unixtime": "1704103560", "from": "Alice Renamed", "from_id": "user1", "photo": "(File not included.)", "text": "pic"},
+  {"id": 8, "type": "message", "date": "2024-01-01T10:07:00", "date_unixtime": "1704103620", "from": "Bob", "from_id": "user2", "forwarded_from": "News", "text": "forwarded thing"}
+ ]
+}
