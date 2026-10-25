@@ -93,10 +93,20 @@ body {
   position: relative;
   z-index: 1;
   flex: 1;
-  padding: 44px 28px 0;
+  padding: 44px 28px 14px;
   display: flex;
   flex-direction: column;
   min-height: 0;
+  /* Safety net: content is auto-scaled to fit (see FitBody), never drawn over the footer. */
+  overflow: hidden;
+}
+
+.cw-fit {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  min-height: 100%;
+  transform-origin: top left;
 }
 
 .cw-decor {

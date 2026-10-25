@@ -1,4 +1,11 @@
-import { useEffect, useState, type CSSProperties, type ReactNode } from 'react'
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from 'react'
 import { APP_CONFIG } from '../../config'
 import { useI18n } from '../../i18n'
 import type { Palette } from './palettes'
@@ -103,9 +110,56 @@ export function fitSize(text: string, max: number, widthPx = 300, ratio = 0.78):
   return Math.min(max, Math.floor(widthPx / (chars * ratio)))
 }
 
-export function truncateName(name: string, max = 22): string {
+/** Only absurdly long names are shortened; normal names wrap onto the next line instead. */
+export function truncateName(name: string, max = 40): string {
   const chars = [...name]
   return chars.length > max ? chars.slice(0, max - 1).join('') + '…' : name
+}
+
+/** Never shrink text below this; long content gets smaller, but stays readable. */
+const MIN_FIT_SCALE = 0.62
+
+/**
+ * Card body that always fits above the footer. When content is taller than the space
+ * (big groups, long names, Russian/Uzbek text), it is scaled down as a whole and given
+ * proportionally more width, so sentences stay complete instead of being cut or overlapping.
+ */
+function FitBody({ children }: { children: ReactNode }) {
+  const bodyRef = useRef<HTMLDivElement>(null)
+  const innerRef = useRef<HTMLDivElement>(null)
+
+  useLayoutEffect(() => {
+    const body = bodyRef.current
+    const inner = innerRef.current
+    if (!body || !inner) return
+    const fit = () => {
+      const cs = getComputedStyle(body)
+      const avail = body.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom)
+      // Widening the content changes how text wraps, so converge in a few steps.
+      let scale = 1
+      for (let i = 0; i < 4; i++) {
+        inner.style.width = `${100 / scale}%`
+        const next = Math.max(MIN_FIT_SCALE, Math.min(1, avail / inner.scrollHeight))
+        if (Math.abs(next - scale) < 0.005) break
+        scale = next
+      }
+      inner.style.width = scale < 1 ? `${100 / scale}%` : ''
+      inner.style.transform = scale < 1 ? `scale(${scale})` : ''
+    }
+    fit()
+    const ro = new ResizeObserver(fit)
+    ro.observe(inner)
+    document.fonts?.ready.then(fit)
+    return () => ro.disconnect()
+  }, [])
+
+  return (
+    <div ref={bodyRef} className="cw-card-body">
+      <div ref={innerRef} className="cw-fit">
+        {children}
+      </div>
+    </div>
+  )
 }
 
 export function CardShell({
@@ -147,7 +201,7 @@ export function CardShell({
           {decor}
         </div>
       )}
-      <div className="cw-card-body">{children}</div>
+      <FitBody>{children}</FitBody>
       <div className="cw-card-footer">
         <span className="cw-logo" aria-hidden="true">
           <LogoMark color={palette.fg} accent={palette.accent} />

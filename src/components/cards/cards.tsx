@@ -155,7 +155,7 @@ export function IntroCard({ data, isStatic }: CardProps) {
         </Decor>
       }
     >
-      <div className="flex h-full flex-col justify-center">
+      <div className="flex flex-1 flex-col justify-center">
         <Anim kind="pop" d={100}>
           <span className="cw-badge" style={{ background: p.accent, color: '#121212' }}>
             {stats.platform === 'whatsapp' ? 'WhatsApp' : 'Telegram'} · Wrapped
@@ -168,7 +168,7 @@ export function IntroCard({ data, isStatic }: CardProps) {
         </Anim>
         <Anim d={500}>
           <p className="mt-5 text-[20px] font-extrabold leading-tight" style={{ color: p.accent }}>
-            {truncateName(who, 40)}
+            {truncateName(who)}
           </p>
         </Anim>
         <Anim d={650}>
@@ -277,7 +277,7 @@ export function WhoTalksCard({ data, isStatic }: CardProps) {
           <h2 className="cw-display mt-3 text-[34px]">
             {balanced
               ? t('card.who.balanced')
-              : t('card.who.more', { name: truncateName(names[0], 16) })}
+              : t('card.who.more', { name: truncateName(names[0]) })}
           </h2>
         </Anim>
         <div className="mt-6 flex h-[230px] items-end gap-4">
@@ -308,8 +308,8 @@ export function WhoTalksCard({ data, isStatic }: CardProps) {
                   animationDelay: `${300 + i * 150}ms`,
                 }}
               />
-              <div className="mt-2 truncate text-[15px] font-extrabold">
-                {truncateName(s.name, 18)}
+              <div className="mt-2 text-[15px] leading-tight font-extrabold break-words">
+                {truncateName(s.name)}
               </div>
               <div className="text-[13px] font-semibold" style={{ color: p.muted }}>
                 {t('card.who.msgs', { n: num(s.n) })}
@@ -321,7 +321,7 @@ export function WhoTalksCard({ data, isStatic }: CardProps) {
           <div className="cw-panel mt-6 text-[15px] font-semibold leading-snug">
             <span className="text-[20px]">📝 </span>
             {t('card.who.longer', {
-              name: truncateName(names[longer], 18),
+              name: truncateName(names[longer]),
               n: num(stats.people[longer].avgWords, 1),
               m: num(stats.people[other].avgWords, 1),
             })}
@@ -337,15 +337,15 @@ export function WhoTalksCard({ data, isStatic }: CardProps) {
       <Kicker>{t('card.who.kicker')}</Kicker>
       <Anim d={150}>
         <h2 className="cw-display mt-3 text-[30px]">
-          {t('card.who.groupTitle', { name: truncateName(names[0], 16) })}
+          {t('card.who.groupTitle', { name: truncateName(names[0]) })}
         </h2>
       </Anim>
       <div className="mt-6 grid gap-[14px]">
         {rows.map((r, i) => (
           <Anim key={i} d={300 + i * 110} kind="slide">
             <div className="flex items-baseline justify-between gap-2 text-[15px] font-extrabold">
-              <span className="truncate">
-                {i + 1}. {truncateName(r.name, 20)}
+              <span className="min-w-0 break-words">
+                {i + 1}. {truncateName(r.name)}
               </span>
               <span className="tabular-nums">{pct(r.value, total)}%</span>
             </div>
@@ -509,7 +509,7 @@ export function SilenceCard({ data, isStatic }: CardProps) {
             <Anim d={650}>
               <div className="cw-panel mt-5 text-[16px] font-bold leading-snug">
                 <span className="text-[22px]">🧊 </span>
-                {t('card.silence.broke', { name: truncateName(names[s.brokenBy], 20) })}
+                {t('card.silence.broke', { name: truncateName(names[s.brokenBy]) })}
               </div>
             </Anim>
           )}
@@ -575,7 +575,7 @@ export function ReplySpeedCard({ data, isStatic }: CardProps) {
       label={t('card.reply.kicker')}
       decor={
         <Decor>
-          <Blob color={p.accent2} size={80} x={270} y={480} shape="star" d={800} />
+          <Blob color={p.accent2} size={56} x={296} y={18} shape="star" d={800} />
         </Decor>
       }
     >
@@ -584,7 +584,7 @@ export function ReplySpeedCard({ data, isStatic }: CardProps) {
         <>
           <Anim d={150}>
             <h2 className="cw-display mt-3 text-[32px]">
-              {t('card.reply.fastest', { name: truncateName(names[fastest.i], 16) })} ⚡
+              {t('card.reply.fastest', { name: truncateName(names[fastest.i]) })} ⚡
             </h2>
           </Anim>
           <Anim kind="zoom" d={350}>
@@ -603,7 +603,7 @@ export function ReplySpeedCard({ data, isStatic }: CardProps) {
         {rows.map((r, idx) => (
           <Anim key={r.i} d={650 + idx * 120} kind="slide">
             <div className="flex items-baseline justify-between gap-2 text-[15px] font-extrabold">
-              <span className="truncate">{truncateName(names[r.i], 20)}</span>
+              <span className="min-w-0 break-words">{truncateName(names[r.i])}</span>
               <span className="tabular-nums">{duration(r.ms)}</span>
             </div>
             <div className="mt-1">
@@ -620,7 +620,7 @@ export function ReplySpeedCard({ data, isStatic }: CardProps) {
       {slowest && rows.length > 1 && (
         <Anim d={1400}>
           <p className="mt-5 text-[14px] font-semibold leading-snug" style={{ color: p.muted }}>
-            {t('card.reply.slowest', { name: truncateName(names[slowest.i], 18) })}
+            {t('card.reply.slowest', { name: truncateName(names[slowest.i]) })}
           </p>
         </Anim>
       )}
@@ -648,10 +648,10 @@ export function TopWordsCard({ data, isStatic, realNames }: CardProps & { realNa
               <div key={pi}>
                 <Anim d={300 + pi * 150}>
                   <div
-                    className="truncate rounded-full px-3 py-1 text-center text-[13px] font-extrabold"
+                    className="rounded-[14px] px-3 py-1 text-center text-[13px] leading-tight font-extrabold break-words"
                     style={{ background: pi === 0 ? p.accent : p.accent2, color: '#fff' }}
                   >
-                    {truncateName(names[pi], 14)}
+                    {truncateName(names[pi])}
                   </div>
                 </Anim>
                 <ol className="mt-3 grid gap-2">
@@ -659,7 +659,7 @@ export function TopWordsCard({ data, isStatic, realNames }: CardProps & { realNa
                     <Anim key={w.key} d={450 + i * 90 + pi * 60} kind="pop">
                       <li className="flex items-baseline justify-between gap-1">
                         <span
-                          className="cw-display truncate"
+                          className="cw-display min-w-0"
                           style={{ fontSize: i === 0 ? 22 : 16 }}
                         >
                           {w.key}
@@ -701,7 +701,7 @@ export function TopWordsCard({ data, isStatic, realNames }: CardProps & { realNa
                 {i + 1}
               </span>
               <span
-                className="cw-display flex-1 truncate"
+                className="cw-display min-w-0 flex-1"
                 style={{
                   fontSize: Math.round(16 + 18 * Math.sqrt(w.count / maxCount)),
                   color: i === 0 ? p.accent : p.fg,
@@ -763,7 +763,7 @@ export function TopEmojisCard({ data, isStatic }: CardProps) {
             {stats.people.slice(0, stats.isGroup ? 4 : 2).map((person, i) =>
               person.topEmojis[0] ? (
                 <div key={i} className="flex items-center justify-between text-[15px] font-bold">
-                  <span className="truncate">{truncateName(names[i], 20)}</span>
+                  <span className="min-w-0 break-words">{truncateName(names[i])}</span>
                   <span>
                     <span className="cw-emoji text-[22px]">{person.topEmojis[0].key}</span>{' '}
                     <span style={{ color: p.muted }}>×{num(person.topEmojis[0].count)}</span>
@@ -863,7 +863,7 @@ export function LaughCard({ data, isStatic }: CardProps) {
         {rows.map((r, i) => (
           <Anim key={i} d={1000 + i * 100} kind="slide">
             <div className="flex justify-between text-[14px] font-extrabold">
-              <span className="truncate">{truncateName(r.name, 20)}</span>
+              <span className="min-w-0 break-words">{truncateName(r.name)}</span>
               <span className="tabular-nums">{num(r.value)} 😂</span>
             </div>
             <div className="mt-1">
@@ -880,7 +880,7 @@ export function LaughCard({ data, isStatic }: CardProps) {
       {top && top.v > 0 && stats.people.length > 1 && (
         <Anim d={1500}>
           <p className="mt-4 text-center text-[14px] font-bold" style={{ color: p.muted }}>
-            {t('card.laugh.most', { name: truncateName(names[top.i], 18) })}
+            {t('card.laugh.most', { name: truncateName(names[top.i]) })}
           </p>
         </Anim>
       )}
@@ -928,13 +928,13 @@ export function AwardsCard({
             <div key={personIndex}>
               <Anim d={150 + pi * 250}>
                 <h2
-                  className="cw-display truncate"
+                  className="cw-display min-w-0"
                   style={{
                     fontSize: compact ? 22 : fitSize(data.names[personIndex], 38, 300, 0.85),
                     color: p.accent,
                   }}
                 >
-                  {truncateName(data.names[personIndex], compact ? 20 : 24)}
+                  {truncateName(data.names[personIndex])}
                 </h2>
               </Anim>
               <div className={compact ? 'mt-2 grid gap-2' : 'mt-5 grid gap-4'}>
@@ -961,7 +961,7 @@ export function AwardsCard({
                             {def.title[lang]}
                           </div>
                           <div
-                            className={`mt-1 font-semibold leading-snug ${compact ? 'line-clamp-2' : ''}`}
+                            className="mt-1 font-semibold leading-snug"
                             style={{ fontSize: compact ? 12 : 14, color: p.muted }}
                           >
                             {fill(def.description[lang], a.vars)}
@@ -1008,7 +1008,7 @@ export function StarterCard({ data, isStatic }: CardProps) {
         <>
           <Anim d={150}>
             <h2 className="cw-display mt-3 text-[30px] leading-tight">
-              {t('card.starter.title', { name: truncateName(top.name, 16) })}
+              {t('card.starter.title', { name: truncateName(top.name) })}
             </h2>
           </Anim>
           <Anim kind="zoom" d={350}>
@@ -1054,7 +1054,7 @@ export function StarterCard({ data, isStatic }: CardProps) {
       >
         {rows.map((r, i) => (
           <span key={i}>
-            {truncateName(r.name, 14)} {pct(r.value, totalStarts)}%
+            {truncateName(r.name)} {pct(r.value, totalStarts)}%
           </span>
         ))}
       </div>
@@ -1063,7 +1063,7 @@ export function StarterCard({ data, isStatic }: CardProps) {
           <Anim d={1000} kind="slide">
             <div className="cw-panel text-[15px] font-bold leading-snug">
               <span className="text-[20px]">🔚 </span>
-              {t('card.starter.killer', { name: truncateName(names[killer.i], 18) })}{' '}
+              {t('card.starter.killer', { name: truncateName(names[killer.i]) })}{' '}
               <span style={{ color: p.muted }}>({tp('unit.times', killer.v)})</span>
             </div>
           </Anim>
@@ -1072,7 +1072,7 @@ export function StarterCard({ data, isStatic }: CardProps) {
           <Anim d={1200} kind="slide">
             <div className="cw-panel text-[15px] font-bold leading-snug">
               <span className="text-[20px]">🔁 </span>
-              {t('card.starter.double', { name: truncateName(names[doubles.i], 18) })}{' '}
+              {t('card.starter.double', { name: truncateName(names[doubles.i]) })}{' '}
               <span style={{ color: p.muted }}>({tp('unit.times', doubles.v)})</span>
             </div>
           </Anim>
@@ -1106,7 +1106,7 @@ export function SummaryCard({ data, isStatic, realNames }: CardProps & { realNam
     tiles.push({ label: t('card.summary.emoji'), value: stats.topEmojis[0].key, emoji: true })
   if (topWord) tiles.push({ label: t('card.summary.word'), value: topWord.key })
   if (fastest)
-    tiles.push({ label: t('card.summary.fastest'), value: truncateName(names[fastest.i], 12) })
+    tiles.push({ label: t('card.summary.fastest'), value: truncateName(names[fastest.i]) })
   tiles.push({ label: t('card.summary.laughs'), value: compact(stats.totalLaughs) })
   const shown = tiles.slice(0, 8)
   return (
@@ -1127,7 +1127,7 @@ export function SummaryCard({ data, isStatic, realNames }: CardProps & { realNam
           className="cw-display mt-2 leading-tight"
           style={{ fontSize: fitSize(title, 30, 640, 0.8) }}
         >
-          {truncateName(title, 40)}
+          {truncateName(title)}
         </h2>
       </Anim>
       <div className="mt-5 grid grid-cols-2 gap-[10px]">
@@ -1148,8 +1148,10 @@ export function SummaryCard({ data, isStatic, realNames }: CardProps & { realNam
                 {tile.label}
               </div>
               <div
-                className={`${tile.emoji ? 'cw-emoji' : 'cw-display'} mt-1 truncate leading-tight`}
-                style={{ fontSize: tile.emoji ? 30 : fitSize(tile.value, 24, 130, 0.8) }}
+                className={`${tile.emoji ? 'cw-emoji' : 'cw-display'} mt-1 leading-tight`}
+                style={{
+                  fontSize: tile.emoji ? 30 : Math.max(15, fitSize(tile.value, 24, 130, 0.8)),
+                }}
               >
                 {tile.value}
               </div>
