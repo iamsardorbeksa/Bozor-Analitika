@@ -6,7 +6,7 @@ const WORD_RE = /[\p{L}\p{N}](?:[\p{L}\p{M}\p{N}]|['’ʻʼ](?=\p{L}))*/gu
 /** Scripts written without spaces need a real word segmenter. */
 const NO_SPACE_SCRIPT_RE =
   /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Thai}\p{Script=Lao}\p{Script=Khmer}\p{Script=Myanmar}]/u
-const NON_ASCII_RE = /[^\x00-\x7F]/
+const NON_ASCII_RE = /[^\p{ASCII}]/u
 
 type Segmenter = { segment(input: string): Iterable<{ segment: string; isWordLike?: boolean }> }
 let wordSegmenter: Segmenter | null | undefined
