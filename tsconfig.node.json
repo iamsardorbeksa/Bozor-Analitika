@@ -11,5 +11,5 @@
     "strict": true,
     "types": ["node"]
   },
-  "include": ["vite.config.ts", "vitest.config.ts", "eslint.config.js", "scripts/*.ts", "src/config.ts"]
+  "include": ["vite.config.ts", "vitest.config.ts", "eslint.config.js", "scripts/*.ts", "tests/helpers/*.ts", "src/config.ts"]
 }
