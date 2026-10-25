@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { APP_CONFIG } from '../../config'
 import { useI18n } from '../../i18n'
-import { LANG_LABELS, LANGS, type Lang } from '../../i18n/lang'
+import { LangMenu } from '../ui/LangMenu'
 import { LogoMark } from '../cards/primitives'
 import { Icon } from '../ui/Icon'
 
@@ -49,23 +49,6 @@ export function ThemeToggle() {
   )
 }
 
-export function LangSelect() {
-  const { t, lang, setLang } = useI18n()
-  return (
-    <label className="header-select">
-      <Icon name="globe" size={18} />
-      <span className="sr-only">{t('lang.label')}</span>
-      <select value={lang} onChange={(e) => setLang(e.target.value as Lang)}>
-        {LANGS.map((l) => (
-          <option key={l} value={l}>
-            {LANG_LABELS[l]}
-          </option>
-        ))}
-      </select>
-    </label>
-  )
-}
-
 export function SiteHeader() {
   const { t } = useI18n()
   return (
@@ -91,7 +74,7 @@ export function SiteHeader() {
         <a href="#/privacy" className="header-link">
           {t('nav.privacy')}
         </a>
-        <LangSelect />
+        <LangMenu />
         <ThemeToggle />
       </nav>
     </header>

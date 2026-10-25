@@ -3,6 +3,7 @@ const PATHS = {
   close: 'M6 6l12 12M18 6L6 18',
   chevronLeft: 'M15 5l-7 7 7 7',
   chevronRight: 'M9 5l7 7-7 7',
+  chevronDown: 'M6 9l6 6 6-6',
   download: 'M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14',
   share: 'M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5M6 12v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6',
   zip: 'M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM11 3v2m0 2v2m0 2v2m0 2h2v3h-2z',
