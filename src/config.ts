@@ -11,6 +11,14 @@ export const APP_CONFIG = {
   siteUrl: 'https://chatwrapped.app',
   description:
     'Turn your WhatsApp or Telegram chat into a funny, shareable story. 100% private: your chat never leaves your device.',
+  /** Shown in the site footer and as the page author. */
+  creator: {
+    name: 'Sardorbek Saidqosimov',
+    // Stored in two parts so the full address never appears as plain text in the page
+    // source, which keeps it away from the simplest spam-harvesting bots.
+    emailUser: 'sardorbek.saidqosimov66',
+    emailDomain: 'gmail.com',
+  },
   themeColor: '#5B2EFF',
   backgroundColor: '#0E0B1F',
 } as const

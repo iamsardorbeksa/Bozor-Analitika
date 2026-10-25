@@ -81,23 +81,62 @@ export function SiteHeader() {
   )
 }
 
+/** Creator credit with an email link (address assembled at runtime, see config). */
+function CreatorCard() {
+  const { t } = useI18n()
+  const { name, emailUser, emailDomain } = APP_CONFIG.creator
+  const email = `${emailUser}@${emailDomain}`
+  const initials = name
+    .split(/\s+/)
+    .map((w) => w[0])
+    .slice(0, 2)
+    .join('')
+  return (
+    <div className="creator-card">
+      <span className="creator-avatar" aria-hidden="true">
+        {initials}
+      </span>
+      <div className="min-w-0">
+        <div className="creator-label">{t('footer.createdBy')}</div>
+        <div className="creator-name">{name}</div>
+        <a className="creator-mail" href={`mailto:${email}`} dir="ltr">
+          <Icon name="mail" size={16} />
+          <span className="sr-only">{t('footer.contact')}: </span>
+          <span className="creator-mail-text">
+            {emailUser}
+            <wbr />@{emailDomain}
+          </span>
+        </a>
+      </div>
+    </div>
+  )
+}
+
 export function SiteFooter() {
   const { t } = useI18n()
   return (
     <footer className="site-footer">
-      <div className="flex items-center gap-2">
-        <span className="logo-tile">
-          <LogoMark color="#fff" accent="#D7FF3A" size={18} />
-        </span>
-        <span className="font-display font-extrabold">{APP_CONFIG.name}</span>
+      <div className="footer-grid">
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="logo-tile">
+              <LogoMark color="#fff" accent="#D7FF3A" size={18} />
+            </span>
+            <span className="font-display font-extrabold">{APP_CONFIG.name}</span>
+          </div>
+          <p className="mt-3 font-semibold">{t('footer.tagline')}</p>
+          <p className="mt-1 flex flex-wrap items-center gap-2 text-sm text-[var(--page-muted)]">
+            <Icon name="lock" size={14} /> {t('footer.noTracking')}{' '}
+            <a href="#/privacy" className="link-btn">
+              {t('nav.privacy')}
+            </a>
+          </p>
+        </div>
+        <CreatorCard />
       </div>
-      <p className="mt-3 font-semibold">{t('footer.tagline')}</p>
-      <p className="mt-1 flex items-center gap-2 text-sm text-[var(--page-muted)]">
-        <Icon name="lock" size={14} /> {t('footer.noTracking')}{' '}
-        <a href="#/privacy" className="link-btn">
-          {t('nav.privacy')}
-        </a>
-      </p>
+      <div className="footer-bottom">
+        © {new Date().getFullYear()} {APP_CONFIG.name} · {APP_CONFIG.creator.name}
+      </div>
     </footer>
   )
 }

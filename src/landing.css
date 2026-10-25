@@ -705,8 +705,93 @@
 .site-footer {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 40px 16px 56px;
+  padding: 40px 16px 32px;
   border-top: 1px solid var(--border);
+}
+.footer-grid {
+  display: grid;
+  gap: 28px;
+  align-items: center;
+}
+@media (min-width: 760px) {
+  .footer-grid {
+    grid-template-columns: 1fr auto;
+  }
+}
+.creator-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  max-width: 100%;
+}
+.creator-avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #5b2eff, #e0145a);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  rotate: -4deg;
+}
+.creator-label {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--page-muted);
+}
+:lang(ar) .creator-label,
+:lang(zh) .creator-label {
+  letter-spacing: 0;
+}
+.creator-name {
+  margin-top: 2px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1.2;
+}
+.creator-mail {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  color: #5b2eff;
+  border-radius: 8px;
+}
+.dark .creator-mail {
+  color: #d7ff3a;
+}
+.creator-mail:hover .creator-mail-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.creator-mail svg {
+  flex: none;
+}
+/* Long addresses wrap only before the "@" (see <wbr>), never mid-word. */
+.creator-mail-text {
+  min-width: 0;
+}
+.footer-bottom {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--page-muted);
 }
 
 /* setup / loading */

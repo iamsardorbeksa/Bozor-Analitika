@@ -24,6 +24,7 @@ const PATHS = {
     'M12 8v5m0 3.5v.5M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z',
   arrowLeft: 'M19 12H5m0 0l6-6m-6 6l6 6',
   dots: 'M12 6h.01M12 12h.01M12 18h.01',
+  mail: 'M4 6h16v12H4zM4 7l8 6 8-6',
   phone: 'M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM11 18h2',
   desktop: 'M3 4h18v12H3zM8 20h8M12 16v4',
 } as const

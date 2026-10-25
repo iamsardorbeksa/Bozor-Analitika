@@ -305,6 +305,8 @@ export const ar: Dict = {
   // ---- footer
   'footer.tagline': 'صُنع للمتعة. دردشاتك تبقى ملكك.',
   'footer.noTracking': 'لا أدوات تتبع، لا ملفات تعريف ارتباط، لا خوادم.',
+  'footer.createdBy': 'من تطوير',
+  'footer.contact': 'تواصل معي',
 
   // ---- loading
   'loading.title': 'جارٍ قراءة دردشتك…',

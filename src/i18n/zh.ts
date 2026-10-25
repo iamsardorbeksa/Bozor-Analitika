@@ -300,6 +300,8 @@ export const zh: Dict = {
   // ---- footer
   'footer.tagline': '为好玩而做。你的聊天只属于你。',
   'footer.noTracking': '无追踪器，无 Cookie，无服务器。',
+  'footer.createdBy': '作者',
+  'footer.contact': '联系作者',
 
   // ---- loading
   'loading.title': '正在读取你的聊天…',

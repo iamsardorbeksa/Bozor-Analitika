@@ -43,6 +43,7 @@ function htmlMeta(): Plugin {
         .replaceAll('%APP_NAME%', APP_CONFIG.name)
         .replaceAll('%APP_DESCRIPTION%', APP_CONFIG.description)
         .replaceAll('%APP_URL%', APP_CONFIG.siteUrl)
+        .replaceAll('%APP_AUTHOR%', APP_CONFIG.creator.name)
         .replaceAll('%THEME_COLOR%', APP_CONFIG.themeColor)
         .replace('%CSP%', isBuild ? PROD_CSP : DEV_CSP)
     },

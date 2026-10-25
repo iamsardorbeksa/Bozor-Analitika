@@ -311,6 +311,8 @@ export const pt: Dict = {
   // ---- footer
   'footer.tagline': 'Feito por diversão. Suas conversas continuam suas.',
   'footer.noTracking': 'Sem rastreadores, sem cookies, sem servidores.',
+  'footer.createdBy': 'Criado por',
+  'footer.contact': 'Fale comigo',
 
   // ---- loading
   'loading.title': 'Lendo sua conversa…',

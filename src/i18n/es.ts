@@ -310,6 +310,8 @@ export const es: Dict = {
   // ---- footer
   'footer.tagline': 'Hecho por diversión. Tus chats son solo tuyos.',
   'footer.noTracking': 'Sin rastreadores, sin cookies, sin servidores.',
+  'footer.createdBy': 'Creado por',
+  'footer.contact': 'Escríbeme',
 
   // ---- loading
   'loading.title': 'Leyendo tu chat…',

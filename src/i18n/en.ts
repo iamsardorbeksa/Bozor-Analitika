@@ -306,6 +306,8 @@ export const en = {
   // ---- footer
   'footer.tagline': 'Built for fun. Your chats stay yours.',
   'footer.noTracking': 'No trackers, no cookies, no servers.',
+  'footer.createdBy': 'Created by',
+  'footer.contact': 'Get in touch',
 
   // ---- loading
   'loading.title': 'Reading your chat…',

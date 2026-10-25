@@ -309,6 +309,8 @@ export const de: Dict = {
   // ---- footer
   'footer.tagline': 'Aus Spaß gebaut. Deine Chats bleiben deine.',
   'footer.noTracking': 'Keine Tracker, keine Cookies, keine Server.',
+  'footer.createdBy': 'Erstellt von',
+  'footer.contact': 'Kontakt',
 
   // ---- loading
   'loading.title': 'Dein Chat wird gelesen…',

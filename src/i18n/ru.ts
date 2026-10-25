@@ -279,6 +279,8 @@ export const ru: Dict = {
 
   'footer.tagline': 'Сделано ради веселья. Ваши чаты остаются вашими.',
   'footer.noTracking': 'Без трекеров, cookies и серверов.',
+  'footer.createdBy': 'Автор проекта',
+  'footer.contact': 'Написать автору',
 
   'loading.title': 'Читаем ваш чат…',
   'loading.reading': 'Открываем файл',

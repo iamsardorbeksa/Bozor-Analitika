@@ -282,6 +282,8 @@ export const uz: Dict = {
 
   'footer.tagline': 'Qiziqish uchun yaratilgan. Chatlaringiz sizniki boʻlib qoladi.',
   'footer.noTracking': 'Trekerlar, cookie va serverlar yoʻq.',
+  'footer.createdBy': 'Muallif',
+  'footer.contact': 'Bogʻlanish',
 
   'loading.title': 'Chatingiz oʻqilmoqda…',
   'loading.reading': 'Fayl ochilmoqda',

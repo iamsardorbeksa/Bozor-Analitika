@@ -313,6 +313,8 @@ export const fr: Dict = {
   // ---- footer
   'footer.tagline': 'Fait pour s’amuser. Vos chats restent à vous.',
   'footer.noTracking': 'Pas de traceurs, pas de cookies, pas de serveurs.',
+  'footer.createdBy': 'Créé par',
+  'footer.contact': 'Me contacter',
 
   // ---- loading
   'loading.title': 'Lecture de votre chat…',
