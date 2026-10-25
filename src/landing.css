@@ -60,7 +60,7 @@
   background: transparent;
   font-weight: 700;
   cursor: pointer;
-  max-width: 7.5rem;
+  max-width: 6.5rem;
 }
 .header-select select option {
   color: #14102a;
@@ -777,4 +777,9 @@ fieldset.setup-section {
   .story-card-enter {
     animation: none !important;
   }
+}
+
+/* Rotated decorations must never cause sideways scrolling on phones. */
+#main {
+  overflow-x: clip;
 }

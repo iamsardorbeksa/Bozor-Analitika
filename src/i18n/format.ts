@@ -3,13 +3,49 @@ import type { Lang } from './lang'
 const LOCALES: Record<Lang, string> = { en: 'en-US', ru: 'ru-RU', uz: 'uz-Latn-UZ' }
 export const localeOf = (lang: Lang) => LOCALES[lang]
 
+/*
+ * Many browsers ship little or no Uzbek locale data (dates come out as "2025 M11 3"),
+ * so Uzbek dates, units and compact numbers are formatted by hand.
+ */
+const UZ_MONTHS = [
+  'yanvar',
+  'fevral',
+  'mart',
+  'aprel',
+  'may',
+  'iyun',
+  'iyul',
+  'avgust',
+  'sentabr',
+  'oktabr',
+  'noyabr',
+  'dekabr',
+]
+const UZ_WEEKDAYS = [
+  'dushanba',
+  'seshanba',
+  'chorshanba',
+  'payshanba',
+  'juma',
+  'shanba',
+  'yakshanba',
+]
+const UZ_UNITS: Record<string, { long: string; short: string }> = {
+  second: { long: 'soniya', short: 'son.' },
+  minute: { long: 'daqiqa', short: 'daq.' },
+  hour: { long: 'soat', short: 'soat' },
+  day: { long: 'kun', short: 'kun' },
+}
+/** Uzbek uses the same digit grouping as Russian (space separators, decimal comma). */
+const NUMBER_LOCALES: Record<Lang, string> = { en: 'en-US', ru: 'ru-RU', uz: 'ru-RU' }
+
 const numberFormats = new Map<string, Intl.NumberFormat>()
 function nf(lang: Lang, opts: Intl.NumberFormatOptions = {}): Intl.NumberFormat {
   const key = lang + JSON.stringify(opts)
   let f = numberFormats.get(key)
   if (!f) {
     try {
-      f = new Intl.NumberFormat(LOCALES[lang], opts)
+      f = new Intl.NumberFormat(NUMBER_LOCALES[lang], opts)
     } catch {
       f = new Intl.NumberFormat('en-US', opts)
     }
@@ -25,10 +61,17 @@ export function formatNumber(n: number, lang: Lang, maxFractionDigits = 0): stri
 /** 12.3K style for big numbers on cards. */
 export function formatCompact(n: number, lang: Lang): string {
   if (n < 10000) return formatNumber(n, lang)
+  if (lang === 'uz') {
+    return n >= 1e6
+      ? `${formatNumber(n / 1e6, lang, 1)} mln`
+      : `${formatNumber(n / 1e3, lang, 1)} ming`
+  }
   return nf(lang, { notation: 'compact', maximumFractionDigits: 1 }).format(n)
 }
 
 function unit(n: number, unitName: string, lang: Lang, display: 'short' | 'long' = 'long'): string {
+  if (lang === 'uz' && UZ_UNITS[unitName])
+    return `${formatNumber(n, lang)} ${UZ_UNITS[unitName][display]}`
   try {
     return nf(lang, {
       style: 'unit',
@@ -76,6 +119,11 @@ export function durationParts(ms: number, lang: Lang): { value: number; label: s
 }
 
 export function formatDate(ts: number, lang: Lang, withYear = true): string {
+  if (lang === 'uz') {
+    const d = new Date(ts)
+    const day = `${d.getDate()}-${UZ_MONTHS[d.getMonth()]}`
+    return withYear ? `${d.getFullYear()}-yil ${day}` : day
+  }
   try {
     return new Intl.DateTimeFormat(LOCALES[lang], {
       day: 'numeric',
@@ -88,6 +136,10 @@ export function formatDate(ts: number, lang: Lang, withYear = true): string {
 }
 
 export function formatShortDate(ts: number, lang: Lang): string {
+  if (lang === 'uz') {
+    const d = new Date(ts)
+    return `${d.getDate()}-${UZ_MONTHS[d.getMonth()].slice(0, 3)}, ${d.getFullYear()}`
+  }
   try {
     return new Intl.DateTimeFormat(LOCALES[lang], {
       day: 'numeric',
@@ -103,6 +155,7 @@ export function formatShortDate(ts: number, lang: Lang): string {
 export function weekdayName(index: number, lang: Lang, style: 'long' | 'short' = 'long'): string {
   // 2024-01-01 was a Monday.
   const d = new Date(2024, 0, 1 + index)
+  if (lang === 'uz') return style === 'long' ? UZ_WEEKDAYS[index] : UZ_WEEKDAYS[index].slice(0, 3)
   try {
     return new Intl.DateTimeFormat(LOCALES[lang], { weekday: style }).format(d)
   } catch {

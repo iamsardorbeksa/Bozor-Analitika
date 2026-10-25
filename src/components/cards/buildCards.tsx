@@ -26,7 +26,7 @@ export interface CardSpec {
 }
 
 /** People shown per award card in group chats. */
-const GROUP_AWARDS_PER_CARD = 3
+const GROUP_AWARDS_PER_CARD = 2
 
 /** Decide which cards to show (skipping ones without data) and in what order. */
 export function buildCards(data: CardData, realNames: string[], t: Translator['t']): CardSpec[] {

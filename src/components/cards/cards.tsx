@@ -923,9 +923,7 @@ export function AwardsCard({
       <Kicker>{t('card.awards.kicker')} 🏆</Kicker>
       <div className={compact ? 'mt-3 grid gap-4' : 'mt-3'}>
         {people.map((personIndex, pi) => {
-          const awards = data.awards
-            .filter((a) => a.personIndex === personIndex)
-            .slice(0, compact ? 2 : 3)
+          const awards = data.awards.filter((a) => a.personIndex === personIndex).slice(0, 3)
           return (
             <div key={personIndex}>
               <Anim d={150 + pi * 250}>
@@ -963,7 +961,7 @@ export function AwardsCard({
                             {def.title[lang]}
                           </div>
                           <div
-                            className="mt-1 font-semibold leading-snug"
+                            className={`mt-1 font-semibold leading-snug ${compact ? 'line-clamp-2' : ''}`}
                             style={{ fontSize: compact ? 12 : 14, color: p.muted }}
                           >
                             {fill(def.description[lang], a.vars)}

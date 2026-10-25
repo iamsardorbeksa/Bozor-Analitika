@@ -77,7 +77,7 @@ export function SiteHeader() {
         <span className="logo-tile">
           <LogoMark color="#fff" accent="#D7FF3A" size={22} />
         </span>
-        <span className="font-display text-[17px] font-extrabold tracking-tight">
+        <span className="font-display hidden text-[17px] font-extrabold tracking-tight min-[480px]:inline">
           {APP_CONFIG.name}
         </span>
       </a>
