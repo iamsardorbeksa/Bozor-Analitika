@@ -2,7 +2,7 @@
 
 16 slayd, oʻzbek tilida. Dizayn saytning oʻzi bilan bir xil (ink + orange, Geist shrifti).
 
-- **PDF:** [Bozor-Analitika-Taqdimot.pdf](Bozor-Analitika-Taqdimot.pdf)
+- **PDF:** [frontend/Bozor-Analitika-Taqdimot.pdf](../../frontend/Bozor-Analitika-Taqdimot.pdf)
 - **Onlayn (tahrirlanadigan, shaxsiy havola):** https://claude.ai/artifact/Js5VhaHfNKsM3GuANZzFaV
 - **Manba fayllar:** [source/](source/): `deck.json`, `deck.css`, `slides/*.html`, `images/` (ilova skrinshotlari)
 
