@@ -18,7 +18,7 @@ _U = {
 _UNIT_RX = "|".join(sorted((re.escape(u) for u in _U), key=len, reverse=True))
 _MULTI = re.compile(rf"(\d+)\s*[x×х*]\s*{_N}\s*({_UNIT_RX})(?![\w])", re.I)
 _SINGLE = re.compile(rf"(?<![\w.,]){_N}\s*({_UNIT_RX})(?![\w])", re.I)
-_PER_KG = re.compile(r"(?:,\s*|\s)(?:kg|кг|вес|vazn)\s*$|\bна вес\b|\bza kg\b|\bkg uchun\b|\bза кг\b", re.I)
+_PER_KG = re.compile(r"(?<![\d.,\s])(?:,\s*|\s)(?:kg|кг|вес|vazn)\s*$|\bна вес\b|\bza kg\b|\bkg uchun\b|\bза кг\b", re.I)
 
 
 @dataclass
