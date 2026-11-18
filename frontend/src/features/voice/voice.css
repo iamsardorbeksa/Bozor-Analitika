@@ -1,0 +1,83 @@
+/* ===== Gemini-style listening glow (ListeningOverlay) =====
+   Three copies of one rounded "band" (border-only, via the padding-box mask trick) filled with a rotating
+   conic gradient: a crisp 3px line, a 14px band blurred 10px and a 48px band blurred 34px.
+   --vx-lvl (0..1) is the live mic level, set from JS; it swells the glow while you speak. */
+@property --vx-a { syntax: '<angle>'; inherits: true; initial-value: 0deg; }
+
+.vx-root {
+  --vx-lvl: 0;
+  --vx-r: clamp(18px, 3.2vw, 34px);
+  --vx-colors: #4285f4, #7a6cf4, #b06cf0, #ff4f9a, #ff7a3d, #ffc53d, #3fc47e, #2ab7d6, #4285f4;
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  animation: vx-rotate 7s linear infinite;
+}
+.vx-root[data-state='working'] { animation-duration: 2.6s; }
+.vx-glow { position: absolute; inset: 0; }
+.vx-band {
+  position: absolute; inset: 0; display: block; border-radius: var(--vx-r);
+  border: var(--vx-w) solid transparent;
+  background: conic-gradient(from var(--vx-a) at 50% 50%, var(--vx-colors)) border-box;
+  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) padding-box exclude, linear-gradient(#000 0 0);
+}
+.vx-band-line { --vx-w: 3px; opacity: .95; }
+.vx-band-mid { --vx-w: calc(12px + var(--vx-lvl) * 10px); }
+.vx-band-wide { --vx-w: calc(40px + var(--vx-lvl) * 34px); }
+.vx-blur { position: absolute; inset: 0; }
+.vx-blur-mid { filter: blur(10px); opacity: calc(.75 + var(--vx-lvl) * .25); }
+.vx-blur-wide { filter: blur(34px); opacity: calc(.38 + var(--vx-lvl) * .5); }
+.vx-root[data-state='working'] .vx-blur-wide { opacity: .45; }
+
+@keyframes vx-rotate { to { --vx-a: 360deg; } }
+
+/* idle breathing when there is no live meter (browser recognition without mic stream) */
+.vx-root[data-meter='idle'][data-state='listening'] .vx-blur-wide { animation: vx-breathe 2.4s ease-in-out infinite; }
+@keyframes vx-breathe { 50% { opacity: .85; } }
+
+/* bottom pill */
+.vx-pill {
+  position: fixed; left: 50%; bottom: max(22px, env(safe-area-inset-bottom)); translate: -50% 0;
+  display: flex; align-items: center; gap: 12px; max-width: min(520px, calc(100vw - 32px));
+  padding: 8px 8px 8px 16px; border-radius: 999px; pointer-events: auto;
+  background: rgba(17, 19, 23, .86); color: #fff;
+  -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4);
+  box-shadow: 0 18px 50px rgba(17, 19, 23, .35), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+.vx-text { display: grid; min-width: 0; line-height: 1.25; }
+.vx-text b { font-size: 14px; font-weight: 600; letter-spacing: -.01em; }
+.vx-text small { font-size: 12px; color: rgba(255, 255, 255, .62); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vx-wave { display: flex; align-items: center; gap: 3px; height: 26px; flex: none; }
+.vx-wave span {
+  width: 4px; height: 100%; border-radius: 4px; transform: scaleY(.2); transform-origin: center;
+  background: linear-gradient(180deg, #7aa7ff, #c38bff 45%, #ff8a5b); transition: transform 70ms linear;
+}
+.vx-root[data-meter='idle'] .vx-wave span { animation: vx-bar 1s ease-in-out infinite; }
+@keyframes vx-bar { 0%, 100% { transform: scaleY(.25); } 50% { transform: scaleY(.85); } }
+.vx-spin { width: 22px; height: 22px; flex: none; border-radius: 50%;
+  background: conic-gradient(from 0deg, #4285f4, #b06cf0, #ff4f9a, #ff7a3d, #ffc53d, #3fc47e, #4285f4);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+          mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  animation: vx-turn .9s linear infinite; }
+@keyframes vx-turn { to { transform: rotate(360deg); } }
+.vx-stop { flex: none; width: 36px; height: 36px; border-radius: 50%; border: 0; display: grid; place-items: center;
+  background: #fff; color: #111317; cursor: pointer; transition: transform .15s; }
+.vx-stop:hover { transform: scale(1.06); }
+.vx-stop:focus-visible { outline: 2px solid #ff5a1f; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .vx-root, .vx-spin, .vx-wave span, .vx-blur-wide { animation: none !important; }
+  .vx-root { --vx-a: 30deg; }
+  .vx-band-mid, .vx-band-wide { --vx-lvl: 0; }
+}
+
+/* ===== mic button ===== */
+.mic-btn { position: relative; flex: none; display: grid; place-items: center; border: 0; border-radius: 50%; cursor: pointer;
+  width: var(--mic-size, 46px); height: var(--mic-size, 46px); background: rgba(17, 19, 23, .06); color: #111317;
+  transition: background .2s, color .2s, transform .15s; }
+.mic-btn:hover { background: rgba(17, 19, 23, .1); }
+.mic-btn:focus-visible { outline: 2px solid #ff5a1f; outline-offset: 2px; }
+.mic-btn[data-state='listening'] { color: #fff; background: conic-gradient(from var(--vx-a, 0deg), #4285f4, #b06cf0, #ff4f9a, #ff7a3d, #ffc53d, #3fc47e, #4285f4);
+  animation: vx-rotate 3s linear infinite; box-shadow: 0 0 0 4px rgba(176, 108, 240, .18); }
+.mic-btn[data-state='working'] { cursor: wait; opacity: .7; }
+.mic-btn:disabled { opacity: .5; cursor: not-allowed; }

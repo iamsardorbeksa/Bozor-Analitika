@@ -1,0 +1,435 @@
+{
+  "nav": {
+    "platform": "Platforma",
+    "insights": "Bozor tahlili",
+    "how": "Qanday ishlaydi",
+    "business": "Bizneslar uchun",
+    "about": "Loyiha haqida",
+    "signIn": "Kirish",
+    "getStarted": "Boshlash",
+    "onThisPage": "Ushbu sahifada",
+    "menu": "Menyu",
+    "sections": {
+      "hero": "Kirish",
+      "snapshot": "Bozor holati",
+      "problem": "Muammo",
+      "how": "Jarayon",
+      "platform": "Imkoniyatlar",
+      "ai": "AI tahlilchi",
+      "regions": "Hududlar",
+      "business": "Kim uchun",
+      "insights": "Maqolalar",
+      "faq": "Savollar"
+    }
+  },
+  "hero": {
+    "eyebrow": "Har bir bozorning oʻz hikoyasi bor. Biz uni oʻqishga yordam beramiz.",
+    "title1": "Bozorni tushuning.",
+    "title2": "Har bir qarorni boshqaring.",
+    "description": "Kerakli mahsulotga buyurtma eʼlon qiling, ishlab chiqaruvchilardan takliflar oling, haqiqiy bozor narxlari bilan solishtiring va shartnomani elektron imzolang — barchasi bitta platformada.",
+    "ctaPrimary": "Bozorni oʻrganish",
+    "ctaSecondary": "Platforma bilan tanishish",
+    "ui": {
+      "index": "Narx indeksi · 30 kun",
+      "avg": "Oʻrtacha narx",
+      "change": "7 kunlik oʻzgarish",
+      "compare": "Taʼminotchilar · {{qty}} {{unit}}",
+      "best": "Eng yaxshi tanlov",
+      "total": "jami",
+      "supply": "Taklif",
+      "demand": "Qiziqish",
+      "offers": "faol taklif",
+      "watch": "Kuzatuvda",
+      "aiTitle": "AI tahlilchi",
+      "aiUp": "{{product}} narxi 7 kunda {{pct}} oshdi. Xaridni rejalashtirishda hisobga oling.",
+      "aiDown": "{{product}} narxi 7 kunda {{pct}} pasaydi — xarid uchun qulay payt boʻlishi mumkin.",
+      "updated": "Yangilangan {{time}}"
+    },
+    "ticker": "Haftaning narx harakatlari"
+  },
+  "snapshot": {
+    "eyebrow": "Bozor holati",
+    "title": "Bozor — bir qarashda.",
+    "subtitle": "Kategoriyani tanlang, mahsulotni bosing — 30 kunlik narx yoʻli, takliflar soni va eng arzon narxni koʻring.",
+    "featured": "Asosiy mahsulotlar",
+    "avg": "Oʻrtacha narx",
+    "offers": "{{count}} ta taklif",
+    "change": "7 kun",
+    "open": "Batafsil",
+    "close": "Yopish",
+    "chart": "30 kunlik oʻrtacha narx",
+    "explore": "Barcha takliflar",
+    "compare": "Narxlarni solishtirish",
+    "min": "Eng past",
+    "max": "Eng yuqori",
+    "empty": "Bu kategoriyada hozircha maʼlumot yoʻq."
+  },
+  "problem": {
+    "eyebrow": "Muammo",
+    "title": "Biznes qarorlari taxminga bogʻliq boʻlmasligi kerak.",
+    "subtitle": "Bugun koʻp tadbirkorlar xarid qilishdan oldin yarim kunini narx yigʻishga sarflaydi — va baribir toʻliq boʻlmagan maʼlumot bilan qaror qiladi.",
+    "old": "Anʼanaviy usul",
+    "new": "Bozor-Analitika bilan",
+    "oldSteps": [
+      {
+        "t": "Taʼminotchilarga qoʻngʻiroq",
+        "d": "Oʻnlab raqamlar, javob bermaganlar, eslab qolingan narxlar."
+      },
+      {
+        "t": "Bozorlarni aylanish",
+        "d": "Chorsu, Oloy, Qoʻyliq — har birida boshqa narx."
+      },
+      {
+        "t": "Narxlarni qoʻlda yozish",
+        "d": "Daftar, Telegram xabarlari, skrinshotlar."
+      },
+      {
+        "t": "Jadvalda solishtirish",
+        "d": "Yetkazish, sifat va minimal buyurtma esdan chiqadi."
+      },
+      {
+        "t": "Toʻliq boʻlmagan qaror",
+        "d": "Eng yaxshi taklif koʻrilmay qolgan boʻlishi mumkin."
+      }
+    ],
+    "newSteps": [
+      {
+        "t": "Bitta qidiruv",
+        "d": "Mahsulot boʻyicha barcha faol takliflar bir ekranda."
+      },
+      {
+        "t": "Avtomatik jami narx",
+        "d": "Miqdor × narx + yetkazish — har bir taklif uchun."
+      },
+      {
+        "t": "Ishonch belgilari",
+        "d": "Tasdiqlangan taʼminotchilar, reyting va yangilanish vaqti."
+      },
+      {
+        "t": "Bozor konteksti",
+        "d": "Narx tarixi, hududiy farq va talab-taklif koʻrsatkichlari."
+      },
+      {
+        "t": "Asosli qaror",
+        "d": "Tavsiya sabablari bilan — faqat eng arzon emas."
+      }
+    ],
+    "timeOld": "~ 4 soat",
+    "timeNew": "~ 5 daqiqa",
+    "timeLabel": "Bitta xarid uchun sarflanadigan vaqt"
+  },
+  "how": {
+    "eyebrow": "Qanday ishlaydi",
+    "title": "Ehtiyojdan imzolangan shartnomagacha.",
+    "steps": [
+      {
+        "t": "Eʼlon qiling",
+        "d": "Nima, qancha va qachonga kerakligini yozing — masalan, “1 000 dona ruchka, 10 kunda”. Sohadagi ishlab chiqaruvchilar darhol xabar oladi."
+      },
+      {
+        "t": "Takliflarni oling",
+        "d": "Ishlab chiqaruvchilar narx, tayyorlash muddati, toʻlov sharti va oʻz talablarini yuboradi."
+      },
+      {
+        "t": "Solishtiring",
+        "d": "Jami narx, muddat, ishonchlilik va toʻlov shartlari yonma-yon: eng arzon, eng tez va tavsiya etilgan taklif belgilanadi. Haqiqiy bozor narxi bilan tekshiring."
+      },
+      {
+        "t": "Shartnoma tuzing",
+        "d": "Eng yaxshi taklifni tanlang — shartnoma avtomatik tuziladi va ikki tomon uni elektron imzo bilan imzolaydi."
+      }
+    ],
+    "viz": {
+      "search": "Qidirish",
+      "results": "{{count}} ta taklif topildi",
+      "verified": "Tasdiqlangan",
+      "unitPrice": "Birlik narxi",
+      "delivery": "Yetkazish",
+      "total": "Jami",
+      "trend": "7 kunlik trend",
+      "supply": "Taklif darajasi",
+      "interest": "Qiziqish indeksi",
+      "regionGap": "Hududlar farqi",
+      "decision": "Tavsiya",
+      "why": "Nega aynan bu taklif:",
+      "send": "Shartnoma tuzish",
+      "factors": {
+        "cost": "Jami narx",
+        "reliability": "Ishonchlilik",
+        "quality": "Sifat",
+        "delivery": "Yetkazish",
+        "availability": "Mavjudlik"
+      }
+    }
+  },
+  "platform": {
+    "eyebrow": "Imkoniyatlar",
+    "title": "Bozoringizni tushunish uchun kerak boʻlgan hamma narsa.",
+    "search": {
+      "t": "Aqlli bozor qidiruvi",
+      "d": "Yuzlab mahsulotlar orasidan kerakli taklifni nomi, kategoriyasi, hududi yoki taʼminotchisi boʻyicha bir zumda toping.",
+      "queries": [
+        "kartoshka",
+        "sement",
+        "guruch"
+      ]
+    },
+    "compare": {
+      "t": "Narxlarni aqlli solishtirish",
+      "d": "Jami xarajat yetkazish bilan hisoblanadi, tavsiya esa sifat, ishonchlilik va mavjudlikni ham hisobga oladi."
+    },
+    "ai": {
+      "t": "AI bozor tahlilchisi",
+      "d": "Oddiy tilda savol bering — javob faqat platformadagi maʼlumotlardan, manba va vaqti bilan.",
+      "q": "Toshkentda eng arzon piyoz qayerda?",
+      "a": "Bozor maʼlumotlari tekshirilmoqda…"
+    },
+    "supply": {
+      "t": "Talab va taklif tahlili",
+      "d": "Kuzatilgan koʻrsatkichlar (takliflar, zaxira, soʻrovlar) va taxminiy qiziqish indeksi alohida koʻrsatiladi.",
+      "observed": "Kuzatilgan",
+      "estimated": "Taxminiy"
+    },
+    "regional": {
+      "t": "Hududiy bozor tahlili",
+      "d": "Bir mahsulotning narxi Toshkent, Samarqand yoki Fargʻonada qanchalik farq qilishini koʻring."
+    },
+    "network": {
+      "t": "Taʼminotchilar tarmogʻi",
+      "d": "Tasdiqlangan ulgurji sotuvchilar, fermerlar va distribyutorlar — reyting va bitimlar tarixi bilan.",
+      "suppliers": "taʼminotchi",
+      "verified": "tasdiqlangan",
+      "verifiedOffers": "tasdiqlangan taʼminotchi takliflari"
+    }
+  },
+  "ai": {
+    "eyebrow": "AI tahlilchi",
+    "title": "Yaxshiroq savol bering. Aqlliroq qaror qiling.",
+    "subtitle": "AI tahlilchi narxlarni oʻylab topmaydi: u platforma vositalari orqali maʼlumot oladi, hisoblaydi va tavsiyani sabablari bilan tushuntiradi.",
+    "label": "Namunaviy koʻrsatma · namunaviy narxlar bilan",
+    "question": "1 000 kg kartoshka uchun eng tejamli taʼminotchini top.",
+    "steps": [
+      "Takliflar qidirilmoqda",
+      "Jami xarajat hisoblanmoqda",
+      "Tavsiya tayyorlanmoqda"
+    ],
+    "supplier": "Taʼminotchi {{name}}",
+    "unit": "Birlik narxi",
+    "delivery": "Yetkazish",
+    "free": "Bepul",
+    "total": "Jami xarajat",
+    "formula": "Jami = miqdor × birlik narxi + yetkazish",
+    "result": "Eng past jami xarajat — Taʼminotchi C",
+    "resultBody": "Birlik narxi B dan yuqori, lekin bepul yetkazish tufayli jami xarajat 100 000 so‘m kam. Koʻrsatilgan namunaviy maʼlumotlar asosida.",
+    "replay": "Qayta koʻrsatish",
+    "tryReal": "Haqiqiy AI tahlilchini sinash"
+  },
+  "regions": {
+    "eyebrow": "Hududlar",
+    "title": "Oʻzbekiston boʻylab bozorlar qanday farq qilishini koʻring.",
+    "subtitle": "Mahsulotni tanlang va hududni bosing — oʻrtacha narx, takliflar soni va respublika oʻrtachasidan farq.",
+    "avg": "Oʻrtacha narx",
+    "offers": "Takliflar",
+    "vsNational": "Respublika oʻrtachasiga nisbatan",
+    "range": "Narx oraligʻi",
+    "cheapest": "Eng arzon hudud",
+    "noData": "Bu mahsulot boʻyicha hududiy maʼlumot yoʻq.",
+    "hint": "Xaritadagi doirani yoki roʻyxatdagi hududni tanlang"
+  },
+  "business": {
+    "eyebrow": "Kim uchun",
+    "buyers": {
+      "eyebrow": "Xaridorlar uchun",
+      "title": "Har bir soʻmni oʻylab sarflang.",
+      "items": [
+        {
+          "t": "Yaxshiroq takliflarni toping",
+          "d": "Butun respublika boʻylab faol takliflar."
+        },
+        {
+          "t": "Taʼminotchilarni solishtiring",
+          "d": "Narx, sifat, yetkazish va ishonchlilik."
+        },
+        {
+          "t": "Noaniqlikni kamaytiring",
+          "d": "Har bir narxda manba va yangilanish vaqti."
+        },
+        {
+          "t": "Narx harakatini tushuning",
+          "d": "Tarix, prognoz va narx ogohlantirishlari."
+        }
+      ],
+      "cta": "Xaridor sifatida boshlash"
+    },
+    "sellers": {
+      "eyebrow": "Sotuvchilar uchun",
+      "title": "Mahsulotingizni kerakli xaridorga koʻrsating.",
+      "items": [
+        {
+          "t": "Takliflarni joylang",
+          "d": "Narx, miqdor va yetkazish shartlari bilan."
+        },
+        {
+          "t": "Xaridorlarga yeting",
+          "d": "Soʻrovlarni qabul qiling yoki qarshi taklif bering."
+        },
+        {
+          "t": "Talabni kuzating",
+          "d": "Koʻrishlar, soʻrovlar va qiziqish indeksi."
+        },
+        {
+          "t": "Raqobatni tushuning",
+          "d": "Narxingiz bozorda qayerda turibdi."
+        }
+      ],
+      "cta": "Sotuvchi sifatida boshlash",
+      "yourPrice": "Sizning narxingiz",
+      "market": "Bozor oraligʻi",
+      "position": "Bozor oʻrtachasidan past"
+    },
+    "title": "Bozorning ikki tomoni uchun yaratilgan."
+  },
+  "insights": {
+    "eyebrow": "Bozor bilimlari",
+    "title": "Bozorni nima harakatlantirishini tushuning.",
+    "subtitle": "Ulgurji xarid qiluvchilar va sotuvchilar uchun qisqa, amaliy maqolalar.",
+    "read": "Oʻqish",
+    "close": "Yopish",
+    "minutes": "{{n}} daqiqa",
+    "articles": [
+      {
+        "tag": "Narxlar",
+        "t": "Mahsulot narxlari nega oʻzgaradi?",
+        "dek": "Taklif, talab, xarajatlar va kutishlar narxni qanday shakllantiradi.",
+        "body": [
+          "Ulgurji narx asosan taklif va talab muvozanatiga bogʻliq: hosil koʻp boʻlsa yoki import oshsa narx tushadi, zaxira kamaysa koʻtariladi. Yoqilgʻi, transport va saqlash xarajatlari ham narxga bevosita taʼsir qiladi.",
+          "Kutishlar ham muhim: sotuvchilar narx oshishini kutsa, mahsulotni ushlab turadi. Shuning uchun bitta kunlik narxdan koʻra bir necha haftalik harakatni kuzatish ishonchliroq signal beradi."
+        ]
+      },
+      {
+        "tag": "Mavsumiylik",
+        "t": "Mavsumiy taklif narxlarga qanday taʼsir qiladi",
+        "dek": "Hosil davri, saqlash va issiqxona mahsulotlari.",
+        "body": [
+          "Sabzavot va mevalarning narxi hosil yigʻim-terimi paytida odatda eng past boʻladi, keyin saqlash xarajatlari va zaxira kamayishi bilan asta oshadi. Issiqxona mahsulotlari qishda qimmatroq, chunki isitish va yorugʻlik xarajati qoʻshiladi.",
+          "Uzoq muddatli xaridlarni rejalashtirishda bir yillik narx tarixini koʻrish foydali — bu mavsumiy chegaralar qayerda ekanini koʻrsatadi."
+        ]
+      },
+      {
+        "tag": "Ulgurji bozor",
+        "t": "Ulgurji bozorlar qanday ishlaydi",
+        "dek": "Dehqon bozori, ulgurji markaz va omborning farqi.",
+        "body": [
+          "Dehqon bozorlari koʻproq chakana va kichik ulgurji uchun, ulgurji markazlar esa katta hajmlar va doimiy taʼminot uchun ishlaydi. Omborlar odatda qurilish materiallari va saqlanadigan tovarlar bilan ishlaydi.",
+          "Ulgurji savdoda minimal buyurtma miqdori, qadoqlash va yetkazish shartlari narx kabi muhim — ularni har doim birga solishtiring."
+        ]
+      },
+      {
+        "tag": "Xarid",
+        "t": "Taʼminotchi takliflarini qanday solishtirish kerak",
+        "dek": "Birlik narxidan tashqariga qarang.",
+        "body": [
+          "Toʻgʻri taqqoslash jami xarajatdan boshlanadi: miqdor × birlik narxi + yetkazish. Arzon birlik narxi qimmat yetkazish bilan yoʻqqa chiqishi mumkin.",
+          "Keyin sifat navi, taʼminotchining tasdiqlanganligi va reytingi, mavjud zaxira va minimal buyurtmani tekshiring. Bozor-Analitika tavsiya ballida aynan shu omillarni hisobga oladi."
+        ]
+      },
+      {
+        "tag": "Hududlar",
+        "t": "Hududiy narx farqlari",
+        "dek": "Nega bir mahsulot turli viloyatlarda turlicha turadi.",
+        "body": [
+          "Mahsulot yetishtiriladigan hududlarda narx odatda pastroq, yirik isteʼmol markazlarida esa transport va talab hisobiga yuqoriroq boʻladi.",
+          "Farq yetkazish xarajatidan katta boʻlsa, boshqa hududdan xarid qilish foydali boʻlishi mumkin — hududiy taqqoslash va jami xarajat hisobi buni tez koʻrsatadi."
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Savollar",
+    "title": "Koʻp beriladigan savollar",
+    "items": [
+      {
+        "q": "Bozor-Analitika nima?",
+        "a": "Bu xaridorlar, ulgurji sotuvchilar, fermerlar va bozor maʼmuriyatini bitta raqamli muhitda birlashtiruvchi B2B platforma: ulgurji narxlar, takliflarni solishtirish, bozor tahlili va AI tahlilchi."
+      },
+      {
+        "q": "Platformadan kim foydalanishi mumkin?",
+        "a": "Doʻkonlar, supermarketlar, restoranlar, ishlab chiqaruvchilar (xaridorlar) hamda fermerlar, ulgurji savdogarlar, distribyutorlar (sotuvchilar)."
+      },
+      {
+        "q": "Bozor maʼlumotlari qayerdan olinadi?",
+        "a": "Narxlar va takliflarni sotuvchilar platformaga joylaydi. Har bir narx yonida manba, taʼminotchining tasdiqlanganligi va oxirgi yangilanish vaqti koʻrsatiladi."
+      },
+      {
+        "q": "Maʼlumotlar real vaqtda yangilanadimi?",
+        "a": "Sotuvchi narxni oʻzgartirishi bilan taklif yangilanadi va oʻzgarish narx tarixiga yoziladi. Har bir narxda u qachon yangilangani koʻrsatiladi — shunda maʼlumot qanchalik yangi ekanini koʻrasiz."
+      },
+      {
+        "q": "AI tahlilchi qanday ishlaydi?",
+        "a": "Til modeli bazaga toʻgʻridan-toʻgʻri kira olmaydi: u faqat platformaning tahlil vositalarini chaqiradi va javobni ularning natijasidan yozadi. Narx, taʼminotchi yoki statistikani oʻylab topmaydi."
+      },
+      {
+        "q": "Sotuvchilar taklif joylay oladimi?",
+        "a": "Ha. Sotuvchi sifatida roʻyxatdan oʻting, mahsulot, narx, miqdor, minimal buyurtma va yetkazish shartlarini kiriting. Narx oʻzgarishlari tarixda saqlanadi."
+      },
+      {
+        "q": "Qaysi hududlar qoʻllab-quvvatlanadi?",
+        "a": "Hozir Toshkent, Samarqand, Fargʻona, Andijon, Namangan, Buxoro va Qashqadaryo. Hududlar roʻyxati kengaytirib boriladi."
+      },
+      {
+        "q": "Taʼminotchilar qanday tasdiqlanadi?",
+        "a": "Sotuvchi hujjatlarini yuboradi, administrator ularni tekshiradi. Tasdiqlangan taʼminotchilar maxsus belgi oladi; shubhali narxlar va shikoyatlar moderatsiya qilinadi."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Keyingi biznes qaroringizni yaxshiroq maʼlumot bilan qabul qiling.",
+    "subtitle": "Bozorni oʻrganing, imkoniyatlarni solishtiring va xarid qarorlarining aqlliroq yoʻlini kashf eting.",
+    "primary": "Boshlash",
+    "secondary": "Bozorni koʻrish"
+  },
+  "footer": {
+    "tagline": "Oʻzbekiston ulgurji bozori uchun narx va taklif tahlili.",
+    "platform": "Platforma",
+    "buyers": "Xaridorlar",
+    "sellers": "Sotuvchilar",
+    "company": "Kompaniya",
+    "contact": "Aloqa",
+    "explorer": "Bozor koʻrgazmasi",
+    "analytics": "Bozor tahlili",
+    "map": "Bozorlar xaritasi",
+    "ai": "AI tahlilchi",
+    "compare": "Narxlarni solishtirish",
+    "alerts": "Narx ogohlantirishlari",
+    "publish": "Taklif joylash",
+    "verify": "Tasdiqlash",
+    "about": "Loyiha haqida",
+    "faq": "Savollar",
+    "insights": "Maqolalar",
+    "location": "Toshkent, Oʻzbekiston",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari",
+    "privacyBody": "Biz faqat xizmat koʻrsatish uchun zarur maʼlumotlarni saqlaymiz: hisob maʼlumotlari, joylangan takliflar va soʻrovlar. Parollar shifrlangan holda saqlanadi. Maʼlumotlar uchinchi shaxslarga sotilmaydi. Hisobingizni oʻchirish uchun administrator bilan bogʻlaning.",
+    "termsBody": "Sotuvchilar joylagan narx va maʼlumotlarning toʻgʻriligi uchun javobgar. Platforma xaridor va sotuvchini bogʻlaydi, lekin bitim tomoni emas. Shubhali yoki notoʻgʻri takliflar moderatsiya qilinib, olib tashlanishi mumkin.",
+    "rights": "Barcha huquqlar himoyalangan."
+  },
+  "about": {
+    "eyebrow": "Loyiha haqida",
+    "title": "Oʻzbekiston bozorlarini shaffof qilamiz",
+    "lead": "Bozor-Analitika — xaridorlar, ulgurji sotuvchilar, fermerlar va bozor maʼmuriyatini bitta raqamli ekotizimda birlashtiruvchi B2B platforma. Loyiha Savdo-sanoat palatasining 19-keysi doirasida yaratilgan.",
+    "problemT": "Muammo",
+    "problemD": "Bozor maʼlumotlari tarqoq: narxlar bozorlar, qoʻngʻiroqlar va Telegram guruhlari boʻylab sochilgan. Tadbirkorlar vaqt va pul yoʻqotadi.",
+    "solutionT": "Yechim",
+    "solutionD": "Tuzilgan takliflar bazasi, jami narxni solishtirish, narx tarixi, talab va taklif indikatorlari hamda maʼlumotga tayanadigan AI tahlilchi.",
+    "principlesT": "Tamoyillar",
+    "principles": [
+      "Har bir narxda manba, tasdiq holati va yangilanish vaqti koʻrsatiladi.",
+      "Shubhali narxlar statistikadan chiqariladi va moderatsiyaga yuboriladi.",
+      "AI narx, taʼminotchi yoki statistikani oʻylab topmaydi.",
+      "Narx tarixi hech qachon ustidan yozilmaydi."
+    ],
+    "stackT": "Texnologiyalar",
+    "stack": "React · TypeScript · Tailwind · FastAPI · SQLAlchemy · PostgreSQL · Pandas · scikit-learn · Claude API · Leaflet",
+    "cta": "Boshlash"
+  }
+}

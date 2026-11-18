@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Mirzo">
+<!-- Mirzo, the scribe (Planner): young, glasses, reed pen (qalam) behind the ear, holds the order scroll -->
+<defs><clipPath id="c1"><circle cx="60" cy="60" r="60"/></clipPath>
+<pattern id="p1" width="7" height="10" patternUnits="userSpaceOnUse"><rect width="7" height="10" fill="#1f3f86"/><rect width="2.5" height="10" fill="#4fb3a5"/><rect x="4.2" width="1" height="10" fill="#f3d27a"/></pattern></defs>
+<g clip-path="url(#c1)">
+<rect width="120" height="120" fill="#3a63b8"/><g fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="2"><rect x="18" y="18" width="84" height="84"/><rect x="18" y="18" width="84" height="84" transform="rotate(45 60 60)"/><circle cx="60" cy="60" r="30"/></g>
+<path d="M8 124 C10 98 32 88 60 88 C88 88 110 98 112 124Z" fill="url(#p1)"/>
+<path d="M50 88 L60 103 L70 88Z" fill="#f4efe6"/>
+<rect x="52" y="73" width="16" height="17" rx="4" fill="#d39c76"/>
+<circle cx="40" cy="62" r="5" fill="#d9a07a"/><circle cx="80" cy="62" r="5" fill="#d9a07a"/>
+<path d="M82 52 L93 36" stroke="#c8933f" stroke-width="3" stroke-linecap="round"/><path d="M93 36 L95.5 32" stroke="#3b2a1a" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="60" cy="60" rx="20" ry="22" fill="#e8b48f"/>
+<path d="M40 57 Q40 47 46 45 L46 55Z M80 57 Q80 47 74 45 L74 55Z" fill="#2a1e17"/>
+<path d="M38 50 L40.5 35 Q60 29 79.5 35 L82 50 Q60 46 38 50Z" fill="#1c1c1f"/><path d="M38.6 49.4 Q60 45.6 81.4 49.4" stroke="#f4efe6" stroke-width="1.4" fill="none"/><g fill="#f4efe6"><path d="M47 45 C44 42 45 37 48.5 36.5 C50.5 38.5 49.5 42 47 45Z"/><path d="M60 43.5 C57 40.5 58 35 61.5 34.5 C63.5 36.5 62.5 40.5 60 43.5Z"/><path d="M73 45 C70 42 71 37 74.5 36.5 C76.5 38.5 75.5 42 73 45Z"/></g>
+<path d="M47 54 h8 M65 54 h8" stroke="#2a1e17" stroke-width="2" stroke-linecap="round"/>
+<g fill="#ffffff" fill-opacity=".18" stroke="#2a1e17" stroke-width="1.6"><circle cx="51.5" cy="60.5" r="5.6"/><circle cx="68.5" cy="60.5" r="5.6"/></g>
+<path d="M57.1 60 h5.8" stroke="#2a1e17" stroke-width="1.6"/>
+<circle cx="51.5" cy="60.8" r="1.9" fill="#2a1e17"/><circle cx="68.5" cy="60.8" r="1.9" fill="#2a1e17"/>
+<path d="M54 71 Q60 75.5 66 71" stroke="#8a4b33" stroke-width="2" fill="none" stroke-linecap="round"/>
+<rect x="38" y="95" width="44" height="19" rx="2" fill="#f6ecd2"/>
+<rect x="34" y="93" width="6" height="23" rx="3" fill="#e2cf9f"/><rect x="80" y="93" width="6" height="23" rx="3" fill="#e2cf9f"/>
+<path d="M44 101 h24 M44 105.5 h30 M44 110 h18" stroke="#9b8559" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="37" cy="105" r="5" fill="#e8b48f"/><circle cx="83" cy="105" r="5" fill="#e8b48f"/>
+</g></svg>

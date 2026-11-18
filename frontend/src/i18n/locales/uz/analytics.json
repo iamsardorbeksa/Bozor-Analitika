@@ -1,0 +1,110 @@
+{
+  "eyebrow": "Bozor tahlili",
+  "title": "Bozor analitikasi",
+  "description": "Har bir mahsulot boʻyicha narxlar tarixi, hududiy farqlar, prognozlar va taklif signallari — platformadagi takliflar asosida.",
+  "askAi": "AI dan soʻrash",
+  "askQuestion": "{{product}} ulgurji bozorini tahlil qil: narxlar, hududiy farqlar, prognoz va taklif.",
+  "noProduct": "Tahlil uchun mahsulotlar hali yoʻq",
+  "picker": {
+    "label": "Mahsulotni tanlash",
+    "placeholder": "Mahsulotni tanlang",
+    "search": "Mahsulot qidirish…",
+    "noMatch": "Hech narsa topilmadi",
+    "more": "{{total}} tadan {{shown}} tasi koʻrsatilgan — aniqlashtirish uchun yozing"
+  },
+  "chart": {
+    "avg": "Oʻrtacha",
+    "min": "Min.",
+    "max": "Maks.",
+    "range": "Min–maks oraligʻi",
+    "actual": "Haqiqiy",
+    "forecast": "Prognoz",
+    "upper": "Yuqori chegara",
+    "lower": "Quyi chegara"
+  },
+  "stats": {
+    "avg": "Oʻrtacha narx",
+    "median": "Mediana",
+    "min": "Eng past",
+    "max": "Eng yuqori",
+    "change7": "7 kunlik oʻzgarish",
+    "change30": "30 kunlik oʻzgarish",
+    "offers": "Faol takliflar",
+    "updated": "Yangilangan",
+    "verifiedOf": "{{n}} tasi tasdiqlangan taʼminotchilardan",
+    "outliers": "Statistikadan chiqarilgan keskin qiymatlar: {{count}} (medianadan juda uzoq takliflar).",
+    "empty": "Tanlangan parametrlar boʻyicha faol takliflar yoʻq",
+    "emptyHint": "Boshqa hudud yoki mahsulotni tanlab koʻring."
+  },
+  "history": {
+    "title": "Narxlar tarixi",
+    "description": "Kunlik oʻrtacha va min–maks oraligʻi, oxirgi {{days}} kun",
+    "periodChange": "davr oʻzgarishi",
+    "method": "Har bir faol taklifning oxirgi narxi boʻyicha kunlik oʻrtacha",
+    "empty": "Narxlar tarixi yetarli emas",
+    "emptyHint": "Trend chizish uchun kamida ikki kunlik yozuv kerak."
+  },
+  "forecast": {
+    "title": "7 kunlik prognoz",
+    "description": "Noaniqlik oraligʻi bilan statistik prognoz",
+    "confidence": { "high": "Yuqori ishonch", "medium": "Oʻrtacha ishonch", "low": "Past ishonch", "insufficient": "Maʼlumot yetarli emas" },
+    "expected": "Kutilayotgan oʻzgarish",
+    "score": "Ishonch darajasi",
+    "method": "Usul",
+    "points": "{{n}} ta maʼlumot nuqtasi",
+    "caveat": "Prognoz — oʻtgan narxlarga asoslangan baho, kafolat emas.",
+    "insufficientTitle": "Prognoz uchun tarix yetarli emas",
+    "insufficientBody": "{{points}} ta kunlik nuqta mavjud; kamida {{min}} ta kerak. Ishonchsiz prognoz koʻrsatgandan koʻra, uni koʻrsatmaymiz.",
+    "methods": {
+      "blend": "Trendni tekislash va 30 kunlik chiziqli trend birikmasi",
+      "holt": "Soʻnuvchi trendni tekislash",
+      "linear": "Chiziqli trend",
+      "other": "Statistik model"
+    },
+    "level": { "insufficient": "maʼlumot yetarli emas", "low": "past", "medium": "oʻrtacha", "high": "yuqori" }
+  },
+  "regional": {
+    "title": "Hududlar boʻyicha taqqoslash",
+    "description": "Hududlar boʻyicha oʻrtacha narx va respublika oʻrtachasidan farq",
+    "offers": "Takliflar",
+    "range": "Min–maks",
+    "vsNational": "respublikaga nisbatan",
+    "cheapest": "Eng arzon",
+    "national": "Resp. oʻrtacha",
+    "empty": "Bu mahsulot boʻyicha hududiy maʼlumot yoʻq",
+    "note": "Respublika oʻrtachasi har bir hududdagi faol takliflar soniga koʻra tortilgan."
+  },
+  "sd": {
+    "title": "Talab va taklif",
+    "description": "Platforma kuzatgan maʼlumotlar va ular asosidagi taxminlar",
+    "observed": "Kuzatilgan",
+    "estimated": "Taxminiy",
+    "period": "Oxirgi {{days}} kun",
+    "activeOffers": "Faol takliflar",
+    "totalQty": "Mavjud hajm",
+    "inquiries": "Xarid soʻrovlari",
+    "views": "Koʻrishlar",
+    "searches": "Qidiruvlar",
+    "ratio": "Taklifga soʻrovlar",
+    "interestIndex": "Qiziqish indeksi",
+    "supplyLevel": "Taklif darajasi",
+    "level": { "none": "Yoʻq", "low": "Past", "medium": "Oʻrtacha", "high": "Yuqori" },
+    "signal": { "demand_gap": "Talab boʻshligʻi", "undersupplied": "Taklif kam", "oversupplied": "Taklif ortiqcha", "balanced": "Muvozanatda" },
+    "disclaimer": "Faqat platformadagi faollik (koʻrishlar, qidiruvlar, soʻrovlar) asosida baholangan. Bu umumiy bozor talabining oʻlchovi emas."
+  },
+  "movers": {
+    "title": "Bozor yetakchilari",
+    "description": "Barcha mahsulotlar boʻyicha 7 kunlik eng katta narx oʻzgarishlari",
+    "trend": "Trend",
+    "previous": "7 kun oldin",
+    "current": "Joriy oʻrtacha",
+    "change": "Oʻzgarish",
+    "empty": "Narx oʻzgarishlari qayd etilmagan",
+    "hint": "Mahsulotni tahlil qilish uchun qatorni bosing"
+  },
+  "formula": {
+    "title": "Oʻzgarish qanday hisoblanadi",
+    "expr": "Oʻzgarish % = (joriy − oldingi) ÷ oldingi × 100",
+    "hint": "current va previous — davr oxiri va boshidagi faol takliflarning oʻrtacha narxi."
+  }
+}

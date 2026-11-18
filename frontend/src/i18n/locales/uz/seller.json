@@ -1,0 +1,362 @@
+{
+  "kpi": {
+    "activeProducts": "Faol mahsulotlar",
+    "activeOffers": "Faol takliflar",
+    "pausedHint_one": "{{count}} ta toʻxtatilgan",
+    "pausedHint_other": "{{count}} ta toʻxtatilgan",
+    "inquiries": "Kelgan soʻrovlar",
+    "totalViews": "Jami koʻrishlar",
+    "views30d_one": "Soʻnggi 30 kunda {{count}} ta",
+    "views30d_other": "Soʻnggi 30 kunda {{count}} ta",
+    "avgPrice": "Oʻrtacha narx",
+    "completedDeals": "Yakunlangan bitimlar",
+    "views": "Koʻrishlar",
+    "pausedHint_few": "{{count}} ta toʻxtatilgan",
+    "pausedHint_many": "{{count}} ta toʻxtatilgan",
+    "views30d_few": "Soʻnggi 30 kunda {{count}} ta",
+    "views30d_many": "Soʻnggi 30 kunda {{count}} ta"
+  },
+  "overview": {
+    "eyebrow": "Sotuvchi kabineti",
+    "title": "Biznes koʻrsatkichlari",
+    "subtitle": "Takliflaringiz samaradorligi va narxlaringizning bozordagi oʻrni.",
+    "rating": "reyting",
+    "deals": "ta yakunlangan bitim",
+    "verifyCta": "Biznesingiz hali tasdiqlanmagan. Tasdiqlangan yetkazib beruvchilar belgi oladi va xaridorlar roʻyxatida yuqoriroq turadi.",
+    "verifyPending": "Tasdiqlash soʻrovingiz koʻrib chiqilmoqda. Tekshiruv tugagach xabar beramiz.",
+    "verifyBtn": "Tasdiqlashdan oʻtish",
+    "viewsChart": "Takliflar koʻrishlari",
+    "viewsChartHint": "Soʻnggi 30 kundagi kunlik koʻrishlar",
+    "openAnalytics": "Tahlil",
+    "noViews": "Hali koʻrishlar qayd etilmagan",
+    "mostViewed": "Eng koʻp koʻrilgan takliflar",
+    "competitiveness": "Narx raqobatbardoshligi",
+    "competitivenessHint": "Narxingiz bozordagi min–max oraligʻida (⌀ = oʻrtacha)",
+    "openIntel": "Bozor razvedkasi",
+    "noCompetitiveness": "Narxlaringizni bozor bilan solishtirish uchun taklif joylang",
+    "vsAvg": "oʻrtachaga nisbatan {{pct}}",
+    "recentRequests": "Soʻnggi soʻrovlar"
+  },
+  "position": {
+    "cheapest": "Eng arzon",
+    "below_avg": "Oʻrtachadan past",
+    "above_avg": "Oʻrtachadan yuqori"
+  },
+  "range": {
+    "min": "Min",
+    "avg": "Oʻrtacha",
+    "max": "Maks",
+    "median": "Mediana",
+    "you": "Sizning narxingiz",
+    "noMarket": "Hali raqobatchi takliflar yoʻq"
+  },
+  "signal": {
+    "demand_gap": "Talab boʻshligʻi",
+    "undersupplied": "Taklif yetishmaydi",
+    "oversupplied": "Taklif ortiqcha",
+    "balanced": "Muvozanatda"
+  },
+  "supply": {
+    "none": "Taklif yoʻq",
+    "low": "Past",
+    "medium": "Oʻrta",
+    "high": "Yuqori"
+  },
+  "estimate": {
+    "interest": "Qiziqish indeksi",
+    "supply": "Taklif darajasi",
+    "signal": "Signal",
+    "disclaimer": "Bu koʻrsatkichlar platformadagi faollik (koʻrishlar, qidiruvlar, soʻrovlar) asosida taxminiy hisoblangan. Ular haqiqiy bozor talabining oʻlchovi emas."
+  },
+  "confidence": {
+    "insufficient": "Maʼlumot yetarli emas",
+    "low": "Past ishonchlilik",
+    "medium": "Oʻrtacha ishonchlilik",
+    "high": "Yuqori ishonchlilik"
+  },
+  "products": {
+    "eyebrow": "Katalog",
+    "title": "Mahsulotlarim",
+    "subtitle": "Takliflaringizni boshqaring: narx, qoldiq, holat va koʻrinish.",
+    "searchPlaceholder": "Takliflaringiz boʻyicha qidirish…",
+    "tabs": {
+      "all": "Barchasi"
+    },
+    "col": {
+      "product": "Mahsulot",
+      "actions": "Amallar"
+    },
+    "quickUpdate": "Narx va qoldiqni yangilash",
+    "activated": "Taklif yana faol",
+    "paused": "Taklif toʻxtatildi — xaridorlar uni koʻrmaydi",
+    "deleteTitle": "Taklif oʻchirilsinmi?",
+    "deleteBody": "“{{title}}” bozordan olib tashlanadi. Narx tarixi tahlil uchun saqlanib qoladi.",
+    "emptyTitle": "Sizda hali takliflar yoʻq",
+    "emptyBody": "Bozorda koʻrinish va soʻrovlar olish uchun birinchi mahsulotingizni qoʻshing.",
+    "historyNote": "Oldingi narx narx tarixida saqlanadi — u hech qachon ustidan yozilmaydi.",
+    "priceChange": "Avval {{from}} edi · oʻzgarish {{pct}}",
+    "moqWarn": "Qoldiq minimal buyurtmadan ({{moq}}) kam"
+  },
+  "form": {
+    "eyebrowNew": "Yangi taklif",
+    "eyebrowEdit": "Taklifni tahrirlash",
+    "titleNew": "Mahsulot qoʻshish",
+    "titleEdit": "Taklifni tahrirlash",
+    "subtitle": "Xaridorlar solishtiradigan maʼlumotlarni kiriting: narx, qoldiq, minimal buyurtma va yetkazib berish.",
+    "backToList": "Mahsulotlarim",
+    "sections": {
+      "product": "Mahsulot",
+      "productHint": "Sotadigan mahsulotingizni platforma katalogidan tanlang.",
+      "price": "Narx va qoldiq",
+      "priceHint": "Bir birlik uchun ulgurji narx, soʻmda.",
+      "delivery": "Yetkazib berish va joylashuv",
+      "photo": "Rasm"
+    },
+    "lockedHint": "Mahsulot, oʻlchov birligi va hudud eʼlon qilingandan keyin oʻzgarmaydi.",
+    "choose": "Tanlang…",
+    "chooseCategoryFirst": "Avval toifani tanlang",
+    "fields": {
+      "title": "Taklif nomi",
+      "unit": "Oʻlchov birligi",
+      "description": "Tavsif",
+      "available": "Mavjud miqdor",
+      "moq": "Minimal buyurtma",
+      "deliveryAvailable": "Yetkazib berish mavjud",
+      "deliveryPrice": "Yetkazib berish narxi",
+      "deliveryDays": "Yetkazib berish muddati",
+      "locationNote": "Joylashuv izohi",
+      "validUntil": "Amal qilish muddati"
+    },
+    "titlePlaceholder": "masalan, Kartoshka — 1-nav",
+    "suggestTitle": "Taklif qilish",
+    "unitHint": "Katalog boʻyicha: {{unit}}",
+    "descriptionHint": "Navi, kelib chiqishi, qadoqlash, yigʻim sanasi…",
+    "moqHint": "Mavjud miqdordan oshmasligi kerak",
+    "deliveryHint": "Xaridorlar yetkazib berish boʻyicha filtrlaydi — imkoningiz boʻlsa yoqing.",
+    "deliveryPriceHint": "0 = bepul yetkazib berish",
+    "noMarket": "Bozorda emas",
+    "noMarkets": "Bu hududda bozorlar roʻyxatda yoʻq",
+    "locationPlaceholder": "4-qator, 12-rasta",
+    "validHint": "Muddatsiz taklif uchun boʻsh qoldiring",
+    "photoHint": "Haqiqiy rasm ishonch uygʻotadi. JPG, PNG yoki WebP, 4 MB gacha.",
+    "dropImage": "Rasmni shu yerga tashlang yoki bosing",
+    "imageRules": "JPG, PNG, WebP · maks. 4 MB",
+    "uploading": "Yuklanmoqda…",
+    "imageUploaded": "Rasm yuklandi",
+    "replaceImage": "Almashtirish",
+    "removeImage": "Olib tashlash",
+    "preview": "Jonli koʻrinish",
+    "previewTitle": "Sizning mahsulotingiz",
+    "publish": "Taklifni eʼlon qilish",
+    "created": "Taklif eʼlon qilindi",
+    "updated": "Taklif yangilandi",
+    "hintTitle": "Bozor tekshiruvi",
+    "hintCount_one": "{{count}} ta faol taklif",
+    "hintCount_other": "{{count}} ta faol taklif",
+    "hintEmpty": "Joriy bozor narxlari va narxingiz qayerda turishini koʻrish uchun mahsulotni tanlang.",
+    "hintNoData": "Bu mahsulot boʻyicha boshqa faol takliflar hali yoʻq — mezonni siz belgilaysiz.",
+    "hintMedian": "Mediana",
+    "useAvg": "Bozor oʻrtachasini qoʻllash",
+    "verdict": {
+      "low": "Narxingiz bozor oʻrtachasiga nisbatan {{pct}} — juda past. Xato emasligini tekshiring.",
+      "below": "Oʻrtachaga nisbatan {{pct}} — raqobatbardosh, xaridorlar sizni yuqorida koʻradi.",
+      "at": "Aynan bozor oʻrtachasi darajasida ({{pct}}).",
+      "above": "Oʻrtachaga nisbatan {{pct}} — bozordan biroz yuqori.",
+      "high": "Oʻrtachaga nisbatan {{pct}} — bozordan ancha yuqori; xaridorlar bu taklifni oʻtkazib yuborishi mumkin."
+    },
+    "errors": {
+      "required": "Majburiy maydon",
+      "number": "Raqam kiriting",
+      "positive": "0 dan katta boʻlishi kerak",
+      "nonNegative": "Manfiy boʻlishi mumkin emas",
+      "integer": "Faqat butun son",
+      "tooLarge": "Qiymat juda katta",
+      "maxDays": "Koʻpi bilan 60 kun",
+      "min2": "Kamida 2 ta belgi",
+      "max": "Koʻpi bilan {{n}} ta belgi",
+      "moqGtStock": "Minimal buyurtma mavjud miqdordan oshmasligi kerak",
+      "pastDate": "Sana oʻtmishda boʻlishi mumkin emas",
+      "imageType": "Faqat JPG, PNG yoki WebP rasmlar",
+      "imageSize": "Rasm hajmi 4 MB dan oshmasligi kerak"
+    },
+    "hintCount_few": "{{count}} ta faol taklif",
+    "hintCount_many": "{{count}} ta faol taklif"
+  },
+  "requests": {
+    "eyebrow": "Savdo",
+    "title": "Kelgan soʻrovlar",
+    "subtitle": "Xaridorlarning xarid soʻrovlari. Qabul qiling, rad eting yoki qarshi taklif yuboring.",
+    "tabs": {
+      "all": "Barchasi"
+    },
+    "empty": "Hali soʻrovlar yoʻq",
+    "emptyTab": "Bu holatda soʻrovlar yoʻq",
+    "emptyBody": "Xaridorlar takliflaringizga soʻrov yuborganda ular shu yerda paydo boʻladi.",
+    "noOffer": "Taklif endi mavjud emas",
+    "preferredPrice": "Istalgan narx",
+    "estimatedTotal": "Taxminiy summa",
+    "yourCounter": "Sizning qarshi taklifingiz",
+    "yourMessage": "Sizning xabaringiz",
+    "dates": "Yaratilgan: {{created}} · yangilangan: {{updated}}",
+    "counterTitle": "Qarshi taklif yuborish",
+    "counterBody": "{{buyer}} uchun oʻz narxingizni taklif qiling. U qabul qilishi yoki bekor qilishi mumkin.",
+    "listed": "Eʼlondagi narx",
+    "counterPrice": "Bir birlik uchun qarshi narx",
+    "counterTotal": "Shu miqdor uchun jami: {{total}} {{cur}}",
+    "message": "Xabar (ixtiyoriy)",
+    "messagePlaceholder": "masalan, Narxga Toshkentgacha yetkazib berish kiradi",
+    "sendCounter": "Qarshi taklif yuborish",
+    "confirm": {
+      "accept": {
+        "title": "Soʻrov qabul qilinsinmi?",
+        "body": "{{buyer}} bitimni qabul qilganingiz haqida xabar oladi.",
+        "cta": "Qabul qilish"
+      },
+      "reject": {
+        "title": "Soʻrov rad etilsinmi?",
+        "body": "{{buyer}} xabardor qilinadi. Bu amalni qaytarib boʻlmaydi.",
+        "cta": "Rad etish"
+      },
+      "complete": {
+        "title": "Yakunlangan deb belgilansinmi?",
+        "body": "{{buyer}} bilan bitim bajarilganini tasdiqlang. U yakunlangan bitimlaringizga qoʻshiladi.",
+        "cta": "Yakunlash"
+      }
+    },
+    "done": {
+      "accept": "Soʻrov qabul qilindi",
+      "reject": "Soʻrov rad etildi",
+      "counter": "Qarshi taklif yuborildi",
+      "complete": "Bitim yakunlandi"
+    }
+  },
+  "analytics": {
+    "eyebrow": "Samaradorlik",
+    "title": "Savdo tahlili",
+    "subtitle": "Koʻrinish, soʻrovlar va har bir narxingizning raqobatbardoshligi.",
+    "kpi": {
+      "views30d": "Koʻrishlar · 30 kun",
+      "allTime": "jami {{n}}",
+      "inquiries": "Soʻrovlar",
+      "open": "{{n}} ta javob kutmoqda",
+      "conversion": "Koʻrish → soʻrov",
+      "conversionHint": "100 ta koʻrishga soʻrovlar",
+      "competitive": "Raqobatbardosh takliflar",
+      "competitiveHint": "Bozor oʻrtachasi yoki undan past"
+    },
+    "viewsTitle": "Koʻrishlar dinamikasi",
+    "viewsHint": "Kunlik koʻrishlar va 7 kunlik sirpanuvchi oʻrtacha",
+    "rolling": "7 kunlik oʻrtacha",
+    "perOfferTitle": "Takliflar boʻyicha koʻrish va soʻrovlar",
+    "perOfferHint": "Soʻnggi 30 kun",
+    "inquiries": "Soʻrovlar",
+    "compTitle": "Narx raqobatbardoshligi",
+    "compHint": "Har bir faol taklif uchun narxingiz bozor min / oʻrtacha / maks qiymatlariga nisbatan",
+    "competitors_one": "{{count}} ta raqobatchi taklif",
+    "competitors_other": "{{count}} ta raqobatchi taklif",
+    "demandTitle": "Talab koʻrsatkichlari",
+    "demandHint": "Mahsulotlaringiz boʻyicha taxminiy qiziqish va taklif",
+    "competitors_few": "{{count}} ta raqobatchi taklif",
+    "competitors_many": "{{count}} ta raqobatchi taklif"
+  },
+  "intel": {
+    "eyebrow": "Tadqiqot",
+    "title": "Bozor razvedkasi",
+    "subtitle": "Istalgan mahsulot boʻyicha narxlar, hududiy farqlar, prognoz va talab–taklif.",
+    "askAi": "AI tahlilchidan soʻrash",
+    "aiQuestion": "{{product}} ulgurji bozorini tahlil qiling: narx tendensiyasi, hududiy farqlar va qanday narx qoʻyishim kerak.",
+    "yourProducts": "Sizning mahsulotlaringiz",
+    "noOwnProducts": "Sizda hali takliflar yoʻq — oʻng tomondan istalgan mahsulotni tanlang.",
+    "anyCategory": "Toifa",
+    "anyProduct": "Istalgan mahsulot",
+    "pickTitle": "Mahsulotni tanlang",
+    "pickBody": "Oʻz mahsulotlaringizdan birini yoki katalogdan istalganini tanlang.",
+    "activeOffers": "ta faol taklif",
+    "verifiedOffers": "tasi tasdiqlangan sotuvchilardan",
+    "outliers_one": "{{count}} ta keskin qiymat chiqarib tashlandi",
+    "outliers_other": "{{count}} ta keskin qiymat chiqarib tashlandi",
+    "change7": "Oʻzgarish · 7 kun",
+    "change30": "Oʻzgarish · 30 kun",
+    "history": "Narx tarixi",
+    "changeInPeriod": "Davr ichidagi oʻzgarish",
+    "noHistory": "Bu davr uchun narx tarixi yetarli emas",
+    "minMax": "Min–maks",
+    "regional": "Hududlar boʻyicha",
+    "regionalHint": "Oʻrtacha narx va milliy oʻrtachaga nisbatan farq",
+    "noRegional": "Hududiy maʼlumotlar hali yoʻq",
+    "forecast": "7 kunlik narx prognozi",
+    "forecastHint": "Narx tarixiga asoslangan statistik prognoz — kafolat emas.",
+    "actual": "Haqiqiy oʻrtacha",
+    "forecastLine": "Prognoz",
+    "forecastValue": "Prognoz",
+    "band": "Ehtimoliy oraliq",
+    "today": "bugun",
+    "expected": "{{days}} kundan soʻng",
+    "method": "Usul: {{method}} · {{points}} ta maʼlumot nuqtasi asosida",
+    "insufficientTitle": "Prognoz uchun maʼlumot yetarli emas",
+    "insufficientBody": "Hozircha {{points}} ta kunlik narx nuqtasi bor; ishonchli prognoz uchun kamida {{min}} ta kerak. Narxlar koʻpaygach prognoz avtomatik paydo boʻladi.",
+    "supplyDemand": "Talab va taklif",
+    "supplyDemandHint": "Chapda — platformada kuzatilgan koʻrsatkichlar, oʻngda — taxminiy indikatorlar.",
+    "outliers_few": "{{count}} ta keskin qiymat chiqarib tashlandi",
+    "outliers_many": "{{count}} ta keskin qiymat chiqarib tashlandi"
+  },
+  "sd": {
+    "observed": "Kuzatilgan",
+    "estimated": "Taxminiy",
+    "period": "soʻnggi {{days}} kun",
+    "activeOffers": "Faol takliflar",
+    "totalQty": "Jami qoldiq",
+    "inquiries": "Soʻrovlar",
+    "views": "Taklif koʻrishlari",
+    "searches": "Qidiruvlar",
+    "ratio": "Bir taklifga soʻrovlar"
+  },
+  "profile": {
+    "eyebrow": "Hisob",
+    "title": "Biznes profili",
+    "subtitle": "Xaridorlar biznesingiz haqida koʻradigan maʼlumotlar va tasdiqlash holati.",
+    "formTitle": "Biznes maʼlumotlari",
+    "formHint": "Sotuvchi sahifangizda va har bir taklifda koʻrsatiladi.",
+    "memberSince": "Platformada {{date}} dan beri",
+    "fields": {
+      "name": "Biznes nomi",
+      "phone": "Aloqa telefoni",
+      "description": "Biznes haqida"
+    },
+    "descriptionHint": "Nima sotasiz, hajmlar, qayerga yetkazib berasiz, ish vaqti.",
+    "errors": {
+      "phone": "Toʻgʻri telefon raqamini kiriting, masalan +998 90 123 45 67",
+      "noteMin": "Hujjatlarni kamida 10 ta belgida tavsiflang"
+    },
+    "verification": "Tasdiqlash",
+    "status": {
+      "verified": {
+        "title": "Tasdiqlangan sotuvchi",
+        "body": "Hujjatlaringiz tekshirildi. Xaridorlar takliflaringizda tasdiq belgisini koʻradi."
+      },
+      "pending": {
+        "title": "Koʻrib chiqilmoqda",
+        "body": "Administrator hujjatlaringizni tekshirmoqda. Odatda bu 1–2 ish kuni oladi."
+      },
+      "rejected": {
+        "title": "Tasdiqlash rad etildi",
+        "body": "Quyidagi izohni oʻqing, kamchilikni tuzating va yangi soʻrov yuboring."
+      },
+      "unverified": {
+        "title": "Tasdiqlanmagan",
+        "body": "Tasdiq belgisini olish uchun roʻyxatdan oʻtish hujjatlaringizni (STIR, guvohnoma) yuboring."
+      }
+    },
+    "verifiedAt": "{{date}} da tasdiqlangan",
+    "documentNote": "Taqdim etilgan hujjatlar",
+    "documentHint": "Hujjatlar va ularning raqamlarini sanab oʻting: STIR, davlat roʻyxatidan oʻtganlik guvohnomasi.",
+    "documentPlaceholder": "STIR 301234567, guvohnoma № 123456 …",
+    "requestBtn": "Tasdiqlashni soʻrash",
+    "requested": "Tasdiqlash soʻrovi yuborildi",
+    "history": "Tasdiqlash tarixi",
+    "noHistory": "Hali tasdiqlash soʻrovlari yoʻq",
+    "yourNote": "Sizning izohingiz",
+    "reviewNote": "Tekshiruvchi",
+    "reviewedAt": "{{date}} da koʻrib chiqilgan"
+  }
+}

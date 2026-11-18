@@ -1,0 +1,362 @@
+{
+  "kpi": {
+    "activeProducts": "Active products",
+    "activeOffers": "Active offers",
+    "pausedHint_one": "{{count}} paused",
+    "pausedHint_other": "{{count}} paused",
+    "inquiries": "Incoming inquiries",
+    "totalViews": "Total views",
+    "views30d_one": "{{count}} in the last 30 days",
+    "views30d_other": "{{count}} in the last 30 days",
+    "avgPrice": "Avg. listed price",
+    "completedDeals": "Completed deals",
+    "views": "Views",
+    "pausedHint_few": "{{count}} paused",
+    "pausedHint_many": "{{count}} paused",
+    "views30d_few": "{{count}} in the last 30 days",
+    "views30d_many": "{{count}} in the last 30 days"
+  },
+  "overview": {
+    "eyebrow": "Seller workspace",
+    "title": "Business overview",
+    "subtitle": "How your listings perform and where your prices stand against the market.",
+    "rating": "rating",
+    "deals": "completed deals",
+    "verifyCta": "Your business isn't verified yet. Verified suppliers get a badge and rank higher with buyers.",
+    "verifyPending": "Your verification request is under review. We'll notify you once it's checked.",
+    "verifyBtn": "Get verified",
+    "viewsChart": "Offer views",
+    "viewsChartHint": "Daily views of your listings, last 30 days",
+    "openAnalytics": "Analytics",
+    "noViews": "No views recorded yet",
+    "mostViewed": "Most viewed offers",
+    "competitiveness": "Price competitiveness",
+    "competitivenessHint": "Your price on the market min–max range (⌀ = average)",
+    "openIntel": "Market intelligence",
+    "noCompetitiveness": "Publish an offer to compare your prices with the market",
+    "vsAvg": "{{pct}} vs. average",
+    "recentRequests": "Recent requests"
+  },
+  "position": {
+    "cheapest": "Cheapest",
+    "below_avg": "Below average",
+    "above_avg": "Above average"
+  },
+  "range": {
+    "min": "Min",
+    "avg": "Average",
+    "max": "Max",
+    "median": "Median",
+    "you": "Your price",
+    "noMarket": "No competing offers yet"
+  },
+  "signal": {
+    "demand_gap": "Demand gap",
+    "undersupplied": "Undersupplied",
+    "oversupplied": "Oversupplied",
+    "balanced": "Balanced"
+  },
+  "supply": {
+    "none": "No supply",
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High"
+  },
+  "estimate": {
+    "interest": "Interest index",
+    "supply": "Supply level",
+    "signal": "Signal",
+    "disclaimer": "Estimates derived from activity on this platform (views, searches, inquiries). They are not a measurement of real market demand."
+  },
+  "confidence": {
+    "insufficient": "Not enough data",
+    "low": "Low confidence",
+    "medium": "Medium confidence",
+    "high": "High confidence"
+  },
+  "products": {
+    "eyebrow": "Catalogue",
+    "title": "My products",
+    "subtitle": "Manage your listings: prices, stock, status and visibility.",
+    "searchPlaceholder": "Search your offers…",
+    "tabs": {
+      "all": "All"
+    },
+    "col": {
+      "product": "Product",
+      "actions": "Actions"
+    },
+    "quickUpdate": "Update price & stock",
+    "activated": "Offer is live again",
+    "paused": "Offer paused — buyers no longer see it",
+    "deleteTitle": "Delete this offer?",
+    "deleteBody": "“{{title}}” will be removed from the market. Its price history is kept for analytics.",
+    "emptyTitle": "You have no offers yet",
+    "emptyBody": "Add your first product to appear in the market and start receiving requests.",
+    "historyNote": "The previous price is kept in the price history — it is never overwritten.",
+    "priceChange": "Was {{from}} · change {{pct}}",
+    "moqWarn": "Stock is below your minimum order ({{moq}})"
+  },
+  "form": {
+    "eyebrowNew": "New listing",
+    "eyebrowEdit": "Edit listing",
+    "titleNew": "Add a product",
+    "titleEdit": "Edit offer",
+    "subtitle": "Fill in the details buyers compare: price, stock, minimum order and delivery.",
+    "backToList": "My products",
+    "sections": {
+      "product": "Product",
+      "productHint": "Choose what you sell from the platform catalogue.",
+      "price": "Price & stock",
+      "priceHint": "Wholesale price per unit in UZS.",
+      "delivery": "Delivery & location",
+      "photo": "Photo"
+    },
+    "lockedHint": "Product, unit and region are fixed after publishing.",
+    "choose": "Choose…",
+    "chooseCategoryFirst": "Choose a category first",
+    "fields": {
+      "title": "Listing title",
+      "unit": "Unit",
+      "description": "Description",
+      "available": "Available quantity",
+      "moq": "Minimum order",
+      "deliveryAvailable": "Delivery available",
+      "deliveryPrice": "Delivery price",
+      "deliveryDays": "Delivery time",
+      "locationNote": "Location note",
+      "validUntil": "Valid until"
+    },
+    "titlePlaceholder": "e.g. Potato — 1st grade",
+    "suggestTitle": "Suggest",
+    "unitHint": "Catalogue default: {{unit}}",
+    "descriptionHint": "Variety, origin, packaging, harvest date…",
+    "moqHint": "Cannot exceed available quantity",
+    "deliveryHint": "Buyers filter by delivery — turn it on if you can ship.",
+    "deliveryPriceHint": "0 = free delivery",
+    "noMarket": "Not at a market",
+    "noMarkets": "No markets listed in this region",
+    "locationPlaceholder": "Row 4, stall 12",
+    "validHint": "Leave empty for an open-ended offer",
+    "photoHint": "A real photo builds trust. JPG, PNG or WebP up to 4 MB.",
+    "dropImage": "Click or drop an image here",
+    "imageRules": "JPG, PNG, WebP · max 4 MB",
+    "uploading": "Uploading…",
+    "imageUploaded": "Photo uploaded",
+    "replaceImage": "Replace",
+    "removeImage": "Remove",
+    "preview": "Live preview",
+    "previewTitle": "Your product",
+    "publish": "Publish offer",
+    "created": "Offer published",
+    "updated": "Offer updated",
+    "hintTitle": "Market check",
+    "hintCount_one": "{{count}} active offer",
+    "hintCount_other": "{{count}} active offers",
+    "hintEmpty": "Choose a product to see current market prices and where your price would sit.",
+    "hintNoData": "No other active offers for this product yet — you set the benchmark.",
+    "hintMedian": "Median",
+    "useAvg": "Use market average",
+    "verdict": {
+      "low": "Your price is {{pct}} vs. the market average — far below. Double-check it's not a typo.",
+      "below": "{{pct}} vs. average — competitive, buyers will see you near the top.",
+      "at": "Right at the market average ({{pct}}).",
+      "above": "{{pct}} vs. average — slightly above the market.",
+      "high": "{{pct}} vs. average — well above the market; buyers may skip this offer."
+    },
+    "errors": {
+      "required": "Required field",
+      "number": "Enter a number",
+      "positive": "Must be greater than 0",
+      "nonNegative": "Cannot be negative",
+      "integer": "Whole number only",
+      "tooLarge": "Value is too large",
+      "maxDays": "At most 60 days",
+      "min2": "At least 2 characters",
+      "max": "At most {{n}} characters",
+      "moqGtStock": "Minimum order can't exceed available quantity",
+      "pastDate": "Date can't be in the past",
+      "imageType": "Only JPG, PNG or WebP images",
+      "imageSize": "Image must be 4 MB or smaller"
+    },
+    "hintCount_few": "{{count}} active offers",
+    "hintCount_many": "{{count}} active offers"
+  },
+  "requests": {
+    "eyebrow": "Sales",
+    "title": "Incoming requests",
+    "subtitle": "Purchase requests from buyers. Accept, reject or send a counteroffer.",
+    "tabs": {
+      "all": "All"
+    },
+    "empty": "No requests yet",
+    "emptyTab": "No requests in this status",
+    "emptyBody": "When buyers request your offers they will appear here.",
+    "noOffer": "Offer no longer available",
+    "preferredPrice": "Preferred price",
+    "estimatedTotal": "Estimated total",
+    "yourCounter": "Your counteroffer",
+    "yourMessage": "Your message",
+    "dates": "Created {{created}} · updated {{updated}}",
+    "counterTitle": "Send a counteroffer",
+    "counterBody": "Propose your price to {{buyer}}. They can accept or cancel.",
+    "listed": "Listed",
+    "counterPrice": "Counter price per unit",
+    "counterTotal": "Total for this quantity: {{total}} {{cur}}",
+    "message": "Message (optional)",
+    "messagePlaceholder": "e.g. Price includes delivery to Tashkent",
+    "sendCounter": "Send counteroffer",
+    "confirm": {
+      "accept": {
+        "title": "Accept this request?",
+        "body": "{{buyer}} will be notified that you accept the deal.",
+        "cta": "Accept"
+      },
+      "reject": {
+        "title": "Reject this request?",
+        "body": "{{buyer}} will be notified. This cannot be undone.",
+        "cta": "Reject"
+      },
+      "complete": {
+        "title": "Mark as completed?",
+        "body": "Confirm the deal with {{buyer}} is done. It will count toward your completed deals.",
+        "cta": "Mark completed"
+      }
+    },
+    "done": {
+      "accept": "Request accepted",
+      "reject": "Request rejected",
+      "counter": "Counteroffer sent",
+      "complete": "Deal marked as completed"
+    }
+  },
+  "analytics": {
+    "eyebrow": "Performance",
+    "title": "Sales analytics",
+    "subtitle": "Visibility, inquiries and how competitive each of your prices is.",
+    "kpi": {
+      "views30d": "Views · 30 days",
+      "allTime": "{{n}} all time",
+      "inquiries": "Inquiries",
+      "open": "{{n}} awaiting reply",
+      "conversion": "View → inquiry",
+      "conversionHint": "Inquiries per 100 offer views",
+      "competitive": "Competitive offers",
+      "competitiveHint": "At or below market average"
+    },
+    "viewsTitle": "Impressions over time",
+    "viewsHint": "Daily offer views with a 7-day rolling average",
+    "rolling": "7-day average",
+    "perOfferTitle": "Views and inquiries by offer",
+    "perOfferHint": "Last 30 days",
+    "inquiries": "Inquiries",
+    "compTitle": "Price competitiveness",
+    "compHint": "Your price vs. market min / average / max for each active offer",
+    "competitors_one": "{{count}} competing offer",
+    "competitors_other": "{{count}} competing offers",
+    "demandTitle": "Demand indicators",
+    "demandHint": "Estimated interest and supply for your products",
+    "competitors_few": "{{count}} competing offers",
+    "competitors_many": "{{count}} competing offers"
+  },
+  "intel": {
+    "eyebrow": "Research",
+    "title": "Market intelligence",
+    "subtitle": "Prices, regional spread, forecast and supply–demand for any product.",
+    "askAi": "Ask the AI analyst",
+    "aiQuestion": "Analyse the wholesale market for {{product}}: price trend, regional differences and what price I should set.",
+    "yourProducts": "Your products",
+    "noOwnProducts": "You have no offers yet — pick any product on the right.",
+    "anyCategory": "Category",
+    "anyProduct": "Any product",
+    "pickTitle": "Choose a product",
+    "pickBody": "Select one of your products or any product from the catalogue.",
+    "activeOffers": "active offers",
+    "verifiedOffers": "from verified suppliers",
+    "outliers_one": "{{count}} outlier excluded",
+    "outliers_other": "{{count}} outliers excluded",
+    "change7": "Change · 7 d",
+    "change30": "Change · 30 d",
+    "history": "Price history",
+    "changeInPeriod": "Change in period",
+    "noHistory": "Not enough price history for this period",
+    "minMax": "Min–max",
+    "regional": "By region",
+    "regionalHint": "Average price, vs. national average",
+    "noRegional": "No regional data yet",
+    "forecast": "7-day price forecast",
+    "forecastHint": "Statistical projection from price history — not a guarantee.",
+    "actual": "Actual average",
+    "forecastLine": "Forecast",
+    "forecastValue": "Forecast",
+    "band": "Likely range",
+    "today": "today",
+    "expected": "In {{days}} days",
+    "method": "Method: {{method}} · based on {{points}} data points",
+    "insufficientTitle": "Not enough data for a forecast",
+    "insufficientBody": "We have {{points}} daily price points; a reliable forecast needs at least {{min}}. It will appear automatically as more prices are recorded.",
+    "supplyDemand": "Supply & demand",
+    "supplyDemandHint": "Observed platform metrics on the left, estimated indicators on the right.",
+    "outliers_few": "{{count}} outliers excluded",
+    "outliers_many": "{{count}} outliers excluded"
+  },
+  "sd": {
+    "observed": "Observed",
+    "estimated": "Estimated",
+    "period": "last {{days}} days",
+    "activeOffers": "Active offers",
+    "totalQty": "Total stock",
+    "inquiries": "Inquiries",
+    "views": "Offer views",
+    "searches": "Searches",
+    "ratio": "Inquiries per offer"
+  },
+  "profile": {
+    "eyebrow": "Account",
+    "title": "Business profile",
+    "subtitle": "What buyers see about your business, and your verification status.",
+    "formTitle": "Business details",
+    "formHint": "Shown on your supplier page and on every offer.",
+    "memberSince": "On the platform since {{date}}",
+    "fields": {
+      "name": "Business name",
+      "phone": "Contact phone",
+      "description": "About the business"
+    },
+    "descriptionHint": "What you sell, volumes, where you deliver, working hours.",
+    "errors": {
+      "phone": "Enter a valid phone number, e.g. +998 90 123 45 67",
+      "noteMin": "Describe the documents in at least 10 characters"
+    },
+    "verification": "Verification",
+    "status": {
+      "verified": {
+        "title": "Verified supplier",
+        "body": "Your documents were checked. Buyers see the verified badge on your offers."
+      },
+      "pending": {
+        "title": "Under review",
+        "body": "An administrator is checking your documents. This usually takes 1–2 working days."
+      },
+      "rejected": {
+        "title": "Verification rejected",
+        "body": "See the reviewer's note below, fix the issue and submit a new request."
+      },
+      "unverified": {
+        "title": "Not verified",
+        "body": "Submit your registration documents (TIN, certificate) to get the verified badge."
+      }
+    },
+    "verifiedAt": "Verified on {{date}}",
+    "documentNote": "Documents provided",
+    "documentHint": "List the documents and their numbers, e.g. TIN, state registration certificate.",
+    "documentPlaceholder": "TIN 301234567, registration certificate No. 123456 …",
+    "requestBtn": "Request verification",
+    "requested": "Verification request sent",
+    "history": "Verification history",
+    "noHistory": "No verification requests yet",
+    "yourNote": "Your note",
+    "reviewNote": "Reviewer",
+    "reviewedAt": "Reviewed {{date}}"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "eyebrow": "Geography",
+  "title": "Market Map",
+  "description": "Bazaars, wholesale markets and warehouses across Uzbekistan, with an optional regional price overlay.",
+  "search": "Search markets or regions…",
+  "noMarkets": "No markets match",
+  "noOffers": "No active offers at this market.",
+  "topOffers": "Top offers",
+  "viewOffers": "Offers in this region",
+  "stats": { "markets": "markets", "offers": "offers", "suppliers": "suppliers", "offersShort": "offers" },
+  "types": { "all": "All", "bazaar": "Bazaar", "wholesale": "Wholesale", "warehouse": "Warehouse" },
+  "overlay": {
+    "label": "Regional price overlay",
+    "none": "No overlay",
+    "clear": "Clear",
+    "empty": "No regional prices for this product",
+    "offers": "{{n}} offers",
+    "vsNational": "vs national"
+  },
+  "legend": { "title": "Legend", "count": "Active offers", "price": "Average price (low → high)" }
+}

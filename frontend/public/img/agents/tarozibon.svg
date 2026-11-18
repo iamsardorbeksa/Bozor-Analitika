@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Tarozibon ota">
+<!-- Tarozibon ota, keeper of the scales (Market Analyst): elder, white turban and beard, balanced brass scale -->
+<defs><clipPath id="c3"><circle cx="60" cy="60" r="60"/></clipPath>
+<pattern id="p3" width="9" height="10" patternUnits="userSpaceOnUse"><rect width="9" height="10" fill="#2d6e4c"/><rect width="3" height="10" fill="#5a2f7f"/><rect x="5" width="1.4" height="10" fill="#e9c35a"/></pattern></defs>
+<g clip-path="url(#c3)">
+<rect width="120" height="120" fill="#7b4ea3"/><g fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="2"><rect x="18" y="18" width="84" height="84"/><rect x="18" y="18" width="84" height="84" transform="rotate(45 60 60)"/><circle cx="60" cy="60" r="30"/></g>
+<path d="M8 124 C10 98 32 88 60 88 C88 88 110 98 112 124Z" fill="url(#p3)"/>
+<rect x="52" y="73" width="16" height="17" rx="4" fill="#c99172"/>
+<circle cx="40" cy="62" r="5" fill="#d29b7b"/><circle cx="80" cy="62" r="5" fill="#d29b7b"/>
+<ellipse cx="60" cy="60" rx="20" ry="22" fill="#e2ab8a"/>
+<path d="M39.5 58 Q39 90 60 92 Q81 90 80.5 58 Q76 72 60 72.5 Q44 72 39.5 58Z" fill="#f2efe9"/>
+<path d="M49 69 Q55 64.5 60 67.5 Q65 64.5 71 69 Q65 70.5 60 69.5 Q55 70.5 49 69Z" fill="#e3ded6"/>
+<path d="M56 74 h8" stroke="#a5604a" stroke-width="1.8" stroke-linecap="round"/>
+<ellipse cx="60" cy="41" rx="25" ry="13" fill="#f7f2e8"/>
+<path d="M36 44 Q60 30 84 42 M38 48 Q60 38 83 47 M40 38 Q60 28 80 36" stroke="#d8cfbf" stroke-width="1.6" fill="none"/>
+<path d="M46 54 q5 -3.5 10 -0.5 M64 53.5 q5 -3 10 0.5" stroke="#f2efe9" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M48.5 60.5 q3 -2.5 6 0 M65.5 60.5 q3 -2.5 6 0" stroke="#2a1e17" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M44 57 l-2 -2 M76 57 l2 -2" stroke="#b9826a" stroke-width="1.2" stroke-linecap="round"/>
+<g stroke="#4a2f0c" stroke-width="4.6" stroke-linecap="round" fill="none" opacity=".55"><path d="M60 92 V120"/><path d="M34 96 H86"/></g><g stroke="#e2b23f" stroke-width="2.4" stroke-linecap="round" fill="none"><path d="M60 92 V120"/><path d="M34 96 H86"/><path d="M36 96 L31 107 M36 96 L41 107 M84 96 L79 107 M84 96 L89 107"/></g>
+<circle cx="60" cy="94" r="3" fill="#e2b23f"/>
+<path d="M28 107 h16 q-8 7 -16 0Z M76 107 h16 q-8 7 -16 0Z" fill="#e2b23f" stroke="#4a2f0c" stroke-width="1.4"/>
+<circle cx="83" cy="104" r="2.6" fill="#f6c64a"/><circle cx="37" cy="104.5" r="2.2" fill="#fff" fill-opacity=".85"/>
+</g></svg>

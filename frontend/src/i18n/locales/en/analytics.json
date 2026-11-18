@@ -1,0 +1,110 @@
+{
+  "eyebrow": "Market intelligence",
+  "title": "Market Analytics",
+  "description": "Price history, regional spread, forecasts and supply signals for every tracked product — computed from platform offers.",
+  "askAi": "Ask AI about this",
+  "askQuestion": "Analyze the {{product}} wholesale market: prices, regional differences, forecast and supply.",
+  "noProduct": "No products to analyze yet",
+  "picker": {
+    "label": "Select product",
+    "placeholder": "Choose a product",
+    "search": "Search products…",
+    "noMatch": "No products match",
+    "more": "Showing {{shown}} of {{total}} — type to narrow down"
+  },
+  "chart": {
+    "avg": "Average",
+    "min": "Min",
+    "max": "Max",
+    "range": "Min–max range",
+    "actual": "Actual",
+    "forecast": "Forecast",
+    "upper": "Upper bound",
+    "lower": "Lower bound"
+  },
+  "stats": {
+    "avg": "Average price",
+    "median": "Median",
+    "min": "Minimum",
+    "max": "Maximum",
+    "change7": "7-day change",
+    "change30": "30-day change",
+    "offers": "Active offers",
+    "updated": "Last updated",
+    "verifiedOf": "{{n}} from verified suppliers",
+    "outliers": "Outliers excluded from statistics: {{count}} (offers far from the median price).",
+    "empty": "No active offers for this selection",
+    "emptyHint": "Try another region or product."
+  },
+  "history": {
+    "title": "Price history",
+    "description": "Daily average with min–max band, last {{days}} days",
+    "periodChange": "period change",
+    "method": "Daily average of each active offer's latest price",
+    "empty": "Not enough price history",
+    "emptyHint": "At least two days of records are needed to draw a trend."
+  },
+  "forecast": {
+    "title": "7-day forecast",
+    "description": "Statistical projection with uncertainty band",
+    "confidence": { "high": "High confidence", "medium": "Medium confidence", "low": "Low confidence", "insufficient": "Insufficient data" },
+    "expected": "Expected change",
+    "score": "Confidence score",
+    "method": "Method",
+    "points": "{{n}} data points",
+    "caveat": "A forecast is an estimate based on past prices, not a guarantee.",
+    "insufficientTitle": "Not enough history for a forecast",
+    "insufficientBody": "We have {{points}} daily data points; at least {{min}} are required. No forecast is shown rather than an unreliable one.",
+    "methods": {
+      "blend": "Trend smoothing combined with a 30-day linear trend",
+      "holt": "Damped trend smoothing",
+      "linear": "Linear trend",
+      "other": "Statistical model"
+    },
+    "level": { "insufficient": "not enough data", "low": "low", "medium": "medium", "high": "high" }
+  },
+  "regional": {
+    "title": "Regional comparison",
+    "description": "Average price by region and difference from the national average",
+    "offers": "Offers",
+    "range": "Min–max",
+    "vsNational": "vs national",
+    "cheapest": "Cheapest",
+    "national": "National avg",
+    "empty": "No regional data for this product",
+    "note": "National average is weighted by the number of active offers in each region."
+  },
+  "sd": {
+    "title": "Supply & demand",
+    "description": "What the platform observes vs what we estimate from it",
+    "observed": "Observed",
+    "estimated": "Estimated",
+    "period": "Last {{days}} days",
+    "activeOffers": "Active offers",
+    "totalQty": "Available volume",
+    "inquiries": "Purchase inquiries",
+    "views": "Offer views",
+    "searches": "Searches",
+    "ratio": "Inquiries per offer",
+    "interestIndex": "Interest index",
+    "supplyLevel": "Supply level",
+    "level": { "none": "None", "low": "Low", "medium": "Medium", "high": "High" },
+    "signal": { "demand_gap": "Demand gap", "undersupplied": "Undersupplied", "oversupplied": "Oversupplied", "balanced": "Balanced" },
+    "disclaimer": "Estimated from on-platform activity only (views, searches, inquiries). It is not a measurement of total market demand."
+  },
+  "movers": {
+    "title": "Market movers",
+    "description": "Largest 7-day price changes across all products",
+    "trend": "Trend",
+    "previous": "7 days ago",
+    "current": "Current avg",
+    "change": "Change",
+    "empty": "No price movements recorded",
+    "hint": "Click a row to analyze that product"
+  },
+  "formula": {
+    "title": "How change is calculated",
+    "expr": "Change % = (current − previous) ÷ previous × 100",
+    "hint": "current and previous are average prices of active offers at the end and start of the period."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "start": "Speak",
+  "stop": "Finish",
+  "listening": "Listening…",
+  "working": "Transcribing…",
+  "hintStop": "Speak — tap ■ or press Esc to finish",
+  "denied": "Microphone access denied",
+  "deniedHint": "Allow the microphone from the lock icon in the address bar.",
+  "unsupported": "This browser has no voice input",
+  "unsupportedHint": "Open it in Chrome or Edge, or type instead.",
+  "error": "Couldn’t recognise the speech",
+  "errorHint": "Try again or type instead.",
+  "heard": "Heard: “{{text}}”",
+  "readAloud": "Read aloud",
+  "stopReading": "Stop"
+}

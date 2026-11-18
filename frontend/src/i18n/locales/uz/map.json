@@ -1,0 +1,21 @@
+{
+  "eyebrow": "Geografiya",
+  "title": "Bozorlar xaritasi",
+  "description": "Oʻzbekiston boʻylab dehqon bozorlari, ulgurji bozorlar va omborlar — hududiy narxlar qatlami bilan.",
+  "search": "Bozor yoki hudud qidirish…",
+  "noMarkets": "Bozorlar topilmadi",
+  "noOffers": "Bu bozorda faol takliflar yoʻq.",
+  "topOffers": "Eng yaxshi takliflar",
+  "viewOffers": "Shu hududdagi takliflar",
+  "stats": { "markets": "bozor", "offers": "taklif", "suppliers": "taʼminotchi", "offersShort": "taklif" },
+  "types": { "all": "Barchasi", "bazaar": "Bozor", "wholesale": "Ulgurji", "warehouse": "Ombor" },
+  "overlay": {
+    "label": "Hududiy narxlar qatlami",
+    "none": "Qatlamsiz",
+    "clear": "Tozalash",
+    "empty": "Bu mahsulot boʻyicha hududiy narxlar yoʻq",
+    "offers": "{{n}} ta taklif",
+    "vsNational": "respublikaga nisbatan"
+  },
+  "legend": { "title": "Shartli belgilar", "count": "Faol takliflar", "price": "Oʻrtacha narx (past → yuqori)" }
+}

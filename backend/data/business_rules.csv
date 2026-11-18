@@ -1,0 +1,9 @@
+rule_id,description,value_text,value_num,valid_note,source_url
+turnover_tax_standard,"Turnover tax (aylanmadan olinadigan soliq), standard rate",4%,4.0,Unchanged for 2026,https://kun.uz/news/2025/12/18/2026-yilda-asosiy-soliqlar-boyicha-stavkalar-ozgarmaydi
+turnover_tax_ip_small,Turnover tax for individual entrepreneurs and self-employed with annual turnover up to 1 bn so'm,1%,1.0,From 1 Jan 2026,https://www.spot.uz/oz/2025/11/26/taxes-for-2026/
+general_regime_threshold,"Turnover above which a business moves to VAT + profit tax (12,000 x BHM)","4,944,000,000 so'm",4944000000.0,From 1 Jun 2026; was 1 bn so'm since 2020,https://kun.uz/news/2026/05/30/kichik-biznesga-soliq-erkinliklari-elon-qilindi-batafsil
+vat_6_catering_trade_services,"Optional regime for businesses whose main activity is catering, trade or services: VAT 6% on all sales, profit tax 0%",6% VAT / 0% profit tax,6.0,1 Jun 2026 to 1 Jan 2030; excludes large taxpayers and firms 50%+ state-owned,https://kun.uz/news/2026/05/30/kichik-biznesga-soliq-erkinliklari-elon-qilindi-batafsil
+vat_standard,"VAT, standard rate",12%,12.0,2026,https://gov.uz/oz/urganch/news/view/138410
+profit_tax_standard,"Profit tax, base rate",15%,15.0,2026,https://gov.uz/oz/urganch/news/view/138410
+profit_tax_exemption_first_year,Businesses moving from turnover tax to VAT + profit tax for the first time are exempt from profit tax for one year,1 year,,From 1 Jan 2026,https://www.spot.uz/oz/2025/12/30/1st-january-changes/
+cbu_policy_rate,Central Bank of Uzbekistan policy (key) rate,14%,14.0,Held at 14% on 5 Nov 2026,https://interfax.com/newsroom/top-stories/119812/

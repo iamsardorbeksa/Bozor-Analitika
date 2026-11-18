@@ -1,0 +1,206 @@
+{
+  "agent": {
+    "planner": {
+      "name": "Mirzo",
+      "role": "Scribe · planner",
+      "job": "Reads the order: products, amounts, cash, deadline"
+    },
+    "scout": {
+      "name": "Dallol",
+      "role": "Bazaar broker · price scout",
+      "job": "Ranks seller offers by delivered cost"
+    },
+    "analyst": {
+      "name": "Tarozibon ota",
+      "role": "Keeper of the scales · market analyst",
+      "job": "Checks against the market average, trend and forecast"
+    },
+    "finance": {
+      "name": "Xazinachi opa",
+      "role": "Treasurer · finance advisor",
+      "job": "Is the cash enough, should you borrow"
+    }
+  },
+  "status": {
+    "wait": "waiting",
+    "run": "working",
+    "done": "done"
+  },
+  "hero": {
+    "title1": "Say what you need.",
+    "title2": "AI finds it cheaper.",
+    "and": "and",
+    "agentsTail": "find you the best-value purchase.",
+    "placeholder": "E.g. I need 200 kg rice and 100 L sunflower oil, I have 4 million so‘m",
+    "askLabel": "Shopping list",
+    "send": "Send",
+    "heard": "Heard: “{{text}}”",
+    "empty": "First type or say what you need."
+  },
+  "examples": {
+    "e1": "For my teahouse I need 200 kg rice and 100 litres of sunflower oil, I have 4 million so‘m",
+    "e2": "Canteen needs 40 kg beef, 30 kg onions and 25 kg carrots by tomorrow",
+    "e3": "Shop needs 50 kg sugar, 300 eggs and 50 kg flour, I have 2 million so‘m"
+  },
+  "regions": {
+    "label": "Regions",
+    "all": "All regions",
+    "more": "+{{n}} more",
+    "hint": "Agents only look at offers in the ticked regions. None ticked means all regions.",
+    "done": "Done",
+    "selectAll": "All"
+  },
+  "stats": {
+    "offers": "active offers",
+    "products": "products",
+    "suppliers": "suppliers",
+    "regions": "regions"
+  },
+  "run": {
+    "title": "AI agents at work",
+    "titleDone": "What the AI agents found",
+    "error": "The agents could not answer: {{msg}}. Please try again.",
+    "retry": "Try again",
+    "engineGemini": "Read by Gemini",
+    "engineDeterministic": "Parsed with keywords (fallback mode)"
+  },
+  "planner": {
+    "reading": "Reading your order…",
+    "cash": "Cash",
+    "deadline": "Deadline",
+    "notSaid": "not given",
+    "days": "{{n}} days",
+    "regions": "Searching: {{list}}",
+    "allRegions": "all regions",
+    "unmatched": "Not in the catalogue: {{list}}",
+    "nothing": "No products found. Try: “200 kg rice, 100 litres of sunflower oil”.",
+    "category": "Category"
+  },
+  "scout": {
+    "loading": "Comparing offers…",
+    "checked": "{{n}} offers checked",
+    "none": "No matching offer in the ticked regions",
+    "total": "total",
+    "per": "1 {{unit}}",
+    "cheaperThan": "cheaper than {{n}} other offers: see the list",
+    "hide": "hide",
+    "colSeller": "Seller",
+    "colPrice": "Price",
+    "colDelivery": "Delivery",
+    "colTotal": "Total",
+    "free": "free",
+    "avg": "average",
+    "days": "in {{n}} days"
+  },
+  "analyst": {
+    "signal": {
+      "buy_now": "Buy now",
+      "wait": "Can wait",
+      "stable": "Price stable"
+    },
+    "vsAvg": "vs average",
+    "noAvg": "no market average",
+    "forecast": "in {{days}} days (estimate): {{pct}}",
+    "noForecast": "not enough data for a forecast",
+    "change": "7 days: {{d7}} · 30 days: {{d30}}",
+    "flagged": "{{n}} offers flagged",
+    "noFlags": "No offer far from the market",
+    "overpriced": "{{supplier}}: {{pct}} overpriced, not chosen",
+    "cheap": "{{supplier}}: {{pct}} cheaper, check quality",
+    "waitSave": "Waiting ~{{days}} days saves ~{{sum}} (estimate)"
+  },
+  "finance": {
+    "need": "Needed",
+    "have": "You have",
+    "short": "Short by {{sum}}",
+    "enough": "✓ Enough cash, {{sum}} left over",
+    "nocash": "Tell me your cash (e.g. “I have 4 million”) and I’ll check whether you need a loan",
+    "loan": "{{type}}: average {{rate}}% a year · cheapest {{bank}} {{best}}%",
+    "interest": "1 month of interest ~{{sum}}",
+    "loanType": {
+      "working_capital": "Working-capital loan",
+      "microloan": "Microloan"
+    },
+    "priceChange": "Prices expected to change {{pct}} (estimate)",
+    "verdict": {
+      "enough": "Your cash is enough: you can buy now.",
+      "borrow": "Not enough cash. Prices are expected to rise more than the loan costs: borrowing and buying now is cheaper.",
+      "wait_and_save": "Not enough cash. The loan costs more than the expected price change: better wait a little and save.",
+      "partial": "Not enough cash: buy what your cash covers now, the rest later.",
+      "unknown_cash": "Cash amount not given."
+    }
+  },
+  "plan": {
+    "title": "Purchase plan",
+    "advice": "Final advice",
+    "where": "Where: {{seller}}, {{region}} · {{price}}",
+    "colProduct": "Product",
+    "colWhere": "Where",
+    "colPrice": "Price",
+    "colVs": "vs average",
+    "colTotal": "Amount",
+    "delivery": "delivery",
+    "free": "free",
+    "avg": "average {{price}}",
+    "noOffer": "No offers in the ticked regions. Add another region.",
+    "open": "Open offer",
+    "tiles": {
+      "products": "Goods",
+      "delivery": "Delivery",
+      "total": "Total",
+      "savings": "Saved vs average"
+    },
+    "explainGemini": "Explanation: Gemini (numbers from the agents)",
+    "explainTemplate": "Explanation: template text",
+    "rates": "Bank rates (Central Bank, {{date}})",
+    "ratesNone": "Cash is enough or not given — no loan was calculated.",
+    "ratesType": "Loan type",
+    "ratesAvg": "Average annual rate",
+    "ratesBest": "Cheapest bank",
+    "ratesMonthly": "1 month of interest",
+    "ratesNote": "Source: {{source}}. This is a comparison, not an offer: the bank sets the final rate.",
+    "tax": "Tax notes (2026)",
+    "taxNote": "Tax rules change; check with the tax office.",
+    "readAloud": "Read aloud",
+    "stop": "Stop",
+    "speakTotal": "Total {{total}}.",
+    "speakSaved": "You save {{sum}} against the average price."
+  },
+  "speak": {
+    "planner": "{{items}}. Cash: {{cash}}. Deadline: {{deadline}}.",
+    "scout": "{{lines}}",
+    "scoutLine": "{{product}}: {{seller}}, {{region}}, {{price}}",
+    "analyst": "{{lines}}",
+    "analystLine": "{{product}}: {{signal}}",
+    "finance": "Needed {{need}}. {{verdict}}"
+  },
+  "team": {
+    "title": "Your bazaar crew",
+    "sub": "Four AI agents, each with one job. Code computes the numbers; the AI only reads your request and writes the explanation.",
+    "ctaTitle": "Try it",
+    "ctaBody": "Type or say your shopping list — four agents build a plan in a minute.",
+    "ctaButton": "Say your list"
+  },
+  "bm": {
+    "title": "How Bozor-Analitika earns",
+    "sub": "Free for buyers. Sellers, banks and data customers pay. Prices are planned; no revenue yet.",
+    "s1h": "Seller commission",
+    "s1p": "~{{pct}}% of each order that came through the platform. Sellers pay only when they sell.",
+    "s2h": "Bank referral",
+    "s2p": "~${{usd}} per approved loan. Xazinachi opa already spots who needs one; the buyer’s rate stays the same.",
+    "s3h": "Price data subscription",
+    "s3p": "~${{usd}}/month for banks, wholesalers and analysts: live offers, trends, regional breakdowns.",
+    "s4h": "Premium",
+    "s4p": "~${{usd}}/month for multi-branch businesses: joint buying, reports, price alerts.",
+    "costTitle": "What one business costs us",
+    "estimate": "estimate",
+    "cPlan": "One purchase plan (2 AI calls, Gemini Flash, paid tier)",
+    "cAi": "AI, ~{{n}} plans a month",
+    "cHost": "Server share at {{n}} businesses",
+    "cTotal": "Cost: 1 business / month",
+    "cRev": "Revenue: ~{{mln}} mln so‘m bought a month × {{pct}}% fee",
+    "cMargin": "Margin: 1 business / month (commission only)",
+    "free": "Within the Gemini free tier the AI cost is $0.",
+    "note": "Estimate, $1 ≈ 12,000 so‘m. Gemini Flash price roughly $0.75 in / $3.75 out per 1M tokens; one plan ≈ 4,000 input + 700 output tokens. Today everything runs on free tiers; figures are rounded."
+  }
+}

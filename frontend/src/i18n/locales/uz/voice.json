@@ -1,0 +1,16 @@
+{
+  "start": "Ovoz bilan aytish",
+  "stop": "Tugatish",
+  "listening": "Tinglayapman…",
+  "working": "Matnga aylantirilmoqda…",
+  "hintStop": "Gapiring — tugatish uchun ■ yoki Esc",
+  "denied": "Mikrofonga ruxsat berilmadi",
+  "deniedHint": "Brauzer manzil qatoridagi qulf belgisidan mikrofonga ruxsat bering.",
+  "unsupported": "Bu brauzer ovozli kiritishni qoʻllamaydi",
+  "unsupportedHint": "Chrome yoki Edge’da oching yoki matnni yozing.",
+  "error": "Ovozni tanib boʻlmadi",
+  "errorHint": "Qayta urinib koʻring yoki matnni yozing.",
+  "heard": "Eshitildi: “{{text}}”",
+  "readAloud": "Oʻqib berish",
+  "stopReading": "Toʻxtatish"
+}

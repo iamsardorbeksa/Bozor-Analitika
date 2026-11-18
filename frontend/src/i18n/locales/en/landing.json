@@ -1,0 +1,435 @@
+{
+  "nav": {
+    "platform": "Platform",
+    "insights": "Market Insights",
+    "how": "How It Works",
+    "business": "For Businesses",
+    "about": "About",
+    "signIn": "Sign In",
+    "getStarted": "Get Started",
+    "onThisPage": "On this page",
+    "menu": "Menu",
+    "sections": {
+      "hero": "Start",
+      "snapshot": "Market now",
+      "problem": "The problem",
+      "how": "Process",
+      "platform": "Capabilities",
+      "ai": "AI Analyst",
+      "regions": "Regions",
+      "business": "Who it's for",
+      "insights": "Insights",
+      "faq": "FAQ"
+    }
+  },
+  "hero": {
+    "eyebrow": "Every Market Has a Story. We Help You Read It.",
+    "title1": "Understand the Market.",
+    "title2": "Master Every Decision.",
+    "description": "Post what you need, get offers from producers, compare them with real market prices and sign the contract electronically — all on one platform.",
+    "ctaPrimary": "Explore the Market",
+    "ctaSecondary": "Discover the Platform",
+    "ui": {
+      "index": "Price index · 30 days",
+      "avg": "Average price",
+      "change": "7-day change",
+      "compare": "Suppliers · {{qty}} {{unit}}",
+      "best": "Best choice",
+      "total": "total",
+      "supply": "Supply",
+      "demand": "Interest",
+      "offers": "active offers",
+      "watch": "Watching",
+      "aiTitle": "AI Analyst",
+      "aiUp": "{{product}} is up {{pct}} over 7 days. Factor it into your purchase plan.",
+      "aiDown": "{{product}} is down {{pct}} over 7 days — it may be a good moment to buy.",
+      "updated": "Updated {{time}}"
+    },
+    "ticker": "This week's price moves"
+  },
+  "snapshot": {
+    "eyebrow": "Market now",
+    "title": "The Market, at a Glance.",
+    "subtitle": "Pick a category and tap a product to see its 30-day price path, number of offers and the lowest price.",
+    "featured": "Staples",
+    "avg": "Average price",
+    "offers": "{{count}} offers",
+    "change": "7 days",
+    "open": "Details",
+    "close": "Close",
+    "chart": "30-day average price",
+    "explore": "All offers",
+    "compare": "Compare prices",
+    "min": "Lowest",
+    "max": "Highest",
+    "empty": "No data in this category yet."
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "Business Decisions Shouldn't Depend on Guesswork.",
+    "subtitle": "Many businesses still spend half a day collecting prices before every purchase — and still decide on incomplete information.",
+    "old": "The traditional way",
+    "new": "With Bozor-Analitika",
+    "oldSteps": [
+      {
+        "t": "Calling suppliers",
+        "d": "Dozens of numbers, missed calls, prices from memory."
+      },
+      {
+        "t": "Visiting markets",
+        "d": "Chorsu, Oloy, Qo'yliq — a different price at each."
+      },
+      {
+        "t": "Writing prices down",
+        "d": "Notebooks, Telegram messages, screenshots."
+      },
+      {
+        "t": "Spreadsheet comparisons",
+        "d": "Delivery, quality and minimum orders get lost."
+      },
+      {
+        "t": "An incomplete decision",
+        "d": "The best offer may never have been seen."
+      }
+    ],
+    "newSteps": [
+      {
+        "t": "One search",
+        "d": "Every active offer for a product on one screen."
+      },
+      {
+        "t": "Total cost, calculated",
+        "d": "Quantity × price + delivery — for every offer."
+      },
+      {
+        "t": "Signals of trust",
+        "d": "Verified suppliers, ratings and update times."
+      },
+      {
+        "t": "Market context",
+        "d": "Price history, regional gaps, supply and demand."
+      },
+      {
+        "t": "A reasoned decision",
+        "d": "A recommendation with reasons — not just the cheapest."
+      }
+    ],
+    "timeOld": "~ 4 hours",
+    "timeNew": "~ 5 minutes",
+    "timeLabel": "Time spent per purchase"
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "From a need to a signed contract.",
+    "steps": [
+      {
+        "t": "Post a request",
+        "d": "Say what you need, how much and by when — e.g. “1,000 pens within 10 days”. Producers in that field are notified right away."
+      },
+      {
+        "t": "Get offers",
+        "d": "Producers send their price, lead time, payment terms and requirements."
+      },
+      {
+        "t": "Compare",
+        "d": "Total cost, lead time, reliability and payment terms side by side — the cheapest, fastest and recommended offers are marked. Check against real market prices."
+      },
+      {
+        "t": "Sign the contract",
+        "d": "Pick the best offer — the contract is generated automatically and both sides sign it with an electronic signature."
+      }
+    ],
+    "viz": {
+      "search": "Search",
+      "results": "{{count}} offers found",
+      "verified": "Verified",
+      "unitPrice": "Unit price",
+      "delivery": "Delivery",
+      "total": "Total",
+      "trend": "7-day trend",
+      "supply": "Supply level",
+      "interest": "Interest index",
+      "regionGap": "Regional gap",
+      "decision": "Recommendation",
+      "why": "Why this offer:",
+      "send": "Create contract",
+      "factors": {
+        "cost": "Total cost",
+        "reliability": "Reliability",
+        "quality": "Quality",
+        "delivery": "Delivery",
+        "availability": "Availability"
+      }
+    }
+  },
+  "platform": {
+    "eyebrow": "Capabilities",
+    "title": "Everything You Need to Understand Your Market.",
+    "search": {
+      "t": "Smart Market Search",
+      "d": "Find the right offer among hundreds of products by name, category, region or supplier.",
+      "queries": [
+        "potato",
+        "cement",
+        "rice"
+      ]
+    },
+    "compare": {
+      "t": "Intelligent Price Comparison",
+      "d": "Totals include delivery, and the recommendation weighs quality, reliability and availability too."
+    },
+    "ai": {
+      "t": "AI Market Analyst",
+      "d": "Ask in plain language — answers come only from platform data, with source and timestamp.",
+      "q": "Where are onions cheapest in Tashkent?",
+      "a": "Checking market data…"
+    },
+    "supply": {
+      "t": "Supply & Demand Intelligence",
+      "d": "Observed metrics (offers, stock, inquiries) and an estimated interest index, kept separate.",
+      "observed": "Observed",
+      "estimated": "Estimated"
+    },
+    "regional": {
+      "t": "Regional Market Insights",
+      "d": "See how much a product's price differs in Tashkent, Samarkand or Fergana."
+    },
+    "network": {
+      "t": "Supplier Network",
+      "d": "Verified wholesalers, farmers and distributors — with ratings and deal history.",
+      "suppliers": "suppliers",
+      "verified": "verified",
+      "verifiedOffers": "offers from verified suppliers"
+    }
+  },
+  "ai": {
+    "eyebrow": "AI Analyst",
+    "title": "Ask Better Questions. Make Smarter Decisions.",
+    "subtitle": "The AI Analyst never invents prices: it pulls data through the platform's tools, does the arithmetic and explains its recommendation.",
+    "label": "Example walkthrough · sample prices",
+    "question": "Find the most cost-effective supplier for 1,000 kg of potatoes.",
+    "steps": [
+      "Finding offers",
+      "Calculating total costs",
+      "Preparing the recommendation"
+    ],
+    "supplier": "Supplier {{name}}",
+    "unit": "Unit price",
+    "delivery": "Delivery",
+    "free": "Free",
+    "total": "Total cost",
+    "formula": "Total = quantity × unit price + delivery",
+    "result": "Lowest total cost — Supplier C",
+    "resultBody": "Its unit price is higher than B's, but free delivery makes the total 100,000 UZS lower. Based on the sample data shown.",
+    "replay": "Replay",
+    "tryReal": "Try the real AI Analyst"
+  },
+  "regions": {
+    "eyebrow": "Regions",
+    "title": "See How Markets Differ Across Uzbekistan.",
+    "subtitle": "Choose a product and select a region — average price, number of offers and the gap to the national average.",
+    "avg": "Average price",
+    "offers": "Offers",
+    "vsNational": "vs national average",
+    "range": "Price range",
+    "cheapest": "Cheapest region",
+    "noData": "No regional data for this product.",
+    "hint": "Select a circle on the map or a region in the list"
+  },
+  "business": {
+    "eyebrow": "Who it's for",
+    "buyers": {
+      "eyebrow": "For buyers",
+      "title": "Spend every som with intent.",
+      "items": [
+        {
+          "t": "Discover better offers",
+          "d": "Active offers from across the country."
+        },
+        {
+          "t": "Compare suppliers",
+          "d": "Price, quality, delivery and reliability."
+        },
+        {
+          "t": "Reduce uncertainty",
+          "d": "A source and update time on every price."
+        },
+        {
+          "t": "Understand price moves",
+          "d": "History, forecasts and price alerts."
+        }
+      ],
+      "cta": "Start as a buyer"
+    },
+    "sellers": {
+      "eyebrow": "For sellers",
+      "title": "Put your product in front of the right buyer.",
+      "items": [
+        {
+          "t": "Publish offers",
+          "d": "With price, stock and delivery terms."
+        },
+        {
+          "t": "Reach buyers",
+          "d": "Accept requests or send a counteroffer."
+        },
+        {
+          "t": "Track demand",
+          "d": "Views, inquiries and an interest index."
+        },
+        {
+          "t": "Understand competition",
+          "d": "See where your price sits in the market."
+        }
+      ],
+      "cta": "Start as a seller",
+      "yourPrice": "Your price",
+      "market": "Market range",
+      "position": "Below market average"
+    },
+    "title": "Built for both sides of the market."
+  },
+  "insights": {
+    "eyebrow": "Market knowledge",
+    "title": "Understand What Moves the Market.",
+    "subtitle": "Short, practical reads for wholesale buyers and sellers.",
+    "read": "Read",
+    "close": "Collapse",
+    "minutes": "{{n}} min read",
+    "articles": [
+      {
+        "tag": "Prices",
+        "t": "Why do product prices change?",
+        "dek": "How supply, demand, costs and expectations shape a price.",
+        "body": [
+          "Wholesale prices mostly follow the balance of supply and demand: a big harvest or more imports pushes prices down, shrinking stocks push them up. Fuel, transport and storage costs feed directly into the price too.",
+          "Expectations matter as well: when sellers expect prices to rise, they hold stock back. That is why the trend over several weeks is a more reliable signal than any single day's price."
+        ]
+      },
+      {
+        "tag": "Seasonality",
+        "t": "How seasonal supply affects prices",
+        "dek": "Harvest, storage and greenhouse produce.",
+        "body": [
+          "Fruit and vegetable prices are usually lowest at harvest and then climb as storage costs grow and stocks shrink. Greenhouse produce costs more in winter because heating and lighting are added.",
+          "When planning long-term purchases, a full year of price history is useful — it shows where the seasonal highs and lows fall."
+        ]
+      },
+      {
+        "tag": "Wholesale",
+        "t": "Understanding wholesale markets",
+        "dek": "Farmers' bazaars, wholesale centres and warehouses.",
+        "body": [
+          "Farmers' bazaars lean toward retail and small wholesale, while wholesale centres handle large volumes and steady supply. Warehouses usually deal in construction materials and goods that store well.",
+          "In wholesale, minimum order quantities, packaging and delivery terms matter as much as price — always compare them together."
+        ]
+      },
+      {
+        "tag": "Buying",
+        "t": "How to compare supplier offers",
+        "dek": "Look beyond the unit price.",
+        "body": [
+          "A fair comparison starts with total cost: quantity × unit price + delivery. A low unit price can be wiped out by expensive delivery.",
+          "Then check the grade, whether the supplier is verified and how it is rated, available stock and minimum order. Bozor-Analitika weighs exactly these factors in its recommendation score."
+        ]
+      },
+      {
+        "tag": "Regions",
+        "t": "Regional market differences",
+        "dek": "Why the same product costs differently across regions.",
+        "body": [
+          "Prices tend to be lower where a product is grown and higher in large consumption centres, where transport and demand add to the cost.",
+          "If the gap is larger than the delivery cost, buying from another region can pay off — a regional comparison plus a total-cost calculation shows it quickly."
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "What is Bozor-Analitika?",
+        "a": "A B2B platform that brings buyers, wholesalers, farmers and market administrators together: wholesale prices, offer comparison, market analytics and an AI analyst."
+      },
+      {
+        "q": "Who can use the platform?",
+        "a": "Shops, supermarkets, restaurants and manufacturers (buyers), and farmers, wholesale traders and distributors (sellers)."
+      },
+      {
+        "q": "Where does the market data come from?",
+        "a": "Sellers publish prices and offers on the platform. Every price shows its source, the supplier's verification status and when it was last updated."
+      },
+      {
+        "q": "Does the platform provide real-time information?",
+        "a": "An offer updates as soon as the seller changes it, and every change is written to the price history. Each price shows when it was updated, so you can always see how fresh it is."
+      },
+      {
+        "q": "How does the AI analyst work?",
+        "a": "The language model has no direct database access: it can only call the platform's analytics tools and writes its answer from their results. It never invents prices, suppliers or statistics."
+      },
+      {
+        "q": "Can sellers publish offers?",
+        "a": "Yes. Register as a seller and add the product, price, stock, minimum order and delivery terms. Price changes are kept in the history."
+      },
+      {
+        "q": "Which regions are supported?",
+        "a": "Currently Tashkent, Samarkand, Fergana, Andijan, Namangan, Bukhara and Kashkadarya, with more regions being added."
+      },
+      {
+        "q": "How are suppliers verified?",
+        "a": "Sellers submit documents and an administrator reviews them. Verified suppliers get a badge; suspicious prices and reported offers go through moderation."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Make Your Next Business Decision with Better Information.",
+    "subtitle": "Explore the market, compare opportunities, and discover a smarter way to make purchasing decisions.",
+    "primary": "Get Started",
+    "secondary": "Explore the Market"
+  },
+  "footer": {
+    "tagline": "Price and supply intelligence for Uzbekistan's wholesale market.",
+    "platform": "Platform",
+    "buyers": "Buyers",
+    "sellers": "Sellers",
+    "company": "Company",
+    "contact": "Contact",
+    "explorer": "Market Explorer",
+    "analytics": "Market Analytics",
+    "map": "Market Map",
+    "ai": "AI Analyst",
+    "compare": "Price Comparison",
+    "alerts": "Price Alerts",
+    "publish": "Publish offers",
+    "verify": "Verification",
+    "about": "About",
+    "faq": "FAQ",
+    "insights": "Insights",
+    "location": "Tashkent, Uzbekistan",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "privacyBody": "We store only the data needed to run the service: account details, published offers and requests. Passwords are stored encrypted. Data is never sold to third parties. Contact an administrator to delete your account.",
+    "termsBody": "Sellers are responsible for the accuracy of the prices and details they publish. The platform connects buyers and sellers but is not a party to the deal. Suspicious or inaccurate offers are moderated and may be removed.",
+    "rights": "All rights reserved."
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Making Uzbekistan's markets transparent",
+    "lead": "Bozor-Analitika is a B2B platform that brings buyers, wholesalers, farmers and market administrators into one digital ecosystem. It was built for the Chamber of Commerce's Case #19.",
+    "problemT": "Problem",
+    "problemD": "Market information is fragmented across bazaars, phone calls and Telegram groups. Entrepreneurs lose time and money.",
+    "solutionT": "Solution",
+    "solutionD": "A structured offer database, total-cost comparison, price history, supply and demand indicators, and an AI analyst grounded in data.",
+    "principlesT": "Principles",
+    "principles": [
+      "Every price shows its source, verification status and last-updated time.",
+      "Suspicious prices are excluded from statistics and sent to moderation.",
+      "The AI never invents prices, suppliers or statistics.",
+      "Price history is never overwritten."
+    ],
+    "stackT": "Stack",
+    "stack": "React · TypeScript · Tailwind · FastAPI · SQLAlchemy · PostgreSQL · Pandas · scikit-learn · Claude API · Leaflet",
+    "cta": "Get started"
+  }
+}

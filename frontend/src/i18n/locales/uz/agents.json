@@ -1,0 +1,206 @@
+{
+  "agent": {
+    "planner": {
+      "name": "Mirzo",
+      "role": "Kotib · rejachi",
+      "job": "Gapni oʻqiydi: mahsulot, miqdor, pul, muddat"
+    },
+    "scout": {
+      "name": "Dallol",
+      "role": "Bozor dalloli · narx izlovchi",
+      "job": "Sotuvchilar takliflarini yetkazish bilan solishtiradi"
+    },
+    "analyst": {
+      "name": "Tarozibon ota",
+      "role": "Tarozi egasi · bozor tahlilchisi",
+      "job": "Oʻrtacha narx, trend va prognoz bilan tekshiradi"
+    },
+    "finance": {
+      "name": "Xazinachi opa",
+      "role": "Xazinachi · moliya maslahatchisi",
+      "job": "Pul yetadimi, qarz olish kerakmi"
+    }
+  },
+  "status": {
+    "wait": "kutmoqda",
+    "run": "ishlamoqda",
+    "done": "tayyor"
+  },
+  "hero": {
+    "title1": "Xarid roʻyxatini ayting.",
+    "title2": "Arzonini AI topadi.",
+    "and": "va",
+    "agentsTail": "sizga eng muqobil xaridni topib berishadi.",
+    "placeholder": "Masalan: 200 kg guruch va 100 litr kungaboqar yogʻi kerak, 4 mln soʻm bor",
+    "askLabel": "Xarid roʻyxati",
+    "send": "Yuborish",
+    "heard": "Eshitildi: “{{text}}”",
+    "empty": "Avval nima kerakligini yozing yoki ayting."
+  },
+  "examples": {
+    "e1": "Choyxonam uchun 200 kg guruch va 100 litr kungaboqar yogʻi kerak, qoʻlimda 4 mln soʻm bor",
+    "e2": "Oshxona uchun 40 kg mol goʻshti, 30 kg piyoz va 25 kg sabzi, ertaga kerak",
+    "e3": "Doʻkonim uchun 50 kg shakar, 300 ta tuxum va 50 kg un, 2 mln soʻm bor"
+  },
+  "regions": {
+    "label": "Viloyatlar",
+    "all": "Barcha viloyatlar",
+    "more": "+{{n}} ta",
+    "hint": "Agentlar faqat belgilangan viloyatlardagi takliflarni koʻradi. Hech biri belgilanmasa — hammasi.",
+    "done": "Tayyor",
+    "selectAll": "Hammasi"
+  },
+  "stats": {
+    "offers": "faol taklif",
+    "products": "mahsulot",
+    "suppliers": "taʼminotchi",
+    "regions": "viloyat"
+  },
+  "run": {
+    "title": "AI agentlar ishlamoqda",
+    "titleDone": "AI agentlar xulosasi",
+    "error": "Agentlar javob bera olmadi: {{msg}}. Qayta urinib koʻring.",
+    "retry": "Qayta urinish",
+    "engineGemini": "Gemini oʻqidi",
+    "engineDeterministic": "Kalit soʻzlar boʻyicha oʻqildi (zaxira usul)"
+  },
+  "planner": {
+    "reading": "Gapni oʻqiyapman…",
+    "cash": "Pul",
+    "deadline": "Muddat",
+    "notSaid": "aytilmadi",
+    "days": "{{n}} kun",
+    "regions": "Qidiruv: {{list}}",
+    "allRegions": "barcha viloyatlar",
+    "unmatched": "Katalogda topilmadi: {{list}}",
+    "nothing": "Mahsulot topilmadi. Masalan: “200 kg guruch, 100 litr kungaboqar yogʻi”.",
+    "category": "Kategoriya"
+  },
+  "scout": {
+    "loading": "Takliflarni solishtiryapman…",
+    "checked": "{{n}} ta taklif tekshirildi",
+    "none": "Belgilangan viloyatlarda mos taklif yoʻq",
+    "total": "jami",
+    "per": "1 {{unit}}",
+    "cheaperThan": "yana {{n}} ta taklifdan arzonroq: roʻyxatni koʻrish",
+    "hide": "yashirish",
+    "colSeller": "Sotuvchi",
+    "colPrice": "Narx",
+    "colDelivery": "Yetkazish",
+    "colTotal": "Jami",
+    "free": "bepul",
+    "avg": "oʻrtacha",
+    "days": "{{n}} kunda"
+  },
+  "analyst": {
+    "signal": {
+      "buy_now": "Hozir oling",
+      "wait": "Kutish mumkin",
+      "stable": "Narx barqaror"
+    },
+    "vsAvg": "oʻrtachaga",
+    "noAvg": "oʻrtacha narx yoʻq",
+    "forecast": "{{days}} kunda (taxmin): {{pct}}",
+    "noForecast": "prognoz uchun maʼlumot yetarli emas",
+    "change": "7 kun: {{d7}} · 30 kun: {{d30}}",
+    "flagged": "{{n}} ta taklif belgilandi",
+    "noFlags": "Keskin farq qiladigan taklif yoʻq",
+    "overpriced": "{{supplier}}: {{pct}} qimmat, tanlanmadi",
+    "cheap": "{{supplier}}: {{pct}} arzon, sifatini tekshiring",
+    "waitSave": "~{{days}} kun kutsangiz ~{{sum}} tejaladi (taxmin)"
+  },
+  "finance": {
+    "need": "Kerak",
+    "have": "Bor",
+    "short": "{{sum}} yetmaydi",
+    "enough": "✓ Pul yetadi, {{sum}} qoladi",
+    "nocash": "Pulingizni ayting (masalan “4 mln soʻm bor”), qarz kerakmi hisoblayman",
+    "loan": "{{type}}: oʻrtacha {{rate}}% yillik · eng arzoni {{bank}} {{best}}%",
+    "interest": "1 oylik foiz ~{{sum}}",
+    "loanType": {
+      "working_capital": "Aylanma mablagʻ krediti",
+      "microloan": "Mikroqarz"
+    },
+    "priceChange": "Narxlar {{pct}} oʻzgarishi kutilmoqda (taxmin)",
+    "verdict": {
+      "enough": "Pul yetadi: hozir sotib olishingiz mumkin.",
+      "borrow": "Pul yetmaydi. Narx oshishi qarz foizidan qimmat: qarz olib hozir olish foydaliroq.",
+      "wait_and_save": "Pul yetmaydi. Qarz foizi kutilayotgan narx oʻzgarishidan qimmat: biroz kuting va jamgʻaring.",
+      "partial": "Pul yetmaydi: hozir pulingiz yetganini oling, qolganini keyinroq.",
+      "unknown_cash": "Pul miqdori aytilmadi."
+    }
+  },
+  "plan": {
+    "title": "Xarid rejasi",
+    "advice": "Yakuniy maslahat",
+    "where": "Qayerdan: {{seller}}, {{region}} · {{price}}",
+    "colProduct": "Mahsulot",
+    "colWhere": "Qayerdan",
+    "colPrice": "Narx",
+    "colVs": "Oʻrtachaga nisbatan",
+    "colTotal": "Summa",
+    "delivery": "yetkazish",
+    "free": "bepul",
+    "avg": "oʻrtacha {{price}}",
+    "noOffer": "Belgilangan viloyatlarda taklif yoʻq. Boshqa viloyatni qoʻshing.",
+    "open": "Taklifni ochish",
+    "tiles": {
+      "products": "Mahsulotlar",
+      "delivery": "Yetkazib berish",
+      "total": "Jami",
+      "savings": "Oʻrtachadan tejash"
+    },
+    "explainGemini": "Izoh: Gemini (raqamlar agentlardan)",
+    "explainTemplate": "Izoh: shablon matn",
+    "rates": "Bank stavkalari (Markaziy bank, {{date}})",
+    "ratesNone": "Pul yetadi yoki miqdori aytilmadi — qarz hisoblanmadi.",
+    "ratesType": "Kredit turi",
+    "ratesAvg": "Oʻrtacha yillik stavka",
+    "ratesBest": "Eng arzon bank",
+    "ratesMonthly": "1 oylik foiz",
+    "ratesNote": "Manba: {{source}}. Bu taqqoslash, taklif emas: yakuniy stavkani bank belgilaydi.",
+    "tax": "Soliq boʻyicha eslatma (2026)",
+    "taxNote": "Soliq qoidalari oʻzgarishi mumkin, soliq inspeksiyasida tekshiring.",
+    "readAloud": "Oʻqib berish",
+    "stop": "Toʻxtatish",
+    "speakTotal": "Jami {{total}}.",
+    "speakSaved": "Oʻrtacha narxdan {{sum}} tejaysiz."
+  },
+  "speak": {
+    "planner": "{{items}}. Pul: {{cash}}. Muddat: {{deadline}}.",
+    "scout": "{{lines}}",
+    "scoutLine": "{{product}}: {{seller}}, {{region}}, {{price}}",
+    "analyst": "{{lines}}",
+    "analystLine": "{{product}}: {{signal}}",
+    "finance": "Kerak {{need}}. {{verdict}}"
+  },
+  "team": {
+    "title": "Sizning bozor jamoangiz",
+    "sub": "Toʻrt AI agent, har birining oʻz ishi bor. Raqamlarni kod hisoblaydi, AI faqat gapingizni oʻqiydi va izoh yozadi.",
+    "ctaTitle": "Sinab koʻring",
+    "ctaBody": "Xarid roʻyxatingizni yozing yoki ayting — toʻrt agent bir daqiqada reja tuzadi.",
+    "ctaButton": "Roʻyxatni aytish"
+  },
+  "bm": {
+    "title": "Bozor-Analitika qanday daromad qiladi",
+    "sub": "Xaridor uchun bepul. Pulni sotuvchilar, banklar va maʼlumot oluvchilar toʻlaydi. Narxlar rejalashtirilgan, hali daromad yoʻq.",
+    "s1h": "Sotuvchi komissiyasi",
+    "s1p": "Platforma orqali kelgan buyurtmadan ~{{pct}}%. Sotuvchi faqat sotganda toʻlaydi.",
+    "s2h": "Bank tavsiyasi",
+    "s2p": "Tasdiqlangan har bir kredit uchun ~${{usd}}. Xazinachi opa kredit kerakligini allaqachon aniqlaydi; xaridor stavkasi oʻzgarmaydi.",
+    "s3h": "Narx maʼlumotlari obunasi",
+    "s3p": "Banklar, ulgurji sotuvchilar va tahlilchilar uchun oyiga ~${{usd}}: jonli takliflar, trendlar, viloyatlar kesimi.",
+    "s4h": "Premium",
+    "s4p": "Bir nechta filialli biznes uchun oyiga ~${{usd}}: umumiy xarid, hisobotlar, narx ogohlantirishlari.",
+    "costTitle": "Bitta biznes bizga qanchaga tushadi",
+    "estimate": "taxmin",
+    "cPlan": "Bitta xarid rejasi (2 ta AI soʻrov, Gemini Flash, pullik tarif)",
+    "cAi": "AI, oyiga ~{{n}} ta reja",
+    "cHost": "Server ulushi, {{n}} ta biznesda",
+    "cTotal": "Xarajat: 1 biznes / oy",
+    "cRev": "Daromad: oyiga ~{{mln}} mln soʻm xarid × {{pct}}% komissiya",
+    "cMargin": "Foyda: 1 biznes / oy (faqat komissiyadan)",
+    "free": "Gemini bepul tarifi doirasida AI xarajati $0.",
+    "note": "Taxminiy hisob, 1 $ ≈ 12 000 soʻm. Gemini Flash narxi taxminan $0,75 kirish / $3,75 chiqish 1M token uchun; bitta reja ≈ 4 000 kirish + 700 chiqish token. Hozir hammasi bepul tariflarda ishlaydi; raqamlar yaxlitlangan."
+  }
+}
