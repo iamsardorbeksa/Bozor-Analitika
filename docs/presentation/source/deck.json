@@ -1,0 +1,19 @@
+{
+  "v": 5,
+  "createdOnFiles": { "v": 1, "at": "2026-11-18T14:00:00Z" },
+  "lists": "css",
+  "format": { "v": 1, "shared": ["project/deck.css"] },
+  "title": "Bozor-Analitika Taqdimot",
+  "order": ["cover", "hook", "problem", "solution", "request", "board", "offers", "contract", "prices", "agents", "tech", "model", "finance", "legal", "pilot", "team"],
+  "sections": {
+    "hook": { "description": "Muammo: xarid hali noshaffof va ogʻzaki kelishuvga tayanadi.", "start": "cover" },
+    "flow": { "description": "Yechim: eʼlon, takliflar, solishtirish va imzolangan shartnoma.", "start": "solution" },
+    "proof": { "description": "Haqiqiy narxlar, AI agentlar va texnologiya.", "start": "prices" },
+    "business": { "description": "Biznes model, moliyaviy kelajak, qonuniy yoʻl xaritasi va pilot.", "start": "model" },
+    "close": { "description": "Jamoa va yakun.", "start": "team" }
+  },
+  "faces": {
+    "geist": { "family": "Geist", "href": "https://fonts.googleapis.com/css2?family=Geist:wght@300..800&display=swap" },
+    "geist-mono": { "family": "Geist Mono", "href": "https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..700&display=swap" }
+  }
+}
